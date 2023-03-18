@@ -8,12 +8,17 @@
     margin-left: auto;
 }
 
+@media(max-width: 1000px) {
+    .container {
+    padding-left: 0;
+    }
+}
+
 @media (min-width: 768px) {
     .container {
     max-width: 720px;
     }
 }
-
 
 @media (min-width: 992px) {
     .container {
