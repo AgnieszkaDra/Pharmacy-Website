@@ -1,146 +1,37 @@
-@import 'partials/variables.scss';
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color:#393939;
-    background-color: #fff;
-    overflow-x: hidden;
-    line-height: 1.5;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/*HEADER*/
-
-.header {
-    background-color: $color-main;
-}
-
-.header__back{
-    padding: 10px 0;
-}
-
-
-.container {
-    left: 0;
-    top: 0;
-    width: 100%;
-padding: 20px;  
-margin: 20px auto; 
-   
-}
-
-.header__top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+@import 'abstracts';
+@import 'base';
+@import 'layout';
+@import 'utilities';
 
 
 
 
 
-@media (min-width: 768px) {
-    .header__container {
-    max-width: 720px;
-}
-}
-
-@media(min-width: 992px) {
-    .header__container {
-        position: static;
-        max-width: 960px
-    }
-}
-
-@media (min-width: 1200px) {
-    .header__container {
-        max-width: 1250px;
-    }
-}
-
-/* .header__top {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 1fr; */
-    /* padding: 0 20px;
-    position: relative;
-} */ 
-
-.header__logo {
-    grid-column: 1/2;
-    grid-row: 1/2;
-   
-}
-@media (min-width: 1200px) {
-    .header__logo {
-        
-        padding-left: 20px;
-    }
-}
 
 
 
-@media (min-width: 1000px) {
-   
-    .hamburger {
-    display: none;
-}
-}
-
-.menu__top {
-    color: black;
-    grid-column: 3/5;
-  
-    margin-bottom: 10px;
-}
-@media (max-width: 1001px){
-    .btn__menu__pp {
-        grid-column: 4/4;
-        justify-self: end;
-    }
-    .menu__top{
-    display: none!important;
-}
-}
-
-.name__top {
-    margin-right: 12rem;
-}
-
-.name__top h3 {
-    text-align: center;
-
-}
-
-.menu {
-    display: flex;
-    justify-content: space-between;
-}
 
 
 
-.menu__top .nav > ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
 
-.menu__top .nav > ul > li {
-    display: inline-block;
-    margin-right: 25px;
-    font-size: 16px;
-    transition: all .3s;
-    color: #393939;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .hero{
     background-image: url('/Projekt/images/drugs2.jpg');
@@ -164,125 +55,7 @@ margin: 20px auto;
     padding-top: 80px;
 }
 
-.menu_slide_left {
-    transform: translateX(-100%);
-    transition: all .3s;
-    position: fixed;
-    top: 0;
-    z-index: 99999;
-    /* max-width: 260px;
-    max-width: 260px; */
-    background: #10161e;
-    min-height: 100vh;
-    width: 100%;
-    padding: 20px;
-    left:0
-    
-  
-}
 
-.fadeInLeft {
-    animation-duration: 0.3s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-    animation-name: fadeInLeft;
-    animation: fadeInLeft .3s forwards;
-}
-
-.fadeInLeft {
-    -webkit-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
-}
-
-.close {
-    position: static;
-    right: 32px;
-    width: 42px;
-    height: 42px;
-    opacity: 1;
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: 15px;
-    padding: 0px 20px;
-}
-
-.close:before {
-    transform: rotate(45deg);
-}
-
-.close:after {
-    transform: rotate(-45deg);
-}
-
-.close:before, .close:after {
-    position: absolute;
-    left: auto;
-    right: 35px;
-    content: " ";
-    height: 33px;
-    width: 2px;
-    background-color: #fff;
-    top: 14px;
-}
-
-.primary-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.menu_slide_left .close {
-    margin-bottom: 20px;
-}
-
-.menu_slide_left ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.menu_slide_left > ul {
-    overflow-y: scroll;
-    height: 90vh;
-}
-
-.menu_slide_left ul li {
-    margin-bottom: 10px;
-    transition: all .3s;
-}
-
-@media (max-width: 1000px) {
-    .menu_slide_left ul li {
-    margin-left: 0;
-}
-}
-
-.menu_slide_left ul li a {
-    color: #fff;
-    display: block;
-    text-decoration: none;
-}
-
-
-.wpml-ls-menu-item {
-    margin-left: 10px;
-}
-
-.back_black {
-    background: rgba(0,0,0,.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: 99998;
-}
 
 
 
@@ -356,7 +129,10 @@ margin: 20px auto;
 .grid-3col {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     text-align: center;
+   
+   
 }
 
 @media (max-width: 992px) {
@@ -387,7 +163,8 @@ margin: 20px auto;
     margin: 20px auto;
     background: $color-submain;
     border-radius: 30px;
-    padding: 20px;
+    padding: 20px 0;
+    
 }
 
 .element__sub__icon  i{

@@ -4,6 +4,8 @@ const buttonpp = document.querySelector('.hamburger')
 const backBlack = document.querySelector('.back_black')
 const menu = document.querySelector('.menu_slide_left')
 const close6 = document.querySelector('.close')
+const header = document.querySelector('header')
+const body = document.querySelector('body')
 
 console.log(buttonpp, backBlack)
 
@@ -28,6 +30,7 @@ buttonpp.addEventListener('click', function(){
     alert('click')
     
     menu.style.transform = "translateX(0%)"
+   
 })
 
 close6.addEventListener('click', function(){

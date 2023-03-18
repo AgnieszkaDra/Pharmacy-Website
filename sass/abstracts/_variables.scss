@@ -1,0 +1,7 @@
+@mixin flex($jc, $js, $ai, $as) {
+   display: flex;
+   justify-content: $jc;
+   justify-self: $js;
+   align-items: $ai;
+   align-self: $as;
+  }
