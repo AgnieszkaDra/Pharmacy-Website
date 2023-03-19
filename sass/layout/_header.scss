@@ -8,8 +8,8 @@
     padding: 10px 0;
 }
 
-.header__top {
-    @include flex(space-between, auto, center, auto);
+.header__container.flex {
+    justify-content: space-between;
 }
 
 
@@ -25,12 +25,18 @@
     
 }
 
+@media(min-width: 1000px){
+    .header__button-container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
 @media (max-width: 300px) {
     .header__logo {
         display: none;
     }
-    .header__top {
-        display: flex;
+    .header__top.flex {
         justify-content: flex-end;
     }
     .header__button-container {
