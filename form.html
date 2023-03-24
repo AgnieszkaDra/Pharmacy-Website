@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/main.css">
+</head>
+
+<body>
+    <main id="form" action="'/" class="orderDrugsForm__form grid container container--fixed">
+        <fieldset class="orderDrugsForm fieldset prescription col">
+            <legend class="orderDrugsForm fieldset__legend">Leki na receptę</legend>
+            <div class="orderDrugsForm label">
+                <div class="electronicPrescriptionContainer flex">
+                    <div>
+                        <label class="orderDrugsForm label__text">
+                            PIN recepty
+                            <span class="star">*</span>
+                        </label>
+                        <div class="label__input">
+                            <input id="PIN" type="text" name="PIN" value size="40" placeholder="Podaj kod recepty" class="pin">
+                        </div>
+                        <div class="label__error"></div>
+                    </div>
+                    <div>
+                        <label class="orderDrugsForm label__text">
+                            PESEL
+                            <span class="star">*</span>
+                        </label>
+                        <div class="label__input">
+                            <input id="pesel" type="text" name="pesel" value size="40" class="pesel">
+                        </div>
+                        <div class="label__error"></div>
+                    </div>
+                    <button class="orderDrugsForm electronicPrescription button">Dodaj kolejną receptę
+                        elektroniczną</button>
+                </div>
+            </div>
+            <div class="orderDrugsForm label">
+                <div class="paperPrescriptionContainer flex">
+                    <div>
+                        <label class="orderDrugsForm label__text">
+                            Recepta papierowa
+                        </label>
+                        <!-- <div class="label__input">
+                            <input id="paperPrescription" type="text" class="paperPrescription" name="paperPrescription" value size="40"
+                                placeholder="Podaj nazwy lekow na receptę">
+                        </div> -->
+                        <!-- <div class="panel__uploader uploader">
+                            <label class="uploader__label">
+                              Wybierz plik ze zdjęciem recepty
+                              <input class="uploader__input paperPrescription" type="file" accept="" />
+                            </label>
+                          </div> -->
+                          <b>our image canvas </b>
+                          <input type="file" id="uploaded-file" />      
+                          <!-- <canvas id= "our-canvas" class="image-container"> </canvas> -->
+                        <div class="label__error"></div>
+                    </div>
+                    <button class="orderDrugsForm paperPrescription button">
+                        Dodaj kolejną receptę
+                    </button>
+                </div>
+            </div>
+            <div class="label__error paperPrescription">
+            </div>
+        </fieldset>
+        <fieldset class="orderDrugsForm fieldset nonprescription col">
+            <legend class="orderDrugsForm fieldset__legend">Pozostałe leki/suplementy diety/wyroby medyczne</legend>
+            <div class="orderDrugsForm label">
+                <div class="theOtherContainer flex">
+                    <div>
+                        <label class="orderDrugsForm label__text">
+                            nazwa leku
+                        </label>
+                        <div class="label__input">
+                            <input class="ol drugName" id="drugName" type="text" name="drugName" value size="40" placeholder=""/>
+                        </div>
+                    </div>
+                    <div class="label__error"></div>
+                <div class="orderDrugsForm label">
+                    <div>
+                    <label class="orderDrugsForm  label__text">
+                        dawka
+                    </label>
+                    <div class="label__input">
+                        <input id="drugDose" class="drugDose" type="text"value size="40">
+                    </div>
+                    </div>
+                    <div class="label__error"></div>
+                </div>
+                <div class="orderDrugsForm label">
+                    <div>
+                    <label class="orderDrugsForm  label__text">
+                        ilość opakowań
+                    </label>
+                    <div class="label__input">
+                        <input id="drugAmount" type="text" class="drugAmount" name="amountDrugs" value size="40">
+                    </div>
+                    </div>
+                    <div class="label__error">error</div>
+                </div>
+                 <button class="orderDrugsForm nonPrescription button">
+                Dodaj kolejny lek
+            </button>
+            </div>
+           
+            </div>
+        </fieldset>
+        <fieldset class="orderDrugsForm fieldset order col">
+            <legend class="orderDrugsForm legend">Twoje zamówienie</legend> 
+            <form class="orderDrugsForm  order col">
+            <!-- //<fieldset class="orderDrugsForm fieldset name col"> -->
+                <legend class="orderDrugsForm legend">Dane zamawiającego</legend>
+                <div class="orderDrugsForm label">
+                    <div class="usernameContainer flex">
+                        <div>
+                            <label for="username" class="ordererDrugsForm label__text">Imię i nazwisko / Nick
+                                <span class="star">*</span>
+                            </label>
+                            <div class="label__input">
+                                <input class="name input" id="username" type="text" name="name" required>
+                                <span class="spanok">&#x2713</span>
+                                <span class="spanwrong">&#120</span>
+                            </div>
+                            <div class="label__error"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="orderDrugsForm label">
+                    <div class="emailContainer flex">
+                        <div>
+                            <div class="orderDrugsForm label__text">e-mail
+                                <span class="star">*</span>
+                            </div>
+                            <div class="label__input">
+                                <input class="email input" id="email" name="email" type="email">
+                                <span class="spanok">&#x2713</span>
+                                <span class="spanwrong">&#120</span>
+                            </div>
+                            <div class="label__error"></div>
+                        </div>
+                    </div>
+                </div>
+            <!-- </fieldset> -->
+            <fieldset class="orderDrugsForm fieldset electronicPrescription">
+                <legend class="orderDrugsForm legend">Recepta elektroniczna</legend>
+            </fieldset>
+            <fieldset class="orderDrugsForm fieldset paperPrescription">
+                <legend class="orderDrugsForm legend">Recepta papierowa</legend>
+                <canvas id= "our-canvas" class="image-container"> </canvas>
+            </fieldset>
+            <fieldset class="orderDrugsForm fieldset otherDrugs">
+                <legend class="orderDrugsForm legend">Pozostałe leki</legend>
+            </fieldset>
+            <div class="order__field order__field--submit orderDrugsForm button send">
+                <input 
+                    class="order__field-input order__field-submit" 
+                    value="zamawiam"
+                    type="submit"
+                />
+            </div>
+            <!-- <button type="submit" class="orderDrugsForm button send">
+                Wyślij
+            </button> -->
+        </form>
+        </fieldset>
+        </div>
+    </main>
+<script type="module" src="./src/index.js" ></script>
+</body>
+
+</html>
