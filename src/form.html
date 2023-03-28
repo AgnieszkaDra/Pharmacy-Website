@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="../sass/style.css">
 </head>
 
 <body>
@@ -137,26 +137,32 @@
                 </fieldset>
                 <fieldset class="fieldset electronicPrescription">
                     <legend class="legend">Recepta elektroniczna</legend>
-                    <div class="label flex column width-80">
-                        1.
+                    <div class="flex column width-80">
+                        <div class="label flex column">
+                            1.
+                        </div>
+                        
                     </div>
                 </fieldset>
                 <fieldset class="fieldset paperPrescription">
                     <legend class="legend">Recepta papierowa</legend>
-                    <div class="label flex column width-80">
-                        2.
-                         <canvas id="our-canvas" class="image-container"> </canvas>
+                    <div class="flex column width-80">
+                        <div class="label flex column">
+                           2.  
+                            <canvas id="our-canvas" class="image-container"> </canvas>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="fieldset otherDrugs">
                     <legend class="legend">Pozostałe leki</legend>
-                    <div class="label flex column width-80">
-                        3.
+                    <div class="flex column width-80">
+                        <div class="label flex column">
+                         3.   
+                        </div>
                     </div>
                 </fieldset>
                 <div class="order__field order__field--submit button send">
                     <button>   <input class="order__field-input order__field-submit" value="zamawiam" type="submit" /></button>
-                 
                 </div>
             </form>
             </fieldset>
@@ -164,7 +170,7 @@
         </section>
     </main>
 
-    <script type="module" src="./src/index.js"></script>
+    <!-- <script type="module" src="./src/script.js"></script> -->
 </body>
 
 </html>

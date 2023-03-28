@@ -38,7 +38,7 @@ close6.addEventListener('click', function(){
 })
 
 
-
-
-
-
+$("#myHref").on('click', function() {
+    alert("inside onclick");
+    // window.location = "http://www.google.com";
+  });

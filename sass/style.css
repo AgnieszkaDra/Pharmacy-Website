@@ -457,6 +457,8 @@ input {
 }
 
 .element__sub__icon i {
+  width: 20px;
+  height: 20px;
   font-size: 50px;
   margin-bottom: 20px;
 }

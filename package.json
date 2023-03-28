@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "webpack-cli": "^5.0.1",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "name": "pharmacy-website-1",
+  "description": "",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.76.3",
+    "webpack-dev-server": "^4.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgnieszkaDra/Pharmacy-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgnieszkaDra/Pharmacy-Website/issues"
+  },
+  "homepage": "https://github.com/AgnieszkaDra/Pharmacy-Website#readme"
+}
