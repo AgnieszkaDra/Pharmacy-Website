@@ -7,6 +7,8 @@ const close6 = document.querySelector('.close')
 const header = document.querySelector('header')
 const body = document.querySelector('body')
 
+alert('index')
+
 console.log(buttonpp, backBlack)
 
 if(button === true){

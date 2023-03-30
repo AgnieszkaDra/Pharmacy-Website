@@ -7,13 +7,16 @@
 @media (max-width: 700px) {
 
     .orderDrugsForm-container {
+
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             'order'
             'prescription'
-            'nonprescription';
+            'nonprescription'
+            ; 
+      
     }
 
     .name {
@@ -32,6 +35,8 @@
     .form-order {
         grid-area: order;
     }
+
+   
 
 }
 

@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: ['whatwg-fetch','./src/script.js'],
-        form: ['whatwg-fetch','./src/form.js']
+        index: ['whatwg-fetch','./src/js/index.js'],
+        form: ['whatwg-fetch','./src/js/form.js']
     },
     // definiuję plik wejściowy 
     output: {
