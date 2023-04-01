@@ -11,6 +11,7 @@
 
 <body>
     <main class="container">
+        <h1 class="flex">Wypełnij poniższy formularz w celu złożenia rezerwacji</h1>
         <section id="form" action="'/" class="orderDrugsForm-container">
             <!-- <form class="form-send col orderDrugsForm resize w">
                 <fieldset class="fieldset">
@@ -86,8 +87,8 @@
             <form class="form-prescription">
                 <fieldset class="fieldset flex column">
                     <legend class="fieldset__legend legend">Leki na receptę</legend>
-                    <div class="flex column width-80">
-                        <div class="label electronicPrescriptionContainer flex column">
+                    <div class="flex column width-80 background-pink margin-bottom-20">
+                        <div class="electronicPrescriptionContainer flex column">
                             <h5>Recepta elektroniczna</h5>
                             <div>
                                 <label class="orderDrugsForm label__text">
@@ -109,12 +110,12 @@
                                 </div>
                                 <div class="label__error"></div>
                             </div>
-                            <button class="electronicPrescription button">Dodaj kolejną receptę
+                            <button class="electronicPrescription button" type="submit">Dodaj kolejną receptę
                                 elektroniczną</button>
                         </div>
                     </div>
-                    <div class="flex column width-80">
-                        <div class="label paperPrescriptionContainer flex column">
+                    <div class="flex column width-80 background-pink">
+                        <div class="paperPrescriptionContainer flex column">
                             <h5>Recepta papierowa</h5>
                             <div class="">
                                 <div class="label__input">
@@ -134,8 +135,8 @@
             <form class="form-nonprescription">
                 <fieldset class="fieldset flex column">
                     <legend class="fieldset__legend legend">Pozostałe leki/suplementy diety/wyroby medyczne</legend>
-                    <div class="flex column width-80">
-                        <div class="label theOtherContainer flex column">
+                    <div class="flex column width-80 background-pink">
+                        <div class="theOtherContainer flex column">
                             <div>
                                 <label class="orderDrugsForm label__text">
                                     nazwa leku
@@ -173,14 +174,15 @@
                                 Dodaj kolejny lek
                             </button>
                         </div>
+                    </div>
                 </fieldset>
             </form>
             <!-- <form class="form-order"> -->
             <form class="form-send w resize col orderDrugsForm">
-                <fieldset class="fieldset">
+                <fieldset class="fieldset flex column">
                     <legend class="legend">Twoje zamówienie</legend>
-                    <div class="flex column width-80">
-                        <div class="label flex column width-80">
+                    <div class="flex column width-80 background-pink">
+                        <div class="flex column width-80">
                             <h4>Dane zamawiającego</h4>
                             <div class="usernameContainer">
                                 <label for="username" class="label__text">Imię i nazwisko / Nick
@@ -206,32 +208,42 @@
                             </div>
                         </div>
                     </div>
-                </fieldset>
-                <fieldset class="fieldset electronicPrescription">
-                    <legend class="legend">Recepta elektroniczna</legend>
-                    <div class="flex column width-80">
-                        <div class="label flex column">
+                    <div class="flex column width-80 background-pink">
+                        <div class="flex column width-80">
+                            <h4>Recepta elektroniczna </h4>
                             1.
                         </div>
                     </div>
-                </fieldset>
-                <fieldset class="fieldset paperPrescription">
-                    <legend class="legend">Recepta papierowa</legend>
-                    <div class="flex column width-80">
+                    <div class="flex column width-80 background-pink">
                         <div class="label flex column">
+                            <h4>Recepta papierowa</h4>
                            2.  
                             <canvas id="our-canvas" class="image-container"> </canvas>
                         </div>
                     </div>
-                </fieldset>
-                <fieldset class="fieldset otherDrugs">
-                    <legend class="legend">Pozostałe leki</legend>
-                    <div class="flex column width-80">
+                    <div class="flex column width-80 background-pink">
                         <div class="label flex column">
+                            <h4>Pozostałe leki</h4>
                          3.   
                         </div>
                     </div>
                 </fieldset>
+                <!-- <fieldset class="fieldset flex column electronicPrescription">
+                    <legend class="legend">Recepta elektroniczna</legend>
+                    
+                </fieldset> -->
+                <!-- <fieldset class="fieldset flex column paperPrescription">
+                    <legend class="legend">Recepta papierowa</legend>
+                    
+                </fieldset> -->
+                <!-- <fieldset class="fieldset flex column otherDrugs">
+                    <legend class="legend">Pozostałe leki</legend>
+                    <div class="flex column width-80 background-pink">
+                        <div class="label flex column">
+                         3.   
+                        </div>
+                    </div>
+                </fieldset> -->
                   
                
                 <!-- <div class="order__field order__field--submit button send">

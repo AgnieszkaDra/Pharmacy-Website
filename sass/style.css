@@ -308,16 +308,19 @@ body {
   .form-nonprescription {
     grid-area: nonprescription;
   }
-  .form-order {
+  .form-send {
     grid-area: order;
   }
 }
 @media (min-width: 700px) {
   .orderDrugsForm-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "prescription order" "nonprescription order";
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "prescription order order" "nonprescription order order";
+  }
+  .name {
+    grid-area: name;
   }
   .form-prescription {
     grid-area: prescription;
@@ -325,7 +328,7 @@ body {
   .form-nonprescription {
     grid-area: nonprescription;
   }
-  .form-order {
+  .form-send {
     grid-area: order;
   }
 }
@@ -346,7 +349,20 @@ body {
 }
 
 .width-80 {
-  width: 80%;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+
+.fieldset {
+  height: 100%;
+}
+
+form {
+  padding: 20px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
 }
 
 span.spanok {
@@ -370,13 +386,8 @@ button {
   margin-bottom: 20px;
 }
 
-.label {
-  width: 100%;
-  border: 10px solid rgb(249, 217, 213);
-}
-
-input {
-  width: 100%;
+.background-pink {
+  background-color: rgb(249, 217, 213);
 }
 
 @media (min-width: 768px) {
@@ -560,6 +571,30 @@ strong {
 .box span {
   font-size: 30px;
   line-height: 40px;
+}
+
+.label__input:focus {
+  outline: none;
+}
+
+.success {
+  border: none;
+  background-color: aqua;
+}
+
+.label.success div input {
+  border-color: rgb(49, 241, 49);
+}
+
+.error {
+  border: none;
+  background-color: red;
+}
+
+.label__input.error {
+  border-color: red;
+  font-size: 9px;
+  height: 20px;
 }
 
 @media (min-width: 768px) {

@@ -1,5 +1,9 @@
-export const setError = (element, message) => {
 
+
+
+export const setError = (element, message) => {
+alert('set error')
+console.log(element)
     const inputControl = element.parentElement.parentElement
     const errorDisplay = inputControl.querySelector('.label__error')
     element.classList.add('error')
@@ -25,3 +29,16 @@ export const setSuccess = element => {
     element.classList.remove('error')
 
 }
+
+export function validatePIN (e) {
+   const pin = document.querySelector('.pin').value 
+   alert(e.length)
+    if(e.length === 4) {
+        alert('ok PIN')
+      if( /[0-9]/.test(pin))  {
+        return true;
+      }else {}
+    }else {
+      alert('not PIN ok')
+        }
+  }
