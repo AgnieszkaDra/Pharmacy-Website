@@ -23,8 +23,51 @@ const textareaNonprescription = document.querySelector('.orderDrugsForm.fieldset
 const textareaDrugDose = document.querySelector('.textarea.drugDose')
 const textareaDrugAmount = document.querySelector('.textarea.drugAmount')
 
+export const showElectronicPrescriptionValue = function(input1, input2, container) {
+    if (!(input1.value.trim() === '') && !(input2)) {
+            
+        const value1 = input1.value.trim()
+        
+        const inputValueContainer = document.createElement('div')
+        const inputValueContainerNode = container.appendChild(inputValueContainer)
+        inputValueContainer.classList.add('inputValueContainer')
+        const inputContainer = document.createElement('div')
+        inputValueContainerNode.appendChild(inputContainer)
+        inputContainer.innerText = n + " " + value1
+        const button = document.createElement('button')
+        button.innerText = 'X'
+        inputValueContainerNode.appendChild(button)
+
+        button.addEventListener('click', function (el) {
+            el.target.closest('.inputValueContainer').remove()
+        })
+        
+      
+    }  
+    if (!(input1.value.trim() === '') && !(input2.value.trim() === '')) {
+        
+    const value1 = input1.value.trim()
+    const value2 = input2.value.trim()
+    const inputValueContainer = document.createElement('div')
+    const inputValueContainerNode = container.appendChild(inputValueContainer)
+    inputValueContainer.classList.add('inputValueContainer')
+    const inputContainer = document.createElement('div')
+    inputValueContainerNode.appendChild(inputContainer)
+    inputContainer.innerText = value1 + value2
+    const button = document.createElement('button')
+    button.innerText = 'X'
+    inputValueContainerNode.appendChild(button)
+
+    button.addEventListener('click', function (el) {
+        el.target.closest('.inputValueContainer').remove()
+    })
+}
+}
+
+
 export const prescriptionValue = function (elementClicked, input1, input2, container) {
     let n = 0
+    alert('prescription value')
     elementClicked.addEventListener('click', function () {
         n++
         if (!(input1.value.trim() === '') && !(input2)) {
@@ -72,7 +115,7 @@ export const prescriptionValue = function (elementClicked, input1, input2, conta
     
 }
 
-prescriptionValue(electronicPrescriptionButton, pin, pesel, textareaPinPesel)
+// prescriptionValue(electronicPrescriptionButton, pin, pesel, textareaPinPesel)
 //prescriptionValue(paperPrescriptionButton, paperPrescription, null, textareapaperPrescription)
 
 

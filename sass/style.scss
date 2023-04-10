@@ -4,16 +4,16 @@
 @import 'utilities';
 
 @media(max-width: 768px) {
-    .w {
-    width: 100px;
-    height: 100px;
-    overflow: auto;
-}
+//     .w {
+//     width: 100px;
+//     height: 100px;
+//     overflow: auto;
+// }
 
 
-.resize {
-    resize: both;
-}
+// .resize {
+//     resize: both;
+// }
 
 .orderDrugsForm-container {
     display: grid;
@@ -26,6 +26,14 @@
         ; 
   }
 }
+
+.image-container {
+    width: 100px;
+    height: 100px;
+}
+
+
+
 
 
 
