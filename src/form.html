@@ -84,7 +84,7 @@
             <!-- </form>  -->
             <!-- </fieldset>
             </form> --> 
-            <div class="form-prescription">
+            <form class="form-prescription">
                 <fieldset class="fieldset flex column">
                     <legend class="fieldset__legend legend">Leki na receptę</legend>
                     <div class="flex column width-80 background-pink margin-bottom-20">
@@ -114,11 +114,13 @@
                                 elektroniczną</button>
                         </div>
                     </div>
+                </fieldset>
+            </form>
                     <div class="flex column width-80 background-pink">
                         <div class="paperPrescriptionContainer flex column">
                             <h5>Recepta papierowa</h5>
                             <div class="inputs-files-container">
-                                <div class="label__input">
+                                <div class="label__input file">
                                     <input type="file" id="uploaded-file" />
                                 </div>
                                 <div class="label__error"></div>
@@ -132,7 +134,7 @@
                     </div>
                 </fieldset>
             </div>
-            <div class="form-nonprescription">
+            <form class="form-nonprescription">
                 <fieldset class="fieldset flex column">
                     <legend class="fieldset__legend legend">Pozostałe leki/suplementy diety/wyroby medyczne</legend>
                     <div class="flex column width-80 background-pink">
@@ -176,7 +178,7 @@
                         </div>
                     </div>
                 </fieldset>
-            </div>
+            </form>
             <!-- <form class="form-order"> -->
             <form class="form-send w resize col orderDrugsForm">
                 <fieldset class="fieldset flex column">
@@ -217,6 +219,7 @@
                     <div class="flex column width-80 background-pink">
                         <div class="label flex column paperPrescriptionOrder">
                             <h4>Recepta papierowa</h4>
+                            <canvas id= "our-canvas" class="image-container"> </canvas>
                             <canvas id= "our-canvas" class="image-container"> </canvas>
                            2.  
                             <!-- <canvas id="our-canvas" class="image-container"> </canvas> -->
