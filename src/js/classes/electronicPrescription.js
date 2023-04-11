@@ -1,6 +1,8 @@
 import { setError } from "../functions/functions";
-import { validatePIN } from "../functions/functions";
+
 import { showElectronicPrescriptionValue } from "../showInputValue/showInputValue";
+
+import { paperPrescriptionValue } from "../showInputValue/showInputValue";
 
 class electronicPrescription {
 
@@ -9,10 +11,13 @@ class electronicPrescription {
         this.pin = document.getElementById('PIN');
         this.pesel = document.getElementById('pesel')
         this.electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
-        this.electronicPrescriptionForm = document.querySelector('.form-prescription')
+        this.electronicPrescriptionForm = document.querySelector('.electronicPrescriptionContainer')
         this.showElectronicPrescriptionValue = showElectronicPrescriptionValue
         this.textareaPinPesel = document.querySelector('.electronicPrescriptionOrder')
         this.setError = {setError}
+        this.paperPrescriptionButton = document.querySelector('paperPrescription.button')
+        this.ourCanvas = document.querySelector('.our-canvas')
+        this.paperPrescriptionValue = paperPrescriptionValue
     
 
         this.electronicPrescriptionForm.fields = [
@@ -33,7 +38,7 @@ class electronicPrescription {
     }
     
     send(){
-        this.electronicPrescriptionForm.addEventListener('submit', e => {
+        this.electronicPrescriptionButton.addEventListener('click', e => {
             e.preventDefault();
             const errors = [];
             const electronicPrescriptionForm = document.querySelector('.form-prescription'); 
@@ -66,6 +71,11 @@ class electronicPrescription {
             
         });
     }
+
+    click() {
+        alert('click')
+        this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
+    }
    
 
         
@@ -77,35 +87,3 @@ class electronicPrescription {
  export default electronicPrescription
 
 
- var canvas = document.getElementById('our-canvas'),
-    context = canvas.getContext('2d');
-let uploadedFile = document.getElementById('uploaded-file');
-window.addEventListener('DOMContentLoaded',initImageLoader) ;
-
-function initImageLoader(){
-    uploadedFile.addEventListener('change',handleManualUploadedFiles);
-    function handleManualUploadedFiles(ev){
-        var file = ev.target.files[0];
-        handleFile(file);
-
-    }   
-}
-function handleFile(file){
-    var ImageType = /image.*/;
-
-    if(file.type.match(ImageType)){
-
-        var reader = new FileReader();      
-
-        reader.onloadend = function(event){
-            var tempImageStore = new Image();
-            tempImageStore.onload = function(ev){
-                canvas.height = ev.target.height;
-                canvas.width = ev.target.width;         
-                context.drawImage(ev.target,0,0);
-            }   
-            tempImageStore.src = event.target.result;
-        }
-        reader.readAsDataURL(file);
-    }   
-}

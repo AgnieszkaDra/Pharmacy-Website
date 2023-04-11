@@ -64,6 +64,22 @@ export const showElectronicPrescriptionValue = function(input1, input2, containe
 }
 }
 
+export const paperPrescriptionValue = function(elementClicked, container) {
+    const inputValueContainer = document.createElement('div')
+    const inputValueContainerNode = container.appendChild(inputValueContainer)
+    inputValueContainer.classList.add('inputValueContainer')
+    const inputContainer = document.createElement('div')
+    inputValueContainerNode.appendChild(inputContainer)
+    inputContainer.innerText = value1 + value2
+    const button = document.createElement('button')
+    button.innerText = 'X'
+    inputValueContainerNode.appendChild(button)
+
+    button.addEventListener('click', function (el) {
+        el.target.closest('.inputValueContainer').remove()
+    })
+}
+
 
 export const prescriptionValue = function (elementClicked, input1, input2, container) {
     let n = 0
@@ -116,7 +132,7 @@ export const prescriptionValue = function (elementClicked, input1, input2, conta
 }
 
 // prescriptionValue(electronicPrescriptionButton, pin, pesel, textareaPinPesel)
-//prescriptionValue(paperPrescriptionButton, paperPrescription, null, textareapaperPrescription)
+// prescriptionValue(paperPrescriptionButton, paperPrescription, null, textareapaperPrescription)
 
 
 export const drugsNameValue = function (elementClicked, input1, input2, input3, container) {

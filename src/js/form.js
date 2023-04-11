@@ -1,25 +1,29 @@
-console.log('form')
+
 
 import Order from "./classes/order.js"
 import electronicPrescription from "./classes/electronicPrescription.js";
+import paperPrescription from "./classes/paperPrescription.js";
 
-import { resizeLayout } from "../js/layoutChange/layoutChange.js";
 document.addEventListener('DOMContentLoaded', init);
-// const username = document.getElementById('username')
-// const email = document.getElementById('email')
-// const usernameData = { value: username}
-// const emailData = {value: email}
-const send = document.querySelector('.send')
+
+const sendOrderButton = document.querySelector('.send')
 const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
-const pin = document.querySelector('.pin')
-console.log(send)
+const paperPrescriptionButton = document.querySelector('.paperPrescription.button')
+console.dir(paperPrescriptionButton)
+
 function init() {
-   resizeLayout()
-    const sendButton = new Order(send)
-    const prescriptionButton = new electronicPrescription(electronicPrescriptionButton)
-   
-    sendButton.send()
-    prescriptionButton.send()
+
+    const orderButtonSend = new Order(sendOrderButton)
+    const electronicPrescriptionButtonAdd = new electronicPrescription(electronicPrescriptionButton)
+    
+    const paperPrescriptionButton = document.querySelector('.paperPrescription.button')
+    orderButtonSend.send()
+    electronicPrescriptionButtonAdd.send()
+    paperPrescriptionButton.addEventListener('click', function(){
+        const paperPrescriptionButtonAdd = new paperPrescription(paperPrescriptionButton)
+        paperPrescriptionButtonAdd.add()
+    })
+ 
 
    
     
@@ -34,6 +38,6 @@ function init() {
 } 
 
 
-
+   
 
 
