@@ -19,14 +19,33 @@ function init() {
     const paperPrescriptionButton = document.querySelector('.paperPrescription.button')
     orderButtonSend.send()
     electronicPrescriptionButtonAdd.send()
-    paperPrescriptionButton.addEventListener('click', function(){
-        const paperPrescriptionButtonAdd = new paperPrescription(paperPrescriptionButton)
-        paperPrescriptionButtonAdd.add()
-    })
+  
  
 
    
     
+   
+  paperPrescriptionButton.addEventListener('click', function(){
+        const paperPrescriptionButtonAdd = new paperPrescription(paperPrescriptionButton)
+        paperPrescriptionButtonAdd.add()
+        let uploadedFiles = document.querySelectorAll('#uploaded-file');
+        uploadedFiles.forEach(el => el.addEventListener('change', function(el){
+           const load = new paperPrescription(el)
+          load.initImageLoader(el)
+           
+        }))
+    })
+
+    function initImageLoader(el){
+      
+        this.uploadedFile.forEach(el => el.addEventListener('change',handleManualUploadedFiles));
+        function handleManualUploadedFiles(ev){
+            alert('change')
+            var file = ev.target.files[0];
+            this.handleFile(file);
+    
+        }   
+    }
    
 
     // const userName = new Input(usernameData)
@@ -37,7 +56,5 @@ function init() {
    
 } 
 
-
-   
 
 

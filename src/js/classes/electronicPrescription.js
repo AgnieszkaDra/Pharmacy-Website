@@ -11,7 +11,7 @@ class electronicPrescription {
         this.pin = document.getElementById('PIN');
         this.pesel = document.getElementById('pesel')
         this.electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
-        this.electronicPrescriptionForm = document.querySelector('.form-prescription')
+        this.electronicPrescriptionForm = document.querySelector('.form-electronicPrescription')
         this.showElectronicPrescriptionValue = showElectronicPrescriptionValue
         this.textareaPinPesel = document.querySelector('.electronicPrescriptionOrder')
         this.setError = {setError}
@@ -41,7 +41,7 @@ class electronicPrescription {
         this.electronicPrescriptionForm.addEventListener('submit', e => {
             e.preventDefault();
             const errors = [];
-            const electronicPrescriptionForm = document.querySelector('.form-prescription'); 
+            const electronicPrescriptionForm = document.querySelector('.form-electronicPrescription'); 
             this.electronicPrescriptionForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
                 const value = electronicPrescriptionForm.elements[name].value;

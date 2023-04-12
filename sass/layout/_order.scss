@@ -13,7 +13,8 @@
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             'order'
-            'prescription'
+            'electronicPrescription'
+            'paperPrescription'
             'nonprescription'
             ; 
       
@@ -24,8 +25,12 @@
 
     }
 
-    .form-prescription {
-        grid-area: prescription;
+    .form-electronicPrescription {
+        grid-area: electronicPrescription;
+    }
+
+    .form-paperPrescription {
+        grid-area: paperPrescription;
     }
 
     .form-nonprescription {
@@ -45,11 +50,12 @@
     .orderDrugsForm-container {
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         // grid-template-rows: 1fr 1fr;
         grid-template-areas:
-            'prescription order order'
-            'nonprescription order order';
+            'electronicPrescription order'
+            'paperPrescription order'
+            'nonprescription order';
     }
 
     .name {
@@ -57,8 +63,12 @@
 
     }
 
-    .form-prescription {
-        grid-area: prescription;
+    .form-electronicPrescription {
+        grid-area: electronicPrescription;
+    }
+
+    .form-paperPrescription {
+        grid-area: paperPrescription;
     }
 
     .form-nonprescription {

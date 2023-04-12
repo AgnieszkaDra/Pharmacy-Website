@@ -297,13 +297,16 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "order" "prescription" "nonprescription";
+    grid-template-areas: "order" "electronicPrescription" "paperPrescription" "nonprescription";
   }
   .name {
     grid-area: name;
   }
-  .form-prescription {
-    grid-area: prescription;
+  .form-electronicPrescription {
+    grid-area: electronicPrescription;
+  }
+  .form-paperPrescription {
+    grid-area: paperPrescription;
   }
   .form-nonprescription {
     grid-area: nonprescription;
@@ -316,14 +319,17 @@ body {
   .orderDrugsForm-container {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "prescription order order" "nonprescription order order";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "electronicPrescription order" "paperPrescription order" "nonprescription order";
   }
   .name {
     grid-area: name;
   }
-  .form-prescription {
-    grid-area: prescription;
+  .form-electronicPrescription {
+    grid-area: electronicPrescription;
+  }
+  .form-paperPrescription {
+    grid-area: paperPrescription;
   }
   .form-nonprescription {
     grid-area: nonprescription;
