@@ -11,9 +11,12 @@ class paperPrescription {
    
     this.uploadedFile = document.querySelectorAll('#uploaded-file');
     this.paperPrescriptionOrder = document.querySelector('.paperPrescriptionOrder')
+    this.id = 0;
    
         
     }
+
+   
 
     initImageLoader(el){
         alert('init')
@@ -23,7 +26,7 @@ class paperPrescription {
         //     alert('change')
         var file = el.target.files[0];
         //     this.handleFile(file);
-    
+ 
         // }   
         this.handleFile(file)
     }
@@ -42,18 +45,18 @@ class paperPrescription {
         if(file.type.match(ImageType)){
     alert('match')
             var reader = new FileReader();      
-            const id1 = document.querySelector('.one')
-            const contextid1 = id1.getContext('2d')
+            // const id1 = document.querySelector('.one')
+            // const contextid1 = id1.getContext('2d')
             reader.onloadend = function(event){
                 var tempImageStore = new Image();
                 tempImageStore.onload = function(ev){
                     
                     canvas.height = ev.target.height;
                     canvas.width = ev.target.width; 
-                    id1.height = ev.target.height;
-                    id1.width = ev.target.width;         
+                    // id1.height = ev.target.height;
+                    // id1.width = ev.target.width;         
                     context.drawImage(ev.target,0,0);
-                    contextid1.drawImage(ev.target,0,0);
+                    // contextid1.drawImage(ev.target,0,0);
                     canvas.classList.add('canvas-show')
                     const inputValueContainer = document.createElement('div')
                     const paper = document.querySelector('.paperPrescriptionOrder')
@@ -82,16 +85,32 @@ class paperPrescription {
         const inputValueContainer = document.createElement('div')
 
     const inputValueContainerNode = this.labelInput.cloneNode(true)
+    inputValueContainerNode.setAttribute('id', 'first')
     console.log(inputValueContainerNode)
     
     this.inputsFilesContainer.appendChild(inputValueContainerNode)
     inputValueContainer.classList.add('inputValueContainer')
     const inputContainer = document.createElement('div')
     inputValueContainerNode.appendChild(inputContainer)
- const canvasNode = this.canvas.cloneNode(true)
- canvasNode.removeAttribute('id')
+
+  
+  
+ 
+    const button = document.createElement('button')
+    button.innerText = 'X'
+    inputValueContainerNode.appendChild(button)
+
+    button.addEventListener('click', function (el) {
+        el.target.closest('.label__input.file').remove()
+
+       
+    })
+
+  const canvasNode = this.canvas.cloneNode(true)
+//  canvasNode.setAttribute('id', 'one')
+//  this.id++
  this.paperPrescriptionOrder.appendChild(canvasNode)
- canvasNode.setAttribute('class', 'one')
+ 
             
         
     }

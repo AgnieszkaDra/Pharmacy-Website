@@ -31,6 +31,7 @@ function init() {
         let uploadedFiles = document.querySelectorAll('#uploaded-file');
         uploadedFiles.forEach(el => el.addEventListener('change', function(el){
            const load = new paperPrescription(el)
+          
           load.initImageLoader(el)
            
         }))

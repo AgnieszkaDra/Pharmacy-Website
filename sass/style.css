@@ -682,4 +682,8 @@ section {
   height: 20px;
 }
 
+.padding-10 > div {
+  padding: 10%;
+}
+
 /*# sourceMappingURL=style.css.map */

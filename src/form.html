@@ -189,8 +189,10 @@
                     <legend class="legend">Twoje zamówienie</legend>
                     <div class="flex column width-80 background-pink">
                         <div class="flex column width-80">
-                            <h4>Dane zamawiającego</h4>
-                            <div class="usernameContainer">
+                            <div class="flex column padding-10">
+                                <h4>Dane zamawiającego</h4>
+                                
+                                <div class="usernameContainer">
                                 <label for="username" class="label__text">Imię i nazwisko / Nick
                                     <span class="star">*</span>
                                 </label>
@@ -200,11 +202,12 @@
                                     <span class="spanwrong">&#120</span>
                                 </div>
                                 <div class="label__error"></div>
-                            </div>
-                            <div class="emailContainer">
-                                <div class="label__text">e-mail
-                                    <span class="star">*</span>
                                 </div>
+                            <div class="emailContainer">
+                                <label for="email" class="label__text">email
+                                    <span class="star">*</span>
+                                </label>
+                                
                                 <div class="label__input">
                                     <input class="email input" id="email" name="email" type="email">
                                     <span class="spanok">&#x2713</span>
@@ -212,6 +215,10 @@
                                 </div>
                                 <div class="label__error"></div>
                             </div>
+                            
+                        </div>
+                           
+                            
                         </div>
                     </div>
                     <div class="flex column width-80 background-pink">
@@ -230,7 +237,7 @@
                         </div>
                     </div>
                     <div class="flex column width-80 background-pink">
-                        <div class="label flex column">
+                        <div class="label flex column nonPrescriptionOrder">
                             <h4>Pozostałe leki</h4>
                          3.   
                         </div>
