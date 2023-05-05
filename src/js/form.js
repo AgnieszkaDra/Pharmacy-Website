@@ -1,5 +1,3 @@
-
-
 import Order from "./classes/order.js"
 import electronicPrescription from "./classes/electronicPrescription.js";
 import paperPrescription from "./classes/paperPrescription.js";
@@ -21,32 +19,33 @@ function init() {
     electronicPrescriptionButtonAdd.send()
   
  
-
-   
-    
-   
-  paperPrescriptionButton.addEventListener('click', function(){
-        const paperPrescriptionButtonAdd = new paperPrescription(paperPrescriptionButton)
-        paperPrescriptionButtonAdd.add()
-        let uploadedFiles = document.querySelectorAll('#uploaded-file');
-        uploadedFiles.forEach(el => el.addEventListener('change', function(el){
+ let uploadedFiles = document.querySelector('#uploaded-file');
+        uploadedFiles.addEventListener('change', function(el){
            const load = new paperPrescription(el)
-          
+           var file = el.target.files[0];
+            load.handleFile(file);
           load.initImageLoader(el)
            
-        }))
-    })
-
-    function initImageLoader(el){
+        })
+   
+    
+     function initImageLoader(el){
       
         this.uploadedFile.forEach(el => el.addEventListener('change',handleManualUploadedFiles));
         function handleManualUploadedFiles(ev){
             alert('change')
-            var file = ev.target.files[0];
-            this.handleFile(file);
+           
+           
     
         }   
     }
+  paperPrescriptionButton.addEventListener('click', function(){
+        const paperPrescriptionButtonAdd = new paperPrescription(paperPrescriptionButton)
+        paperPrescriptionButtonAdd.add()
+       
+    })
+
+  
    
 
     // const userName = new Input(usernameData)
@@ -56,6 +55,3 @@ function init() {
     // userEmail.checkLength()
    
 } 
-
-
-
