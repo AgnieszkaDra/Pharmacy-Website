@@ -38,6 +38,7 @@ class electronicPrescription {
     }
     
     send(){
+      
         this.electronicPrescriptionForm.addEventListener('submit', e => {
             e.preventDefault();
             const errors = [];

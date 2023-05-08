@@ -1,25 +1,51 @@
+console.log('działa')
 
-let n = 0;
-let idm = document.getElementById('0')
-console.log(idm)
+import InputFile from "./InputFile"
+import Button from "./Button"
 
-class paperPrescription {
-    constructor( {value = ''} ) {
-        this.value = value;
-        this.idn="0"
-        this.idm = "0"
+export class paperPrescription {
+    constructor( selector ) {
+
+        const container = document.querySelector(selector)
+
+        if (!container) throw new Error('Container element not found')
+
+        this.selector = selector
+        this.container = document.querySelector(selector)
+       
+        this.idn=0
+        this.idm = 0
+      
         this.paperPrescriptionOrder = document.querySelector('.paperPrescriptionOrder')
+        this.paperPrescriptionButton = document.querySelector('.paperPrescription.button')
         this.inputsFilesContainer = document.querySelector('.inputs-files-container')
         this.labelInput = document.querySelector('.label__input.file')
+        // this.canvas = findId(this.paperPrescriptionOrder)
         this.canvas = this.paperPrescriptionOrder.querySelector('.image-container')
         this.context = this.canvas.getContext('2d');
         this.uploadedFile = document.querySelectorAll('#uploaded-file');
+        // this.uploadedFile = this.findId(this.inputsFilesContainer)
         this.paperPrescriptionContainer = document.querySelector('.paperPrescriptionContainer')
         this.uploadInput = this.paperPrescriptionContainer.querySelector('.inputs-files-container')
        
 
        
    }
+
+   init() {
+    this.render()
+}
+
+render() {
+    this.container.innerText = ''
+
+    const inputFile = new InputFile()
+    const button = new Button()
+
+    this.container.appendChild(inputFile)
+    this.container.appendChild(button)
+    
+}
 
    
 
@@ -85,185 +111,218 @@ class paperPrescription {
     //         reader.readAsDataURL(file);
     //     }   
     // } 
-    
+    // findId(el) {
+    //     const id = el.getAttribute('id')
+    //     return id
+    // }
 
-    increment(n){
-    
-      n++;
-      return n;
-    }
 
-    increment2(m){
-    
-        m++;
-        return m;
-      }
+    // increment = () => {
+ 
+      
+    // }
 
-       handleFile(file){
-        var ImageType = /image.*/;
-
-        if(file.type.match(ImageType)){
+    // increment2(m){
     
-            var reader = new FileReader();      
-    
-            reader.onloadend = function(event){
-                alert('event')
-                var tempImageStore = new Image();
-                tempImageStore.onload = function(ev){
-                    this.canvas.height = ev.target.height;
-                    this.canvas.width = ev.target.width;         
-                    this.context.drawImage(ev.target,0,0);
-                    //this.canvasId = this.canvas
-                    // this.canvasId.height = ev.target.height;
-                    // this.canvasId.width = ev.target.width;         
-                    // context.drawImage(ev.target,0,0);
-                }   
-                tempImageStore.src = event.target.result;
-            }
-            reader.readAsDataURL(file);
-        }   
-    }
+    //     const p = m++;
+    //     return p;
+    //   }
 
-    add(){
+    //    handleFile(file){
+    //     var ImageType = /image.*/;
+
+    //     if(file.type.match(ImageType)){
+    
+    //         var reader = new FileReader();      
+    
+    //         reader.onloadend = function(event){
+    //             alert('event')
+    //             var tempImageStore = new Image();
+    //             tempImageStore.onload = function(ev){
+    //                 console.log(this.canvas)
+    //                 this.canvas.height = ev.target.height;
+    //                 this.canvas.width = ev.target.width;         
+    //                 this.context.drawImage(ev.target,0,0);
+    //                 //this.canvasId = this.canvas
+    //                 // this.canvasId.height = ev.target.height;
+    //                 // this.canvasId.width = ev.target.width;         
+    //                 // context.drawImage(ev.target,0,0);
+    //             }   
+    //             tempImageStore.src = event.target.result;
+    //         }
+    //         reader.readAsDataURL(file);
+    //     }   
+    // }
+
+//     add(){
+
+
+//                 const inputCont = document.createElement('div') 
+//              const inputFile = document.createElement('input')
+//         inputFile.setAttribute('type', 'file')
+//     inputFile.setAttribute('id', this.increment(this.idn))
+//         inputCont.appendChild(inputFile) 
+        
        
-        const inputValueContainer = document.createElement('div')
-        const inputValueContainerNode = this.labelInput.cloneNode(true)
-        inputValueContainerNode.setAttribute('id', this.increment(this.idn))
-        // const parent2Id = inputValueContainerNode.getAttribute('id')
-        // console.log(parent2Id)
-        const input = inputValueContainerNode.querySelector('input')
+       
+       
+//         const inputValueContainer = document.createElement('div')
+       
+//         const inputValueContainerNode = this.labelInput.cloneNode(true)
+//          const labelInpuTInput = this.labelInput.querySelector('input')
+//          console.log('wink')
+       
+//         inputValueContainerNode.setAttribute('id', this.increment())
+//         // const parent2Id = inputValueContainerNode.getAttribute('id')
+//         // console.log(parent2Id)
+//         const input = inputValueContainerNode.querySelector('input')
+//         const IdInput = inputValueContainerNode.getAttribute('id')
+       
+//         inputValueContainerNode.setAttribute('class', 'new')
         
     
    
-    this.inputsFilesContainer.appendChild(inputValueContainerNode)
-    inputValueContainer.classList.add('inputValueContainer')
-    const inputContainer = document.createElement('div')
-    inputValueContainerNode.appendChild(inputContainer)
+//     this.inputsFilesContainer.appendChild(inputCont)
+//     inputValueContainer.classList.add('inputValueContainer')
+//     const inputContainer = document.createElement('div')
+//     inputValueContainerNode.appendChild(inputContainer)
 
 
 
   
   
  
-    const button = document.createElement('button')
-    button.innerText = 'X'
-    inputValueContainerNode.appendChild(button)
+//     const button = document.createElement('button')
+//     button.innerText = 'X'
+//     inputValueContainerNode.appendChild(button)
 
-    button.addEventListener('click', function (el) {
-        el.target.closest('.label__input.file').remove()
+//     button.addEventListener('click', function (el) {
+//         el.target.closest('.label__input.file').remove()
 
        
-    })
+//     })
 
-  const canvasNode = this.canvas.cloneNode(true)
-  canvasNode.setAttribute('id', this.increment2(this.idm))
-  const getIdCanvas = canvasNode.getAttribute("id")
-  console.log(getIdCanvas)
-  var canvas = document.getElementById('our-canvas')
-//  canvasNode.setAttribute('id', 'one')
-//  this.id++
- this.paperPrescriptionOrder.appendChild(canvasNode)
+//   const canvasNode = this.canvas.cloneNode(true)
+//   const contextNode = canvasNode.getContext('2d');
+  
+//   const getIdCanvas = canvasNode.getAttribute("id")
+ 
+//   const newNode = canvasNode.setAttribute('id', this.increment2(this.idm))
+
+//   var canvas = document.getElementById('our-canvas')
+// //  canvasNode.setAttribute('id', 'one')
+// //  this.id++
+//  this.paperPrescriptionOrder.appendChild(newNode)
  
           
-                canvasNode.setAttribute('class', 'nowa')
                
-                this.uploadInput.addEventListener('change',handleManualUploadedFiles());
-                function handleManualUploadedFiles(ev){
-            aler
-                    var file = ev.target.files[0];
-                
+               
+//                 if(getIdCanvas === IdInput) {
+//                      canvasNode.setAttribute('class', 'nowa')
+//                     alert('match')
                    
-                    handleFile(file);
+                    
+//                     inputClick.addEventListener('change',function(el){
+//                         var file = el.target.files[0];
+//                          handleFile2(file)
+//                     });
+              
+//                 }   
             
-                }   
+//                 function handleFile2(file){
+//                     var ImageType = /image.*/;
             
-                function handleFile(file){
-                    var ImageType = /image.*/;
-            
-                    if(file.type.match(ImageType)){
+//                     if(file.type.match(ImageType)){
                 
-                        var reader = new FileReader();      
+//                         var reader = new FileReader();      
                 
-                        reader.onloadend = function(event){
-                            alert('event')
-                            var tempImageStore = new Image();
-                            tempImageStore.onload = function(ev){
-                                this.canvas.height = ev.target.height;
-                                this.canvas.width = ev.target.width;         
-                                this.context.drawImage(ev.target,0,0);
-                                //this.canvasId = this.canvas
-                                // this.canvasId.height = ev.target.height;
-                                // this.canvasId.width = ev.target.width;         
-                                // context.drawImage(ev.target,0,0);
-                            }   
-                            tempImageStore.src = event.target.result;
-                        }
-                        reader.readAsDataURL(file);
-                    }   
-                }
+//                         reader.onloadend = function(event){
+//                             alert('event')
+//                             var tempImageStore = new Image();
+//                             tempImageStore.onload = function(ev){
+//                                 const canvasShow = canvasNode
+//                               const contextShow = contextNode
+//                               canvasShow.height = ev.target.height;
+//                               canvasShow.width = ev.target.width;         
+//                                 contextNode.drawImage(ev.target,0,0);
+//                                 //this.canvasId = this.canvas
+//                                 // this.canvasId.height = ev.target.height;
+//                                 // this.canvasId.width = ev.target.width;         
+//                                 // context.drawImage(ev.target,0,0);
+//                             }   
+//                             tempImageStore.src = event.target.result;
+//                         }
+//                         reader.readAsDataURL(file);
+//                     }   
+//                 }
             
           
-            }
+//             }
         
-    }
-
+                //}
+                
+}
+    
 
 export default paperPrescription
 
-var canvas = document.querySelector('.image-container'),
-    context = canvas.getContext('2d');
-    let uploadedFiles = document.querySelectorAll('#uploaded-file');
-uploadedFiles.forEach(el => el.addEventListener('change', function(el){
-    alert('njknfjsk')
-    const lek = new paperPrescription(el)
-    lek.handleManualUploadedFiles()
+// var canvas = document.querySelector('.image-container'),
+//     context = canvas.getContext('2d');
+//     let uploadedFile = document.querySelector('#uploaded-file');
+    
+// //     let uploadedFile = document.querySelector('#uploaded-file');
+// // uploadedFile.addEventListener('change', function(el){
+// //     alert('njknfjsk')
+
+// //     const lek = el
+// //     lek.handleManualUploadedFiles()
    
-}))
-    console.log(uploadedFiles) 
-// let uploadedFile = document.getElementById('uploaded-file');
-window.addEventListener('DOMContentLoaded',initImageLoader) ;
+// // })
 
-function initImageLoader(){
-    uploadedFiles.forEach(el => el.addEventListener('change',handleManualUploadedFiles));
-    function handleManualUploadedFiles(ev){
-        alert('change')
-        var file = ev.target.files[0];
-        handleFile(file);
+// // let uploadedFile = document.getElementById('uploaded-file');
+// // window.addEventListener('DOMContentLoaded',initImageLoader) ;
 
-    }   
-}
-function handleFile(file){
-    var ImageType = /image.*/;
 
-    if(file.type.match(ImageType)){
+//     uploadedFile.addEventListener('change',function(el){
+//         var file = el.target.files[0];
+//         console.log(file)
+//         handleFile(file);
+//     });
+    
 
-        var reader = new FileReader();      
+// function handleFile(file){
+//     var ImageType = /image.*/;
 
-        reader.onloadend = function(event){
-            var tempImageStore = new Image();
-            tempImageStore.onload = function(ev){
-                canvas.height = ev.target.height;
-                canvas.width = ev.target.width;         
-                context.drawImage(ev.target,0,0);
-                canvas.classList.add('canvas-show')
-                const inputValueContainer = document.createElement('div')
-                const paper = document.querySelector('.paperPrescriptionOrder')
-    const inputValueContainerNode = paper.appendChild(inputValueContainer)
-    inputValueContainer.classList.add('inputValueContainer')
-    const inputContainer = document.createElement('div')
+//     if(file.type.match(ImageType)){
+
+//         var reader = new FileReader();      
+
+//         reader.onloadend = function(event){
+//             var tempImageStore = new Image();
+//             tempImageStore.onload = function(ev){
+//                 canvas.height = ev.target.height;
+//                 canvas.width = ev.target.width;         
+//                 context.drawImage(ev.target,0,0);
+//                 canvas.classList.add('canvas-show')
+//                 const inputValueContainer = document.createElement('div')
+//                 const paper = document.querySelector('.paperPrescriptionOrder')
+//     const inputValueContainerNode = paper.appendChild(inputValueContainer)
+//     inputValueContainer.classList.add('inputValueContainer')
+//     const inputContainer = document.createElement('div')
  
-    const button = document.createElement('button')
-    button.innerText = 'X'
-    button.classList.add('button-paper')
-    inputValueContainerNode.appendChild(button)
+//     const button = document.createElement('button')
+//     button.innerText = 'X'
+//     button.classList.add('button-paper')
+//     inputValueContainerNode.appendChild(button)
 
-    button.addEventListener('click', function (el) {
-        el.target.closest('.paperPrescriptionOrder').remove()
-    })
+//     button.addEventListener('click', function (el) {
+//         el.target.closest('.paperPrescriptionOrder').remove()
+//     })
                
-            }   
-            tempImageStore.src = event.target.result;
-        }
-        reader.readAsDataURL(file);
-    }   
-} 
+//             }   
+//             tempImageStore.src = event.target.result;
+//         }
+//         reader.readAsDataURL(file);
+//     }  
+ 
+// } 
