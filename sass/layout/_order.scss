@@ -9,13 +9,16 @@
     .orderDrugsForm-container {
 
         display: grid;
+        grid-gap: 20px;
+        grid-row-gap: 20px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
+            'data'
             'order'
             'electronicPrescription'
             'paperPrescription'
-            'nonprescription'
+            'nonPrescription'
             ; 
       
     }
@@ -25,16 +28,20 @@
 
     }
 
-    .form-electronicPrescription {
+    .dataOfPrescription {
+        grid-area: dataOfPrescription;
+    }
+
+    .electronicPrescription {
         grid-area: electronicPrescription;
     }
 
-    .form-paperPrescription {
+    .paperPrescription {
         grid-area: paperPrescription;
     }
 
-    .form-nonprescription {
-        grid-area: nonprescription;
+    .nonPrescription {
+        grid-area: nonPrescription;
     }
 
     .form-send {
@@ -53,25 +60,30 @@
         grid-template-columns: 1fr 1fr;
         // grid-template-rows: 1fr 1fr;
         grid-template-areas:
+            'dataOfPrescription dataOfPrescription'
             'electronicPrescription order'
             'paperPrescription order'
             'nonprescription order';
     }
 
-    .name {
-        grid-area: name;
+    // .name {
+    //     grid-area: name;
 
+    // }
+
+    .dataOfPrescription {
+        grid-area: dataOfPrescription;
     }
 
-    .form-electronicPrescription {
+    .electronicPrescription {
         grid-area: electronicPrescription;
     }
 
-    .form-paperPrescription {
+    .paperPrescription {
         grid-area: paperPrescription;
     }
 
-    .form-nonprescription {
+    .nonPrescription {
         grid-area: nonprescription;
     }
 
@@ -103,9 +115,9 @@
     height: calc(100% - 20px);
 }
 
-.fieldset {
-    height: 100%;
-}
+// .fieldset {
+//     height: 100%;
+// }
 
 form {
     padding:20px;
@@ -130,14 +142,14 @@ button {
     // width: calc(6rem + 2vh);
 
     color: white;
-    background-color: $color-main;
+    background-color: $color-submain;
     border: none;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-bottom: 20px;
+   
 
 }
 

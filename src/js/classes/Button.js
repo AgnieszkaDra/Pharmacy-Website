@@ -1,6 +1,6 @@
-export class InputFile{
+export class Button{
 
-    constructor( selector ) {
+    constructor( selector, label ) {
 
         const container = document.querySelector(selector)
 
@@ -8,6 +8,7 @@ export class InputFile{
 
         this.selector = selector
         this.container = document.querySelector(selector)
+        this.label = label
      
     }
 
@@ -16,17 +17,21 @@ export class InputFile{
     }
 
     render() {
-        this.container.innerText = ''
-
+        // this.container.innerText = ''
+        const buttonCont = document.createElement('div')
+        buttonCont.classList.add('flex', 'column')
         const button = document.createElement('button') 
+        button.classList.add('button')
+        // button.setAttribute('style', 'background:yellow')
+        button.innerText = this.label
       
         // inputFile.setAttribute('id', )
-     
-      
-       this.container.appendChild(button)
+    
+        this.container.appendChild(buttonCont)
+        buttonCont.appendChild(button)
 
     }
 
 }
 
-export default InputFile
+export default Button

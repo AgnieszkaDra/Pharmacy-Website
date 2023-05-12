@@ -10,8 +10,15 @@
 </head>
 
 <body>
-    <main class="container">
-        <h1 class="flex">Wypełnij poniższy formularz w celu złożenia rezerwacji</h1>
+    <h1 class="flex">Wypełnij poniższy formularz w celu złożenia rezerwacji</h1>
+    <main class="main">
+        <!-- <section class="orderDrugsForm-data"></section> -->
+        <section class="orderDrugsForm-container">
+           
+        </section>
+    </main>
+    <div class="container">
+        
         <section id="form" action="'/" class="orderDrugsForm-container">
             <!-- <form class="form-send col orderDrugsForm resize w">
                 <fieldset class="fieldset">
@@ -84,10 +91,10 @@
             <!-- </form>  -->
             <!-- </fieldset>
             </form> --> 
-            <form class="form-electronicPrescription">
+            <form class="electronicPrescription">
                 <fieldset class="fieldset flex column">
                     <legend class="fieldset__legend legend">Leki na receptę elektroniczną</legend>
-                    <div class="flex column width-80 background-pink margin-bottom-20">
+                    <!-- <div class="flex column width-80 background-pink margin-bottom-20"> -->
                         <div class="electronicPrescriptionContainer flex column">
                             <h5>Recepta elektroniczna</h5>
                             <div>
@@ -113,9 +120,10 @@
                             <button class="electronicPrescription button" type="submit">Dodaj kolejną receptę
                                 elektroniczną</button>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </fieldset>
             </form>
+            
             <div class="paperPrescription">
                 <fieldset class="fieldset flex column">
                     <legend class="fieldset__legend legend">Leki na receptę papierową</legend>
@@ -138,7 +146,7 @@
                 </fieldset>
             </div>
             
-            <form class="form-nonprescription">
+            <form class="nonPrescription">
                 <fieldset class="fieldset flex column">
                     <legend class="fieldset__legend legend">Pozostałe leki/suplementy diety/wyroby medyczne</legend>
                     <div class="flex column width-80 background-pink">
@@ -275,7 +283,8 @@
             <!-- </fieldset> -->
             </form>
         </section>
-    </main>
+    </div>
+    <div class="field"></div>
 <script type="module" src="./js/form.js"></script>
     <!-- <script type="module" src="./src/script.js"></script> -->
 </body>

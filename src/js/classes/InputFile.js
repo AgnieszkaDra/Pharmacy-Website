@@ -1,6 +1,6 @@
 export class InputFile{
 
-    constructor( selector ) {
+    constructor( selector, id ) {
 
         const container = document.querySelector(selector)
 
@@ -8,6 +8,7 @@ export class InputFile{
 
         this.selector = selector
         this.container = document.querySelector(selector)
+        this.id = id
      
     }
 
@@ -15,13 +16,18 @@ export class InputFile{
         this.render()
     }
 
-    render() {
-        this.container.innerText = ''
+    changeId() {
+        return this.id = this.id + 1
+    }
 
+    render() {
+        // this.container.innerText = ''
+        const id = this.changeId()
         const inputCont = document.createElement('div') 
         const inputFile = document.createElement('input')
         inputFile.setAttribute('type', 'file')
-        // inputFile.setAttribute('id', )
+        inputFile.setAttribute('id', id)
+        inputFile.classList.add('file')
      
         inputCont.appendChild(inputFile)    
        this.container.appendChild(inputCont)

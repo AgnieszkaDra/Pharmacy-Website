@@ -11,13 +11,13 @@ class electronicPrescription {
         this.pin = document.getElementById('PIN');
         this.pesel = document.getElementById('pesel')
         this.electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
-        this.electronicPrescriptionForm = document.querySelector('.form-electronicPrescription')
+        this.electronicPrescriptionForm = document.querySelector('.electronicPrescription')
         this.showElectronicPrescriptionValue = showElectronicPrescriptionValue
         this.textareaPinPesel = document.querySelector('.electronicPrescriptionOrder')
         this.setError = {setError}
         this.paperPrescriptionButton = document.querySelector('paperPrescription.button')
         this.ourCanvas = document.querySelector('.our-canvas')
-        this.paperPrescriptionValue = paperPrescriptionValue
+        // this.paperPrescriptionValue = paperPrescriptionValue
     
 
         this.electronicPrescriptionForm.fields = [

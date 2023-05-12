@@ -295,21 +295,26 @@ body {
 @media (max-width: 700px) {
   .orderDrugsForm-container {
     display: grid;
+    grid-gap: 20px;
+    grid-row-gap: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "order" "electronicPrescription" "paperPrescription" "nonprescription";
+    grid-template-areas: "data" "order" "electronicPrescription" "paperPrescription" "nonPrescription";
   }
   .name {
     grid-area: name;
   }
-  .form-electronicPrescription {
+  .dataOfPrescription {
+    grid-area: dataOfPrescription;
+  }
+  .electronicPrescription {
     grid-area: electronicPrescription;
   }
-  .form-paperPrescription {
+  .paperPrescription {
     grid-area: paperPrescription;
   }
-  .form-nonprescription {
-    grid-area: nonprescription;
+  .nonPrescription {
+    grid-area: nonPrescription;
   }
   .form-send {
     grid-area: order;
@@ -320,18 +325,18 @@ body {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "electronicPrescription order" "paperPrescription order" "nonprescription order";
+    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescription order" "paperPrescription order" "nonprescription order";
   }
-  .name {
-    grid-area: name;
+  .dataOfPrescription {
+    grid-area: dataOfPrescription;
   }
-  .form-electronicPrescription {
+  .electronicPrescription {
     grid-area: electronicPrescription;
   }
-  .form-paperPrescription {
+  .paperPrescription {
     grid-area: paperPrescription;
   }
-  .form-nonprescription {
+  .nonPrescription {
     grid-area: nonprescription;
   }
   .form-send {
@@ -359,10 +364,6 @@ body {
   height: calc(100% - 20px);
 }
 
-.fieldset {
-  height: 100%;
-}
-
 form {
   padding: 20px;
 }
@@ -382,14 +383,13 @@ span.spanwrong {
 button {
   padding: 10px;
   color: white;
-  background-color: rgb(254, 46, 22);
+  background-color: rgb(249, 217, 213);
   border: none;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin-bottom: 20px;
 }
 
 .background-pink {
@@ -579,6 +579,24 @@ strong {
   line-height: 40px;
 }
 
+.fieldset {
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 50px;
+  margin-bottom: 20px;
+}
+
+.fieldset h2 {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  font-size: 18px;
+  line-height: 1;
+  margin: -9px 0 0; /* half of font-size */
+  background: #fff;
+  padding: 0 3px;
+}
+
 .label__input:focus {
   outline: none;
 }
@@ -613,7 +631,7 @@ strong {
     max-width: 1250px;
   }
 }
-.container {
+.container, .main {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -622,22 +640,22 @@ strong {
 }
 
 @media (max-width: 1000px) {
-  .container {
+  .container, .main {
     padding-left: 0;
   }
 }
 @media (min-width: 768px) {
-  .container {
+  .container, .main {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container {
+  .container, .main {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container {
+  .container, .main {
     max-width: 1250px;
   }
 }
