@@ -2,7 +2,7 @@
 
 export class Form{
 
-    constructor( selector, classs='') {
+    constructor( selector, classs='', classs2 = '') {
 
         const container = document.querySelector(selector)
 
@@ -11,6 +11,7 @@ export class Form{
         this.selector = selector
         this.container = document.querySelector(selector)
         this.classs = classs
+        this.classs2 = classs2
         
      
     }
@@ -26,7 +27,7 @@ export class Form{
       
         const form = document.createElement('form')
        form.classList.add(this.classs)
-      
+   
 
        
      

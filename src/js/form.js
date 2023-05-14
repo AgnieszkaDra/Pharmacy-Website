@@ -36,12 +36,13 @@ const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
 //     const fieldset0 = new FieldsetImitate('.orderDrugsForm-container', 'Dane zamawiającego', 'dataOfPrescription', '#0000')
 // fieldset0.init()
-const form1 = new Form('.orderDrugsForm-container', 'electronicPrescriptionForm')
+
+const fieldset1 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
+fieldset1.init()
+const form1 = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
 form1.init()
 
 
-const fieldset1 = new FieldsetImitate('.electronicPrescriptionForm', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
-fieldset1.init()
 
 
 
@@ -75,17 +76,17 @@ fieldset5.init()
 // const input0b= new Input('.dataOfPrescription', 'email')
 // input0b.init()
 
-const input1 = new Input('.electronicPrescriptionFieldset', 'PIN', 'PIN recepty')
+const input1 = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')
 input1.init()
 
-const labelError1 = new LabelError('.electronicPrescriptionFieldset' )
+const labelError1 = new LabelError('.electronicPrescriptionForm' )
 labelError1.init()
 
 
-const input2= new Input('.electronicPrescriptionFieldset', 'PESEL', 'PESEL recepty')
+const input2= new Input('.electronicPrescriptionForm', 'PESEL', 'PESEL recepty')
 input2.init()
 
-const labelError2 = new LabelError('.electronicPrescriptionFieldset' )
+const labelError2 = new LabelError('.electronicPrescriptionForm' )
 labelError2.init()
 
 // const input3= new Input('.nonPrescription', 'nazwa leku')
@@ -100,7 +101,7 @@ labelError2.init()
 // const inputFile1 = new InputFile('.paperPrescription', 0)
 // inputFile1.init()
 
-const button1 = new Button('.electronicPrescriptionFieldset', 'Dodaj kolejną receptę elektroniczną', 'submit')
+const button1 = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
 button1.init()
 const electronicPrescriptionButtonAdd = new electronicPrescriptionSend(electronicPrescriptionButton)
 electronicPrescriptionButtonAdd.send()

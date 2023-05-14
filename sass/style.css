@@ -295,11 +295,11 @@ body {
 @media (max-width: 700px) {
   .orderDrugsForm-container {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 0px 20px;
     grid-row-gap: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "data" "order" "electronicPrescriptionForm" "paperPrescription" "nonPrescription";
+    grid-template-areas: "data" "order" "electronicPrescriptionFieldset" "paperPrescription" "nonPrescription";
   }
   .name {
     grid-area: name;
@@ -307,8 +307,8 @@ body {
   .dataOfPrescription {
     grid-area: dataOfPrescription;
   }
-  .electronicPrescriptionForm {
-    grid-area: electronicPrescriptionForm;
+  .electronicPrescriptionFieldset {
+    grid-area: electronicPrescriptionFieldset;
   }
   .paperPrescription {
     grid-area: paperPrescription;
@@ -323,15 +323,15 @@ body {
 @media (min-width: 700px) {
   .orderDrugsForm-container {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 0px 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionForm order" "paperPrescription order" "nonprescription order";
+    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionFieldset order" "paperPrescription order" "nonprescription order";
   }
   .dataOfPrescription {
     grid-area: dataOfPrescription;
   }
-  .electronicPrescriptionForm {
-    grid-area: electronicPrescriptionForm;
+  .electronicPrescriptionFieldset {
+    grid-area: electronicPrescriptionFieldset;
   }
   .paperPrescription {
     grid-area: paperPrescription;
@@ -362,10 +362,6 @@ body {
 .width-80 {
   width: calc(100% - 20px);
   height: calc(100% - 20px);
-}
-
-form {
-  padding: 20px;
 }
 
 .margin-bottom-20 {
@@ -583,7 +579,6 @@ strong {
   position: relative;
   border: 1px solid #ddd;
   padding: 50px;
-  margin-bottom: 20px;
 }
 
 .fieldset h2 {
@@ -667,10 +662,6 @@ strong {
 
 .column {
   flex-direction: column;
-}
-
-section {
-  padding: 50px 0;
 }
 
 @media (max-width: 768px) {
