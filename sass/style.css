@@ -299,7 +299,7 @@ body {
     grid-row-gap: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "data" "order" "electronicPrescription" "paperPrescription" "nonPrescription";
+    grid-template-areas: "data" "order" "electronicPrescriptionForm" "paperPrescription" "nonPrescription";
   }
   .name {
     grid-area: name;
@@ -307,8 +307,8 @@ body {
   .dataOfPrescription {
     grid-area: dataOfPrescription;
   }
-  .electronicPrescription {
-    grid-area: electronicPrescription;
+  .electronicPrescriptionForm {
+    grid-area: electronicPrescriptionForm;
   }
   .paperPrescription {
     grid-area: paperPrescription;
@@ -325,13 +325,13 @@ body {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescription order" "paperPrescription order" "nonprescription order";
+    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionForm order" "paperPrescription order" "nonprescription order";
   }
   .dataOfPrescription {
     grid-area: dataOfPrescription;
   }
-  .electronicPrescription {
-    grid-area: electronicPrescription;
+  .electronicPrescriptionForm {
+    grid-area: electronicPrescriptionForm;
   }
   .paperPrescription {
     grid-area: paperPrescription;

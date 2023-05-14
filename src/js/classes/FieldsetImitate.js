@@ -2,7 +2,7 @@
 
 export class FieldsetImitate{
 
-    constructor( selector, textH2= '', classs, color) {
+    constructor( selector, textH2= '', classs = '', color) {
 
         const container = document.querySelector(selector)
 
@@ -25,12 +25,12 @@ export class FieldsetImitate{
 
     render() {
         // this.container.innerText = ''
-
+      
         const fieldsetImitate = document.createElement('section')
         fieldsetImitate.classList.add('fieldset')
         fieldsetImitate.classList.add('flex')
         fieldsetImitate.classList.add('column')
-        fieldsetImitate.classList.add(this.classs) 
+        fieldsetImitate.classList.add(this.classs)
 
         const h2 = document.createElement('h2')
         h2.innerText = this.textH2
@@ -38,7 +38,7 @@ export class FieldsetImitate{
         
         fieldsetImitate.classList.add('fieldset')
         
-        fieldsetImitate.classList.add(this.classs)
+       
         fieldsetImitate.style.background = this.color
         
 
@@ -46,7 +46,7 @@ export class FieldsetImitate{
      
         // inputFile.setAttribute('id', )
      
-      
+  
        this.container.appendChild(fieldsetImitate)
 
     }

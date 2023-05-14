@@ -25,7 +25,7 @@ const textareaDrugAmount = document.querySelector('.textarea.drugAmount')
 
 export const showElectronicPrescriptionValue = function(input1, input2, container) {
     if (!(input1.value.trim() === '') && !(input2)) {
-            
+            alert('textnjcsndkc')
         const value1 = input1.value.trim()
         
         const inputValueContainer = document.createElement('div')

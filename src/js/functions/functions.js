@@ -7,7 +7,8 @@ console.log(element)
     const inputControl = element.parentElement.parentElement
     const errorDisplay = inputControl.querySelector('.label__error')
     
-    element.classList.add('error')
+    // element.classList.add('error')
+    inputControl.classList.add('error')
     inputControl.classList.remove('success')
     errorDisplay.innerText = message
     

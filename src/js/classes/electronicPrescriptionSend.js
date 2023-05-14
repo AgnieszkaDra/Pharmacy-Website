@@ -1,22 +1,21 @@
-import { setError } from "../functions/functions";
 
+import { setError } from "../functions/functions";
 import { showElectronicPrescriptionValue } from "../showInputValue/showInputValue";
 
-import { paperPrescriptionValue } from "../showInputValue/showInputValue";
 
-class electronicPrescription {
+class electronicPrescriptionSend {
 
     constructor( {value = ''} ) {
         this.value = value;
         this.pin = document.getElementById('PIN');
-        this.pesel = document.getElementById('pesel')
+        this.pesel = document.getElementById('PESEL')
         this.electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
-        this.electronicPrescriptionForm = document.querySelector('.electronicPrescription')
+        this.electronicPrescriptionForm = document.querySelector('.electronicPrescriptionForm')
         this.showElectronicPrescriptionValue = showElectronicPrescriptionValue
         this.textareaPinPesel = document.querySelector('.electronicPrescriptionOrder')
-        this.setError = {setError}
-        this.paperPrescriptionButton = document.querySelector('paperPrescription.button')
-        this.ourCanvas = document.querySelector('.our-canvas')
+        // this.setError = {setError}
+        // this.paperPrescriptionButton = document.querySelector('paperPrescription.button')
+        // this.ourCanvas = document.querySelector('.our-canvas')
         // this.paperPrescriptionValue = paperPrescriptionValue
     
 
@@ -28,7 +27,7 @@ class electronicPrescription {
                 pattern: "[0-9]{4}",
             },
             {
-                name: 'pesel',
+                name: 'PESEL',
                 label: 'PESEL',
                 required: false,
                 pattern: "[0-9]{4}[0-3]{1}[0-9}{1}[0-9]{5}",
@@ -38,12 +37,13 @@ class electronicPrescription {
     }
     
     send(){
-      console.log(this.electronicPrescriptionForm)
+ 
         this.electronicPrescriptionForm.addEventListener('submit', e => {
-            alert('submit')
+            alert('click')
+            console.log(this.electronicPrescriptionForm.elements)
             e.preventDefault();
             const errors = [];
-            const electronicPrescriptionForm = document.querySelector('.electronicPrescription'); 
+            const electronicPrescriptionForm = document.querySelector('.electronicPrescriptionForm'); 
             this.electronicPrescriptionForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
                 const value = electronicPrescriptionForm.elements[name].value;
@@ -66,6 +66,7 @@ class electronicPrescription {
             })
          
             if(errors.length === 0){
+                alert('0 errors')
                 this.showElectronicPrescriptionValue(this.pin, this.pesel, this.textareaPinPesel)
                 this.pin.value=' '
                 this.pesel.value = ' '
@@ -86,6 +87,4 @@ class electronicPrescription {
  
 }
 
- export default electronicPrescription
-
-
+ export default electronicPrescriptionSend

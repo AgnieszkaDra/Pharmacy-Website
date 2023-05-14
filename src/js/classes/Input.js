@@ -2,7 +2,7 @@
 
 export class Input{
 
-    constructor( selector, name= '', ) {
+    constructor( selector, id='', label='' ) {
 
         const container = document.querySelector(selector)
 
@@ -10,7 +10,10 @@ export class Input{
 
         this.selector = selector
         this.container = document.querySelector(selector)
-        this.name = name
+        this.id =id
+        this.name = id
+        this.label = label
+
         
     }
 
@@ -23,7 +26,7 @@ export class Input{
         input.innerText = 'input'
         
         this.container.appendChild(input)
-       this.render()
+        this.render()
     }
 
   
@@ -38,12 +41,12 @@ export class Input{
         const label = document.createElement('label')
         label.setAttribute('style', 'align-self:flex-start')
  
-        label.innerText = this.name
+        label.innerText = this.label
       
         const input = document.createElement('input')
         input.setAttribute('type', 'text')
-        input.setAttribute('id', this.name)
-        input.setAttribute('name', this.name)
+        input.setAttribute('id', this.id)
+        input.setAttribute('name', this.id)
         // label.setAttribute('for', this.name)
         
         

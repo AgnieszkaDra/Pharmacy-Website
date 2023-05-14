@@ -16,7 +16,7 @@
         grid-template-areas:
             'data'
             'order'
-            'electronicPrescription'
+            'electronicPrescriptionForm'
             'paperPrescription'
             'nonPrescription'
             ; 
@@ -32,8 +32,8 @@
         grid-area: dataOfPrescription;
     }
 
-    .electronicPrescription {
-        grid-area: electronicPrescription;
+    .electronicPrescriptionForm {
+        grid-area: electronicPrescriptionForm;
     }
 
     .paperPrescription {
@@ -61,7 +61,7 @@
         // grid-template-rows: 1fr 1fr;
         grid-template-areas:
             'dataOfPrescription dataOfPrescription'
-            'electronicPrescription order'
+            'electronicPrescriptionForm order'
             'paperPrescription order'
             'nonprescription order';
     }
@@ -75,8 +75,8 @@
         grid-area: dataOfPrescription;
     }
 
-    .electronicPrescription {
-        grid-area: electronicPrescription;
+    .electronicPrescriptionForm {
+        grid-area: electronicPrescriptionForm;
     }
 
     .paperPrescription {

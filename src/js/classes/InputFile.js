@@ -24,6 +24,7 @@ export class InputFile{
         // this.container.innerText = ''
         const id = this.changeId()
         const inputCont = document.createElement('div') 
+        inputCont.setAttribute('style', 'padding:10px')
         const inputFile = document.createElement('input')
         inputFile.setAttribute('type', 'file')
         inputFile.setAttribute('id', id)
