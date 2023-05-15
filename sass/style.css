@@ -299,7 +299,7 @@ body {
     grid-row-gap: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "data" "order" "electronicPrescriptionFieldset" "paperPrescription" "nonPrescription";
+    grid-template-areas: "data" "order" "electronicPrescriptionFieldset" "paperPrescriptionFieldset" "nonPrescription";
   }
   .name {
     grid-area: name;
@@ -310,8 +310,8 @@ body {
   .electronicPrescriptionFieldset {
     grid-area: electronicPrescriptionFieldset;
   }
-  .paperPrescription {
-    grid-area: paperPrescription;
+  .paperPrescriptionFieldset {
+    grid-area: paperPrescriptionFieldset;
   }
   .nonPrescription {
     grid-area: nonPrescription;
@@ -325,7 +325,7 @@ body {
     display: grid;
     grid-gap: 0px 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionFieldset order" "paperPrescription order" "nonprescription order";
+    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionFieldset order" "paperPrescriptionFieldset order" "nonprescription order";
   }
   .dataOfPrescription {
     grid-area: dataOfPrescription;
@@ -333,8 +333,8 @@ body {
   .electronicPrescriptionFieldset {
     grid-area: electronicPrescriptionFieldset;
   }
-  .paperPrescription {
-    grid-area: paperPrescription;
+  .paperPrescriptionFieldset {
+    grid-area: paperPrescriptionFieldset;
   }
   .nonPrescription {
     grid-area: nonprescription;
@@ -402,6 +402,16 @@ button {
     max-width: 1250px;
   }
 }
+input {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+label {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
 .section--first {
   display: grid;
   grid-template-columns: 1fr 1fr;

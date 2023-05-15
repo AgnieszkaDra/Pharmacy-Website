@@ -35,11 +35,11 @@ export class Input{
         // this.container.innerText = ''
 
         const inputContainer = document.createElement('div')
-        inputContainer.setAttribute('style', 'padding:10px')
+        
         inputContainer.classList.add('flex')
         inputContainer.classList.add('column')
         const label = document.createElement('label')
-        label.setAttribute('style', 'align-self:flex-start')
+        label.setAttribute('style', 'width:80%')
  
         label.innerText = this.label
       
@@ -47,6 +47,7 @@ export class Input{
         input.setAttribute('type', 'text')
         input.setAttribute('id', this.id)
         input.setAttribute('name', this.id)
+        input.setAttribute('style', 'width:80%')
         // label.setAttribute('for', this.name)
         
         

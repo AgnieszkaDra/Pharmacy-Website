@@ -8,14 +8,17 @@ import Input from "./classes/Input.js";
 import InputFile from "./classes/InputFile.js";
 import electronicPrescriptionSend from "./classes/electronicPrescriptionSend.js";
 import LabelError from "./classes/LabelError.js";
+import Canvas from "./classes/Canvas.js";
+import paperPrescriptionSend from "./classes/paperPrescriptionSend.js";
 // document.addEventListener('DOMContentLoaded', init);
-
+const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 import Form from "./classes/Form.js";
 
 const sendOrderButton = document.querySelector('.send')
-const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
-const paperPrescriptionButton = document.querySelector('.paperPrescription.button')
+// const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
+
 // console.dir(paperPrescriptionButton)
+const paperContainer = document.querySelector('.paperPrescriptionForm')
 const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
 
@@ -42,16 +45,10 @@ fieldset1.init()
 const form1 = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
 form1.init()
 
-
-
-
-
-
-
-
-
-// const fieldset2 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę papierową', 'paperPrescription', '#fe2e16')
-// fieldset2.init()
+const fieldset2 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '#fe2e16')
+fieldset2.init()
+// const form2 = new Form('.paperPrescriptionFieldset', 'paperPrescriptionForm')
+// form2.init()
 
 // const fieldset3 = new FieldsetImitate('.orderDrugsForm-container', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescription', '#fe2e16')
 // fieldset3.init()
@@ -62,8 +59,8 @@ fieldset4.init()
 const fieldset5 = new FieldsetImitate('.form-send', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'pink')
 fieldset5.init()
 
-// const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'pink')
-// fieldset6.init()
+const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'pink')
+fieldset6.init()
 
 // const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'paperPrescriptionOrder', 'pink')
 // fieldset7.init()
@@ -89,6 +86,12 @@ input2.init()
 const labelError2 = new LabelError('.electronicPrescriptionForm' )
 labelError2.init()
 
+const input3= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
+input3.init()
+
+const labelError3 = new LabelError('.paperPrescriptionFieldset' )
+labelError3.init()
+
 // const input3= new Input('.nonPrescription', 'nazwa leku')
 // input3.init()
 
@@ -106,11 +109,35 @@ button1.init()
 const electronicPrescriptionButtonAdd = new electronicPrescriptionSend(electronicPrescriptionButton)
 electronicPrescriptionButtonAdd.send()
 
-// const button2 = new Button('paperPrescription', 'Dodaj kolejną receptę papierową')
-// button2.init()
+const button2 = new Button('.paperPrescriptionFieldset', 'Dodaj kolejną receptę papierową', '')
+button2.init()
+const canvas1 = new Canvas('.paperPrescriptionOrder')
+canvas1.init()
+
+const paperPrescriptionButtonAdd = new paperPrescriptionSend()
+paperPrescriptionButtonAdd.send()
+const paperPrescriptionButton = document.querySelector('.paperPrescriptionFieldsetbutton')
+console.log(paperPrescriptionButton)
+paperPrescriptionButton.addEventListener('click', (el) =>{
+ alert('clickButton')
+const elem = el.target
+  const button2 = new InputFile('.paperPrescriptionFieldset')
+button2.init()
+
+const canvas1 = new Canvas('.paperPrescriptionOrder')
+canvas1.init()
+const paperPrescriptionButtonAdd = new paperPrescriptionSend()
+paperPrescriptionButtonAdd.sendNew()
+})
+
+
+
+
 
 // const button3 = new Button('nonPrescription', 'Dodaj kolejny lek')
 // button3.init()
+
+
 
 
 
@@ -171,3 +198,39 @@ electronicPrescriptionButtonAdd.send()
     // userEmail.checkLength()
    
 
+//     var canvas = document.getElementById('our-canvas'),
+//     context = canvas.getContext('2d');
+//     const buttonPaper = document.querySelector('.paperPrescriptionForm.button')
+//     console.log(buttonPaper)
+// let uploadedFile = document.getElementById('uploaded-file');
+// buttonPaper.addEventListener('submit',initImageLoader) ;
+
+// function initImageLoader(e){
+//   e.preventDefault()
+// alert('init')
+//     uploadedFile.addEventListener('change',handleManualUploadedFiles);
+//     function handleManualUploadedFiles(ev){
+//         var file = ev.target.files[0];
+//         handleFile(file);
+
+//     }   
+// }
+// function handleFile(file){
+//     var ImageType = /image.*/;
+
+//     if(file.type.match(ImageType)){
+
+//         var reader = new FileReader();      
+
+//         reader.onloadend = function(event){
+//             var tempImageStore = new Image();
+//             tempImageStore.onload = function(ev){
+//                 canvas.height = ev.target.height;
+//                 canvas.width = ev.target.width;         
+//                 context.drawImage(ev.target,0,0);
+//             }   
+//             tempImageStore.src = event.target.result;
+//         }
+//         reader.readAsDataURL(file);
+//     }   
+// }

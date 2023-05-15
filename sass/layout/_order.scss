@@ -17,7 +17,7 @@
             'data'
             'order'
             'electronicPrescriptionFieldset'
-            'paperPrescription'
+            'paperPrescriptionFieldset'
             'nonPrescription'
             ; 
       
@@ -36,8 +36,8 @@
         grid-area: electronicPrescriptionFieldset;
     }
 
-    .paperPrescription {
-        grid-area: paperPrescription;
+    .paperPrescriptionFieldset {
+        grid-area: paperPrescriptionFieldset;
     }
 
     .nonPrescription {
@@ -62,7 +62,7 @@
         grid-template-areas:
             'dataOfPrescription dataOfPrescription'
             'electronicPrescriptionFieldset order'
-            'paperPrescription order'
+            'paperPrescriptionFieldset order'
             'nonprescription order';
     }
 
@@ -79,8 +79,8 @@
         grid-area: electronicPrescriptionFieldset;
     }
 
-    .paperPrescription {
-        grid-area: paperPrescription;
+    .paperPrescriptionFieldset {
+        grid-area: paperPrescriptionFieldset;
     }
 
     .nonPrescription {

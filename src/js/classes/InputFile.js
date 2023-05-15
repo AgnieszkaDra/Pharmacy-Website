@@ -1,6 +1,9 @@
+import { numberInput} from "../functions/functions"
+import { classInputCreate } from "../functions/functions"
+
 export class InputFile{
 
-    constructor( selector, id ) {
+    constructor( selector) {
 
         const container = document.querySelector(selector)
 
@@ -8,7 +11,8 @@ export class InputFile{
 
         this.selector = selector
         this.container = document.querySelector(selector)
-        this.id = id
+        this.classs = classInputCreate()
+        // this.id = id
      
     }
 
@@ -27,8 +31,9 @@ export class InputFile{
         inputCont.setAttribute('style', 'padding:10px')
         const inputFile = document.createElement('input')
         inputFile.setAttribute('type', 'file')
-        inputFile.setAttribute('id', id)
+        inputFile.setAttribute('id', 'uploaded-file')
         inputFile.classList.add('file')
+        inputFile.classList.add(this.classs)
      
         inputCont.appendChild(inputFile)    
        this.container.appendChild(inputCont)
