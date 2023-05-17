@@ -50,8 +50,8 @@ fieldset2.init()
 // const form2 = new Form('.paperPrescriptionFieldset', 'paperPrescriptionForm')
 // form2.init()
 
-// const fieldset3 = new FieldsetImitate('.orderDrugsForm-container', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescription', '#fe2e16')
-// fieldset3.init()
+const fieldset3 = new FieldsetImitate('.orderDrugsForm-container', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescription', '#fe2e16')
+fieldset3.init()
 
 const fieldset4 = new FieldsetImitate('.orderDrugsForm-container', 'Twoje Zamówienie', 'form-send', '#fe2e16')
 fieldset4.init()
@@ -62,8 +62,8 @@ fieldset5.init()
 const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'pink')
 fieldset6.init()
 
-// const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'paperPrescriptionOrder', 'pink')
-// fieldset7.init()
+const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'paperPrescriptionOrder', 'pink')
+fieldset7.init()
 
 
 
@@ -92,8 +92,8 @@ input3.init()
 const labelError3 = new LabelError('.paperPrescriptionFieldset' )
 labelError3.init()
 
-// const input3= new Input('.nonPrescription', 'nazwa leku')
-// input3.init()
+const input4= new Input('.nonPrescription', null,'nazwa leku')
+input4.init()
 
 // const input4= new Input('.nonPrescription', 'dawka')
 // input4.init()
@@ -121,13 +121,16 @@ console.log(paperPrescriptionButton)
 paperPrescriptionButton.addEventListener('click', (el) =>{
  alert('clickButton')
 const elem = el.target
-  const button2 = new InputFile('.paperPrescriptionFieldset')
-button2.init()
+  const input4 = new InputFile('.paperPrescriptionFieldset')
+input4.init()
+const classInput4 = input4.classs
+console.log(typeof classInput4)
 
 const canvas1 = new Canvas('.paperPrescriptionOrder')
 canvas1.init()
+const classCanvas1 = canvas1.classs
 const paperPrescriptionButtonAdd = new paperPrescriptionSend()
-paperPrescriptionButtonAdd.sendNew()
+paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
 })
 
 

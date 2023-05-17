@@ -26,13 +26,8 @@ export class Form{
         // this.container.innerText = ''
       
         const form = document.createElement('form')
-       form.classList.add(this.classs)
-   
-
-       
-     
-  
-       this.container.appendChild(form)
+        form.classList.add(this.classs)
+        this.container.appendChild(form)
 
     }
 

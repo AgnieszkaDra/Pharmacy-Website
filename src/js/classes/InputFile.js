@@ -33,7 +33,7 @@ export class InputFile{
         inputFile.setAttribute('type', 'file')
         inputFile.setAttribute('id', 'uploaded-file')
         inputFile.classList.add('file')
-        inputFile.classList.add(this.classs)
+        inputFile.classList.add('in' + this.classs)
      
         inputCont.appendChild(inputFile)    
        this.container.appendChild(inputCont)

@@ -66,13 +66,52 @@ function handleFile(file){
         }
         // )  
     
-    sendNew() {
-      console.log(this.elem)
-        var canvas = this.elem.querySelector('input')
+    sendNew(inp,can) {
+console.log(inp,can)
+        let canvas = document.querySelector(`.cl${inp}`)
         console.log(canvas)
         let context = canvas.getContext('2d');
+        let uploadedFile = document.querySelector(`.in${inp}`);
+        initImageLoader()
+function initImageLoader(){
+alert('init')
+console.dir(uploadedFile)
+
+    uploadedFile.addEventListener('change',handleManualUploadedFiles);
+    function handleManualUploadedFiles(ev){
+        var file = ev.target.files[0];
+        handleFile(file);
+        ev.target.value = null
+
+    }   
+}
+function handleFile(file){
+        var ImageType = /image.*/;
+    
+        if(file.type.match(ImageType)){
+    
+            var reader = new FileReader();      
+    
+            reader.onloadend = function(event){
+                var tempImageStore = new Image();
+                tempImageStore.onload = function(ev){
+                    canvas.height = ev.target.height;
+                    canvas.width = ev.target.width;         
+                    context.drawImage(ev.target,0,0);
+                   
+                }   
+                tempImageStore.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+          
+        }   
     }
+    
+
+
+        }
     }
+    
 
   
    
