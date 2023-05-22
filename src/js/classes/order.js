@@ -32,6 +32,7 @@ class Order {
         this.orderForm.addEventListener('submit', e => {
             alert('submit')
             e.preventDefault();
+            console.log(this.orderForm.fields)
             const errors = [];
             const orderForm = document.querySelector('.form-send'); 
             this.orderForm.fields.forEach(function(field){

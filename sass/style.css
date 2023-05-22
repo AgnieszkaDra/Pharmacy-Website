@@ -47,6 +47,10 @@ body {
   align-items: center;
 }
 
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
 .section__headline--h2 {
   margin: 0;
   font-size: 40px;
@@ -105,6 +109,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
 }
 
 .section__headline--h2 {
@@ -292,14 +300,36 @@ body {
   display: grid;
 }
 
+#our-canvas {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.canvassize {
+  width: 60px;
+  height: 60px;
+}
+
 @media (max-width: 700px) {
   .orderDrugsForm-container {
     display: grid;
     grid-gap: 0px 20px;
     grid-row-gap: 20px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "data" "order" "electronicPrescriptionFieldset" "paperPrescriptionFieldset" "nonPrescription";
+    grid-template-areas: "data" "electronicPrescriptionFieldset" "paperPrescriptionFieldset" "nonPrescriptionFieldset" "order";
+  }
+  .orderDrugsForm-container .fieldset h2 {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 8px;
+    line-height: 1;
+    margin: -9px 0 0;
+    background: #fff;
+    padding: 0 3px;
   }
   .name {
     grid-area: name;
@@ -313,11 +343,14 @@ body {
   .paperPrescriptionFieldset {
     grid-area: paperPrescriptionFieldset;
   }
-  .nonPrescription {
-    grid-area: nonPrescription;
+  .nonPrescriptionFieldset {
+    grid-area: nonPrescriptionFieldset;
   }
-  .form-send {
+  .sendPrescriptionFieldset {
     grid-area: order;
+  }
+  .electronicPrescriptionOrder.fieldset, .paperPrescriptionOrder.fieldset, .nonPrescriptionOrder.fieldset {
+    padding: 30px 80px;
   }
 }
 @media (min-width: 700px) {
@@ -325,7 +358,7 @@ body {
     display: grid;
     grid-gap: 0px 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionFieldset order" "paperPrescriptionFieldset order" "nonprescription order";
+    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionFieldset order" "paperPrescriptionFieldset order" "nonPrescriptionFieldset order";
   }
   .dataOfPrescription {
     grid-area: dataOfPrescription;
@@ -336,11 +369,19 @@ body {
   .paperPrescriptionFieldset {
     grid-area: paperPrescriptionFieldset;
   }
-  .nonPrescription {
-    grid-area: nonprescription;
+  .nonPrescriptionFieldset {
+    grid-area: nonPrescriptionFieldset;
   }
-  .form-send {
+  .sendPrescriptionFieldset {
     grid-area: order;
+  }
+  .nameAndSurnameOrder.fieldset {
+    padding: 30px 80px;
+    border: 4px solid white;
+    margin-bottom: 40px;
+  }
+  .electronicPrescriptionOrder.fieldset, .paperPrescriptionOrder.fieldset, .nonPrescriptionOrder.fieldset {
+    padding: 60px 100px;
   }
 }
 .legend {
@@ -588,7 +629,8 @@ strong {
 .fieldset {
   position: relative;
   border: 1px solid #ddd;
-  padding: 50px;
+  padding: 30px;
+  margin-bottom: 20px;
 }
 
 .fieldset h2 {
@@ -616,8 +658,7 @@ strong {
 }
 
 .error {
-  border: none;
-  background-color: red;
+  background-color: pink;
 }
 
 .label__input.error {
@@ -674,14 +715,6 @@ strong {
   flex-direction: column;
 }
 
-@media (max-width: 768px) {
-  .orderDrugsForm-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr;
-    grid-template-areas: "order" "prescription" "nonprescription";
-  }
-}
 .image-container {
   width: 100px;
   height: 100px;

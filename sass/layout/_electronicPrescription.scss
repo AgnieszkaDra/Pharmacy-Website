@@ -1,3 +1,5 @@
+
+
 .label__input:focus {
     outline: none;
 }
@@ -13,10 +15,11 @@
 }
 
 .error {
-  border: none;
-  background-color: red;
  
-}
+  
+  background-color: pink;
+
+ }
 
 .label__input.error {
  

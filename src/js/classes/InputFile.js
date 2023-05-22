@@ -28,6 +28,7 @@ export class InputFile{
         // this.container.innerText = ''
         const id = this.changeId()
         const inputCont = document.createElement('div') 
+        inputCont.classList.add('inputCont')
         inputCont.setAttribute('style', 'padding:10px')
         const inputFile = document.createElement('input')
         inputFile.setAttribute('type', 'file')
@@ -35,9 +36,14 @@ export class InputFile{
         inputFile.classList.add('file')
         inputFile.classList.add('in' + this.classs)
      
-        inputCont.appendChild(inputFile)    
-       this.container.appendChild(inputCont)
-
+        inputCont.appendChild(inputFile) 
+        const button = document.createElement('button')
+        button.innerText = 'X'
+        button.addEventListener('click', function (el) {
+            el.target.closest('.inputCont').remove()
+        })   
+        this.container.appendChild(inputCont)
+        inputCont.appendChild(button)
     }
 
 }

@@ -7,7 +7,6 @@ class paperPrescriptionSend {
 
     constructor(elem) {
         this.elem = elem
-      
         this.paperPrescriptionForm = document.querySelector('.paperPrescriptionForm')
         this.buttonPaper = document.querySelector('.paperPrescriptionForm.button')
         this.uploadedFile = document.getElementById('uploaded-file');
@@ -21,7 +20,13 @@ class paperPrescriptionSend {
         // this.paperPrescriptionForm.addEventListener('submit', e => {
         //     alert('submit')
         //     e.preventDefault();
-            var canvas = document.getElementById('our-canvas')
+        // let canvas = document.createElement('canvas')
+        // canvas.setAttribute('id', 'our-canvas')
+        // canvas.classList.add( 'cl' + this.classs)
+        // const paperprescriptionOrder = document.querySelector('.paperPrescriptionOrder')
+        
+        // paperprescriptionOrder.appendChild(canvas)
+    var canvas = document.getElementById('our-canvas')
     let context = canvas.getContext('2d');
     const buttonPaper = document.querySelector('.paperPrescriptionForm.button')
 let uploadedFile = document.getElementById('uploaded-file');
@@ -33,6 +38,10 @@ console.dir(uploadedFile)
 
     uploadedFile.addEventListener('change',handleManualUploadedFiles);
     function handleManualUploadedFiles(ev){
+        var canvas = document.getElementById('our-canvas')
+    canvas.setAttribute('style', 'display:block')
+    canvas.classList.add('canvassize')
+    let context = canvas.getContext('2d');
         var file = ev.target.files[0];
         handleFile(file);
         ev.target.value = null
@@ -50,7 +59,8 @@ function handleFile(file){
                 var tempImageStore = new Image();
                 tempImageStore.onload = function(ev){
                     canvas.height = ev.target.height;
-                    canvas.width = ev.target.width;         
+                    canvas.width = ev.target.width;   
+                           
                     context.drawImage(ev.target,0,0);
                    
                 }   
@@ -68,8 +78,10 @@ function handleFile(file){
     
     sendNew(inp,can) {
 console.log(inp,can)
+
         let canvas = document.querySelector(`.cl${inp}`)
         console.log(canvas)
+        canvas.setAttribute('style', 'display:block')
         let context = canvas.getContext('2d');
         let uploadedFile = document.querySelector(`.in${inp}`);
         initImageLoader()

@@ -13,7 +13,7 @@ class electronicPrescriptionSend {
         this.electronicPrescriptionForm = document.querySelector('.electronicPrescriptionForm')
         this.showElectronicPrescriptionValue = showElectronicPrescriptionValue
         this.textareaPinPesel = document.querySelector('.electronicPrescriptionOrder')
-        // this.setError = {setError}
+        this.setError = {setError}
         // this.paperPrescriptionButton = document.querySelector('paperPrescription.button')
         // this.ourCanvas = document.querySelector('.our-canvas')
         // this.paperPrescriptionValue = paperPrescriptionValue
@@ -43,22 +43,21 @@ class electronicPrescriptionSend {
             console.log(this.electronicPrescriptionForm.elements)
             e.preventDefault();
             const errors = [];
+        
             const electronicPrescriptionForm = document.querySelector('.electronicPrescriptionForm'); 
             this.electronicPrescriptionForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
                 const value = electronicPrescriptionForm.elements[name].value;
                 console.log(value)
                 const valParent = electronicPrescriptionForm.elements[name]
-                const errorDisplayPin = document.querySelector('.label__error.pin')
-                errorDisplayPin.innerText = ''
-                const errorDisplayPesel = document.querySelector('.label__error.pesel')
-                errorDisplayPesel.innerText = ''
+               
+                // errorDisplayPesel.innerText = ''
                
                 if(pattern, valParent){
                     const reg = new RegExp(pattern);
                     if(!reg.test(value)){
                         alert(`Field ${label} is invalid`);
-                        setError(valParent, `${label} jest niepoprawny`)
+                        setError(valParent, `${label} jestniepoprawny`)
                         errors.push('error');
                     }
                 }
@@ -69,7 +68,18 @@ class electronicPrescriptionSend {
                 alert('0 errors')
                 this.showElectronicPrescriptionValue(this.pin, this.pesel, this.textareaPinPesel)
                 this.pin.value=' '
-                this.pesel.value = ' '
+                this.pesel.value = ' ' 
+                const errorDisplayPin = document.querySelector('.PIN')
+                errorDisplayPin.classList.remove('error')
+                const errorDisplayPinClosest = errorDisplayPin.querySelector('.label__error')
+    
+                errorDisplayPinClosest.innerText = ''
+                const errorDisplayPesel = document.querySelector('.PESEL')
+                errorDisplayPesel.classList.remove('error')
+                const errorDisplayPeselClosest = errorDisplayPesel.querySelector('.label__error')
+                errorDisplayPeselClosest.innerText = ''
+
+                errorDisplayPesel.closest('.label__error').innerHTML = ''
             } 
             
         });

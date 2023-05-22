@@ -3,29 +3,29 @@
 @import 'layout';
 @import 'utilities';
 
-@media(max-width: 768px) {
-//     .w {
-//     width: 100px;
-//     height: 100px;
-//     overflow: auto;
+// @media(max-width: 768px) {
+// //     .w {
+// //     width: 100px;
+// //     height: 100px;
+// //     overflow: auto;
+// // }
+
+
+// // .resize {
+// //     resize: both;
+// // }
+
+// // .orderDrugsForm-container {
+// //     display: grid;
+// //     grid-template-columns: 1fr;
+// //     grid-template-rows: 0.2fr 1fr 1fr;
+// //     grid-template-areas:
+// //         'order'
+// //         'prescription'
+// //         'nonprescription'
+// //         ; 
+// //   }
 // }
-
-
-// .resize {
-//     resize: both;
-// }
-
-.orderDrugsForm-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr;
-    grid-template-areas:
-        'order'
-        'prescription'
-        'nonprescription'
-        ; 
-  }
-}
 
 .image-container {
     width: 100px;

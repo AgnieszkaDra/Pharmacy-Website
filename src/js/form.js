@@ -15,6 +15,8 @@ const electronicPrescriptionButton = document.querySelector('.electronicPrescrip
 import Form from "./classes/Form.js";
 
 const sendOrderButton = document.querySelector('.send')
+
+import prescriptionValue from "./classes/nonPrescriptionSend.js";
 // const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 
 // console.dir(paperPrescriptionButton)
@@ -25,7 +27,7 @@ const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
 // function init() {
 
-  //   const orderButtonSend = new Order(sendOrderButton)
+    // const orderButtonSend = new Order(sendOrderButton)
   //   const electronicPrescriptionButtonAdd = new electronicPrescription(electronicPrescriptionButton)
   // orderButtonSend.send()
   //   electronicPrescriptionButtonAdd.send()
@@ -50,11 +52,17 @@ fieldset2.init()
 // const form2 = new Form('.paperPrescriptionFieldset', 'paperPrescriptionForm')
 // form2.init()
 
-const fieldset3 = new FieldsetImitate('.orderDrugsForm-container', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescription', '#fe2e16')
+const fieldset3 = new FieldsetImitate('.orderDrugsForm-container', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
 fieldset3.init()
 
-const fieldset4 = new FieldsetImitate('.orderDrugsForm-container', 'Twoje Zamówienie', 'form-send', '#fe2e16')
+const fieldset4 = new FieldsetImitate('.orderDrugsForm-container', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
 fieldset4.init()
+
+const form2 = new Form('.sendPrescriptionFieldset', 'form-send')
+form2.init()
+const fieldset8 = new FieldsetImitate('.form-send', 'Dane zamawiającego', 'nameAndSurnameOrder', '')
+fieldset8.init()
+
 
 const fieldset5 = new FieldsetImitate('.form-send', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'pink')
 fieldset5.init()
@@ -62,28 +70,26 @@ fieldset5.init()
 const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'pink')
 fieldset6.init()
 
-const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'paperPrescriptionOrder', 'pink')
+const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'nonPrescriptionOrder', 'pink')
 fieldset7.init()
 
+const input0a= new Input('.nameAndSurnameOrder', 'username', 'Imię i nazwisko/Nick')
+input0a.init()
 
-
-// const input0a= new Input('.dataOfPrescription', 'Imię i nazwisko/Nick')
-// input0a.init()
-
-// const input0b= new Input('.dataOfPrescription', 'email')
-// input0b.init()
+const input0b= new Input('.nameAndSurnameOrder','email',  'email')
+input0b.init()
 
 const input1 = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')
 input1.init()
 
-const labelError1 = new LabelError('.electronicPrescriptionForm' )
+const labelError1 = new LabelError('.PIN' )
 labelError1.init()
 
 
 const input2= new Input('.electronicPrescriptionForm', 'PESEL', 'PESEL recepty')
 input2.init()
 
-const labelError2 = new LabelError('.electronicPrescriptionForm' )
+const labelError2 = new LabelError('.PESEL' )
 labelError2.init()
 
 const input3= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
@@ -92,14 +98,14 @@ input3.init()
 const labelError3 = new LabelError('.paperPrescriptionFieldset' )
 labelError3.init()
 
-const input4= new Input('.nonPrescription', null,'nazwa leku')
+const input4= new Input('.nonPrescriptionFieldset', 'drugName','nazwa leku')
 input4.init()
 
-// const input4= new Input('.nonPrescription', 'dawka')
-// input4.init()
+const input5= new Input('.nonPrescriptionFieldset', 'drugDose',  'dawka')
+input5.init()
 
-// const input5= new Input('.nonPrescription', 'ilość')
-// input5.init()
+const input6= new Input('.nonPrescriptionFieldset', 'drugAmount' , 'ilość')
+input6.init()
 
 // const inputFile1 = new InputFile('.paperPrescription', 0)
 // inputFile1.init()
@@ -132,6 +138,22 @@ const classCanvas1 = canvas1.classs
 const paperPrescriptionButtonAdd = new paperPrescriptionSend()
 paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
 })
+
+const button3 = new Button('.nonPrescriptionFieldset', 'Dodaj kolejny lek', '')
+button3.init()
+
+const nonPrescriptionButton = document.querySelector('.nonPrescriptionFieldsetbutton')
+nonPrescriptionButton.addEventListener('click', (el) => {
+  alert('clicknon')
+  const non = new prescriptionValue()
+  non.init()
+})
+
+const button4 = new Button('.form-send', 'Zamawiam', 'send')
+button4.init()
+
+
+
 
 
 

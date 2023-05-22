@@ -13,6 +13,7 @@ export class Input{
         this.id =id
         this.name = id
         this.label = label
+        this.classs = id
 
         
     }
@@ -29,8 +30,6 @@ export class Input{
         this.render()
     }
 
-  
-
     render() {
         // this.container.innerText = ''
 
@@ -38,6 +37,8 @@ export class Input{
         
         inputContainer.classList.add('flex')
         inputContainer.classList.add('column')
+        inputContainer.classList.add('margin-bottom')
+        inputContainer.classList.add(this.classs)
         const label = document.createElement('label')
         label.setAttribute('style', 'width:80%')
  
@@ -46,6 +47,7 @@ export class Input{
         const input = document.createElement('input')
         input.setAttribute('type', 'text')
         input.setAttribute('id', this.id)
+       
         input.setAttribute('name', this.id)
         input.setAttribute('style', 'width:80%')
         // label.setAttribute('for', this.name)

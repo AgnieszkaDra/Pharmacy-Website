@@ -23,7 +23,7 @@ class electronicPrescription {
         this.electronicPrescriptionForm.fields = [
             {
                 name: 'PIN',
-                label: '4-cyfrowy PIN recepty',
+                label: 'Podaj 4-cyfrowy PIN recepty',
                 required: false,
                 pattern: "[0-9]{4}",
             },

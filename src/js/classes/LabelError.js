@@ -21,7 +21,7 @@ export class LabelError{
     render() {
         // this.container.innerText = ''
         const labelCont = document.createElement('div')
-        labelCont.classList.add('error')
+        labelCont.classList.add('label__error')
         labelCont.innerText = this.label
       
     
