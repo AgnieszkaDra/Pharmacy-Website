@@ -13,6 +13,10 @@ body {
     box-sizing: border-box;
 }
 
+@mixin color-pink() {
+    background-color: rgb(249, 217, 213);;
+}
+
 .border--pink {
     border: 10px solid rgb(249, 217, 213);
    border-radius: 2px;

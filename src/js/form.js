@@ -65,13 +65,13 @@ fieldset8.init()
     const orderButtonSend = new Order()
       orderButtonSend.send()
 
-const fieldset5 = new FieldsetImitate('.form-send', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'pink')
+const fieldset5 = new FieldsetImitate('.form-send', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
 fieldset5.init()
 
-const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'pink')
+const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'rgb(249, 217, 213)')
 fieldset6.init()
 
-const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'nonPrescriptionOrder', 'pink')
+const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'nonPrescriptionOrder', 'rgb(249, 217, 213)')
 fieldset7.init()
 
 const input0a= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')

@@ -19,8 +19,6 @@
 
 @media (max-width: 700px) {
 
-    
-
     .orderDrugsForm-container {
 
         display: grid;
@@ -66,27 +64,44 @@
 
     .electronicPrescriptionFieldset {
         grid-area: electronicPrescriptionFieldset;
+      
     
     }
 
     .paperPrescriptionFieldset {
         grid-area: paperPrescriptionFieldset;
-     
     }
 
     .nonPrescriptionFieldset {
         grid-area: nonPrescriptionFieldset;
-       
     }
 
     .sendPrescriptionFieldset {
         grid-area: order;
     }
 
-  
-
     .electronicPrescriptionOrder.fieldset, .paperPrescriptionOrder.fieldset, .nonPrescriptionOrder.fieldset {
         padding: 30px 80px;
+    }
+
+    .electronicPrescriptionForm {
+        display: flex;
+        justify-content: flex-start;
+        align-items:center;
+        flex-direction: column;
+
+        & div {
+           display: flex;
+          
+        //    justify-content: flex-start;
+        //    align-items: flex-start;
+           flex-direction: row;
+           margin-bottom: 10px;
+           
+           & input {
+            margin-bottom: 0;
+           }
+        }
     }
 
    
@@ -191,14 +206,16 @@ button {
 
     // width: calc(6rem + 2vh);
 
-    color: white;
-    background-color: $color-submain;
+    // color: white;
+    background-color: $color-white;
     border: none;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px;
    
 
 }

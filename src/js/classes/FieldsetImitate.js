@@ -2,7 +2,7 @@
 
 export class FieldsetImitate{
 
-    constructor( selector, textH2= '', classs = '', color) {
+    constructor( selector, textH2= '', classs = '', color = '') {
 
         const container = document.querySelector(selector)
 
