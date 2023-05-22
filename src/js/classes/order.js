@@ -2,8 +2,8 @@ console.log('order')
 
 class Order {
 
-    constructor( {value = ''} ) {
-        this.value = value;
+    constructor() {
+     
         this.username = document.getElementById('username')
         this.email = document.getElementById('email')
         this.orderForm = document.querySelector('.form-send'); 
@@ -35,6 +35,7 @@ class Order {
             console.log(this.orderForm.fields)
             const errors = [];
             const orderForm = document.querySelector('.form-send'); 
+           console.log(orderForm.elements)
             this.orderForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
                 const value = orderForm.elements[name].value;

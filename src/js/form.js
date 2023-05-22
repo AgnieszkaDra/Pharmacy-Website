@@ -27,9 +27,9 @@ const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
 // function init() {
 
-    // const orderButtonSend = new Order(sendOrderButton)
+
   //   const electronicPrescriptionButtonAdd = new electronicPrescription(electronicPrescriptionButton)
-  // orderButtonSend.send()
+
   //   electronicPrescriptionButtonAdd.send()
 
   // const orderButtonSend = new Order(sendOrderButton)
@@ -62,7 +62,8 @@ const form2 = new Form('.sendPrescriptionFieldset', 'form-send')
 form2.init()
 const fieldset8 = new FieldsetImitate('.form-send', 'Dane zamawiającego', 'nameAndSurnameOrder', '')
 fieldset8.init()
-
+    const orderButtonSend = new Order()
+      orderButtonSend.send()
 
 const fieldset5 = new FieldsetImitate('.form-send', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'pink')
 fieldset5.init()
@@ -73,7 +74,7 @@ fieldset6.init()
 const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'nonPrescriptionOrder', 'pink')
 fieldset7.init()
 
-const input0a= new Input('.nameAndSurnameOrder', 'username', 'Imię i nazwisko/Nick')
+const input0a= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')
 input0a.init()
 
 const input0b= new Input('.nameAndSurnameOrder','email',  'email')
