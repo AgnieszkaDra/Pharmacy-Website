@@ -113,13 +113,19 @@ input6.init()
 
 const button1 = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
 button1.init()
-const electronicPrescriptionButtonAdd = new electronicPrescriptionSend(electronicPrescriptionButton)
+const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
 electronicPrescriptionButtonAdd.send()
 
 const button2 = new Button('.paperPrescriptionFieldset', 'Dodaj kolejną receptę papierową', '')
 button2.init()
 const canvas1 = new Canvas('.paperPrescriptionOrder')
 canvas1.init()
+
+const paper = document.querySelector('.paperPrescriptionFieldset')
+
+const inputsFileContainer = document.createElement('div')
+inputsFileContainer.classList.add('paperInputsContainer')
+paper.appendChild(inputsFileContainer)
 
 const paperPrescriptionButtonAdd = new paperPrescriptionSend()
 paperPrescriptionButtonAdd.send()
@@ -128,7 +134,7 @@ console.log(paperPrescriptionButton)
 paperPrescriptionButton.addEventListener('click', (el) =>{
  alert('clickButton')
 const elem = el.target
-  const input4 = new InputFile('.paperPrescriptionFieldset')
+  const input4 = new InputFile('.paperInputsContainer')
 input4.init()
 const classInput4 = input4.classs
 console.log(typeof classInput4)

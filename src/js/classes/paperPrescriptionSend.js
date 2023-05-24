@@ -123,18 +123,7 @@ function handleFile(file){
 
         }
     }
-    
-
-  
-   
-
-        
-        
-      
- 
-// }
-
- export default paperPrescriptionSend
+export default paperPrescriptionSend
 
 // var canvas = document.getElementById('our-canvas'),
 //     context = canvas.getContext('2d');

@@ -38,8 +38,12 @@
 }
 
 .inputValueContainer {
-    border: 2px solid red;
-
+    border: 4px solid red;
+    padding: 3px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button-paper{

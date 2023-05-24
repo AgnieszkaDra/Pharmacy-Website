@@ -53,7 +53,7 @@ export const showElectronicPrescriptionValue = function(input1, input2, containe
     inputValueContainer.classList.add('inputValueContainer')
     const inputContainer = document.createElement('div')
     inputValueContainerNode.appendChild(inputContainer)
-    inputContainer.innerText = value1 + value2
+    inputContainer.innerText = "PIN" +"  " +  value1 + "          " + "PESEL" + " " + value2 + "  "
     const button = document.createElement('button')
     button.innerText = 'X'
     inputValueContainerNode.appendChild(button)

@@ -24,7 +24,7 @@ class prescriptionValue {
                         inputValueContainer.classList.add('inputValueContainer')
                         const inputContainer = document.createElement('div')
                         inputValueContainerNode.appendChild(inputContainer)
-                        inputContainer.innerText = n + " " + value1
+                        inputContainer.innerText = n + "  " + value1
                         const button = document.createElement('button')
                         button.innerText = 'X'
                         inputValueContainerNode.appendChild(button)
@@ -45,7 +45,7 @@ class prescriptionValue {
                     inputValueContainer.classList.add('inputValueContainer')
                     const inputContainer = document.createElement('div')
                     inputValueContainerNode.appendChild(inputContainer)
-                    inputContainer.innerText = value1 + value2
+                    inputContainer.innerText = value1 + "  " +  value2
                     const button = document.createElement('button')
                     button.innerText = 'X'
                     inputValueContainerNode.appendChild(button)

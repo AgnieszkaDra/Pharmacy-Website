@@ -5,8 +5,8 @@ import { showElectronicPrescriptionValue } from "../showInputValue/showInputValu
 
 class electronicPrescriptionSend {
 
-    constructor( {value = ''} ) {
-        this.value = value;
+    constructor() {
+        // this.value = value;
         this.pin = document.getElementById('PIN');
         this.pesel = document.getElementById('PESEL')
         this.electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
