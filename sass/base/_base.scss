@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    color:#393939;
+    color: #393939;
     overflow-x: hidden;
     line-height: 1.5;
     font-size: 16px;
@@ -13,13 +13,9 @@ body {
     box-sizing: border-box;
 }
 
-@mixin color-pink() {
-    background-color: rgb(249, 217, 213);;
-}
-
 .border--pink {
-    border: 10px solid rgb(249, 217, 213);
-   border-radius: 2px;
+    border: 10px solid $color-submain;
+    border-radius: 2px;
 }
 
 .text-center {
@@ -32,13 +28,10 @@ body {
     align-items: center;
 }
 
-.margin-bottom {
-    margin-bottom: 10px;
-}
 
 .section__headline--h2 {
     margin: 0;
-   font-size: 40px;
+    font-size: 40px;
     color: $color-main;
     font-weight: 700;
     margin-bottom: 30px;
@@ -50,15 +43,12 @@ body {
     }
 }
 
-.section__headline--h3{
+.section__headline--h3 {
     color: $color-font;
     font-size: 25px;
 }
 
 .section > div {
     padding: 10px 20px 20px 20px;
+    margin: 20px 0;
 }
-
-
-
-

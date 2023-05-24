@@ -77,8 +77,14 @@ fieldset7.init()
 const input0a= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')
 input0a.init()
 
+const labelError0a = new LabelError('.name' )
+labelError0a.init()
+
 const input0b= new Input('.nameAndSurnameOrder','email',  'email')
 input0b.init()
+
+const labelError0b = new LabelError('.email' )
+labelError0b.init()
 
 const input1 = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')
 input1.init()
@@ -96,11 +102,13 @@ labelError2.init()
 const input3= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
 input3.init()
 
-const labelError3 = new LabelError('.paperPrescriptionFieldset' )
-labelError3.init()
+// const labelError3 = new LabelError('.paperPrescriptionFieldset' )
+// labelError3.init()
 
 const input4= new Input('.nonPrescriptionFieldset', 'drugName','nazwa leku')
 input4.init()
+
+
 
 const input5= new Input('.nonPrescriptionFieldset', 'drugDose',  'dawka')
 input5.init()

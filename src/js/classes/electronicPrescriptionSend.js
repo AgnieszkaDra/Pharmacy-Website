@@ -57,7 +57,7 @@ class electronicPrescriptionSend {
                     const reg = new RegExp(pattern);
                     if(!reg.test(value)){
                         alert(`Field ${label} is invalid`);
-                        setError(valParent, `${label} jestniepoprawny`)
+                        setError(valParent, `${label} jest niepoprawny`)
                         errors.push('error');
                     }
                 }

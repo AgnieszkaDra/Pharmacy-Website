@@ -1,4 +1,5 @@
-console.log('order')
+import { setError } from "../functions/functions";
+import { setSuccess } from "../functions/functions";
 
 class Order {
 
@@ -35,10 +36,12 @@ class Order {
             console.log(this.orderForm.fields)
             const errors = [];
             const orderForm = document.querySelector('.form-send'); 
-           console.log(orderForm.elements)
+            console.log(orderForm.elements)
+           
             this.orderForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
                 const value = orderForm.elements[name].value;
+                const valParent = orderForm.elements[name]
                 if(required){
                     if(value.length === 0){
                         alert(`${label} field is required`);
@@ -49,14 +52,38 @@ class Order {
                     const reg = new RegExp(pattern);
                     if(!reg.test(value)){
                         alert(`Field ${label} is invalid`);
+                        setError(valParent, `${label} jest niepoprawny`)
                         errors.push('error');
                     }
                 }
+            //      if(errors.length === 0){
+            //    alert(`Dziękujemy! Twoje zamówienie zostało poprawnie wysłane!`);
+            //    setSuccess(valParent, `${label} dane prawidłowe`)
+            //    e.target.reset();
+            // } 
             })
-            if(errors.length === 0){
-               alert(`Dziękujemy! Twoje zamówienie zostało poprawnie wysłane!`);
+            this.orderForm.fields.forEach(function(field){
+                const {name, label, required = false, pattern = null} = field;
+                const value = orderForm.elements[name].value;
+                const valParent = orderForm.elements[name]
+               if(errors.length === 0){
+              
+               setSuccess(valParent, `${label} dane prawidłowe`)
                e.target.reset();
             } 
+            //      if(errors.length === 0){
+            //    alert(`Dziękujemy! Twoje zamówienie zostało poprawnie wysłane!`);
+            //    setSuccess(valParent, `${label} dane prawidłowe`)
+            //    e.target.reset();
+            // } 
+            })
+            if(errors.length === 0){
+                alert(`Dziękujemy! Twoje zamówienie zostało poprawnie wysłane!`);
+                // setSuccess(valParent, `${label} dane prawidłowe`)
+                // e.target.reset();
+             } 
+
+              
         });
     }
 }
