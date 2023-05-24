@@ -328,6 +328,11 @@ body {
   .name {
     grid-area: name;
   }
+  span.success {
+    position: absolute;
+    top: 100%;
+    right: 100%;
+  }
   .dataOfPrescription {
     grid-area: dataOfPrescription;
   }
@@ -670,6 +675,16 @@ strong {
 .success {
   border: none;
   background-color: aqua;
+}
+
+.name {
+  position: relative;
+}
+
+span.success {
+  position: absolute;
+  bottom: 15px;
+  right: -10px;
 }
 
 .label.success div input {

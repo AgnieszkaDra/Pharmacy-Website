@@ -8,6 +8,18 @@
   border: none;
  
   background-color: aqua;
+ 
+
+}
+
+.name {
+  position: relative;
+}
+
+span.success {
+   position: absolute;
+  bottom: 15px;
+    right: -10px;
 }
 
 .label.success div input {

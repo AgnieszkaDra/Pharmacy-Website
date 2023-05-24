@@ -13,6 +13,7 @@ import paperPrescriptionSend from "./classes/paperPrescriptionSend.js";
 // document.addEventListener('DOMContentLoaded', init);
 const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 import Form from "./classes/Form.js";
+import SpanOk from "./classes/SpanOk.js";
 
 const sendOrderButton = document.querySelector('.send')
 
@@ -22,6 +23,13 @@ import prescriptionValue from "./classes/nonPrescriptionSend.js";
 // console.dir(paperPrescriptionButton)
 const paperContainer = document.querySelector('.paperPrescriptionForm')
 const paperPrescriptionContainer = document.querySelector('.paperPrescription')
+
+const ok = 'f004'
+const ok2 = '0x2713'
+
+// const toUnicode = code => String.fromCodePoint(parseInt(code, 16));
+const toUnicode = String.fromCodePoint(0x2713);
+
 
 
 
@@ -62,8 +70,8 @@ const form2 = new Form('.sendPrescriptionFieldset', 'form-send')
 form2.init()
 const fieldset8 = new FieldsetImitate('.form-send', 'Dane zamawiającego', 'nameAndSurnameOrder', '')
 fieldset8.init()
-    const orderButtonSend = new Order()
-      orderButtonSend.send()
+const orderButtonSend = new Order()
+orderButtonSend.send()
 
 const fieldset5 = new FieldsetImitate('.form-send', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
 fieldset5.init()
@@ -76,6 +84,10 @@ fieldset7.init()
 
 const input0a= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')
 input0a.init()
+
+const span0a = new SpanOk('.name', toUnicode)
+span0a.init()
+
 
 const labelError0a = new LabelError('.name' )
 labelError0a.init()

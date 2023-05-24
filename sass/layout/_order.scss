@@ -55,7 +55,13 @@
 
     .name {
         grid-area: name;
+        
+    }
 
+    span.success {
+        position: absolute;
+        top:100%;
+        right: 100%;
     }
 
     .dataOfPrescription {
