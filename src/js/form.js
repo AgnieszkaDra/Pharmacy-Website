@@ -18,17 +18,16 @@ import SpanOk from "./classes/SpanOk.js";
 const sendOrderButton = document.querySelector('.send')
 
 import prescriptionValue from "./classes/nonPrescriptionSend.js";
+import { toUnicode } from "./functions/functions.js";
 // const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 
 // console.dir(paperPrescriptionButton)
 const paperContainer = document.querySelector('.paperPrescriptionForm')
 const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
-const ok = 'f004'
-const ok2 = '0x2713'
 
-// const toUnicode = code => String.fromCodePoint(parseInt(code, 16));
-const toUnicode = String.fromCodePoint(0x2713);
+
+
 
 
 
@@ -85,7 +84,7 @@ fieldset7.init()
 const input0a= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')
 input0a.init()
 
-const span0a = new SpanOk('.name', toUnicode)
+const span0a = new SpanOk('.name', toUnicode(0x2713))
 span0a.init()
 
 

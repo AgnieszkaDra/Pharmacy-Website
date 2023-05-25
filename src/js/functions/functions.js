@@ -40,3 +40,9 @@ export const classCanvasCreate = () => numberCanvas = numberCanvas + 1
 
 export let numberInput = 0
 export const classInputCreate = () => numberInput = numberInput + 1
+
+
+export const toUnicode = code => {
+    return String.fromCodePoint(code)
+}
+    

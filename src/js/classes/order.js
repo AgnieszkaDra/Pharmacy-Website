@@ -1,6 +1,7 @@
 import { setError } from "../functions/functions";
 import { setSuccess } from "../functions/functions";
 
+
 class Order {
 
     constructor() {
@@ -30,7 +31,7 @@ class Order {
     }
     
     send(){
-        this.orderForm.addEventListener('submit', e => {
+       this.orderForm.addEventListener('submit', e => {
             alert('submit')
             e.preventDefault();
             console.log(this.orderForm.fields)
@@ -62,6 +63,7 @@ class Order {
             //    e.target.reset();
             // } 
             })
+           
             this.orderForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
                 const value = orderForm.elements[name].value;
@@ -81,6 +83,13 @@ class Order {
                 alert(`Dziękujemy! Twoje zamówienie zostało poprawnie wysłane!`);
                 // setSuccess(valParent, `${label} dane prawidłowe`)
                 // e.target.reset();
+                const orderForm = document.querySelector('.form-send'); 
+                const span = orderForm.querySelectorAll('span')
+                
+                orderForm.addEventListener('click', e => {
+                    span.forEach(function(el){
+                    el.innerText = ''
+                    })})
              } 
 
               
