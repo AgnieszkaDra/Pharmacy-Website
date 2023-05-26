@@ -397,6 +397,15 @@ body {
     padding: 60px 100px;
   }
 }
+.success {
+  border: none;
+  background-color: rgb(255, 182, 193);
+}
+
+.name, .email {
+  position: relative;
+}
+
 .legend {
   font-weight: 700;
   font-size: 1.2rem;
@@ -670,15 +679,6 @@ strong {
 }
 .label__input:focus {
   outline: none;
-}
-
-.success {
-  border: none;
-  background-color: aqua;
-}
-
-.name {
-  position: relative;
 }
 
 span.success {

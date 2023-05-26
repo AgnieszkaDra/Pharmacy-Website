@@ -14,6 +14,7 @@ import paperPrescriptionSend from "./classes/paperPrescriptionSend.js";
 const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 import Form from "./classes/Form.js";
 import SpanOk from "./classes/SpanOk.js";
+import SpanWrong from "./classes/SpanWrong.js";
 
 const sendOrderButton = document.querySelector('.send')
 
@@ -84,8 +85,11 @@ fieldset7.init()
 const input0a= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')
 input0a.init()
 
-const span0a = new SpanOk('.name', toUnicode(0x2713))
-span0a.init()
+const span0aOK = new SpanOk('.name', toUnicode(0x2713))
+span0aOK.init()
+
+const span0aWrong = new SpanWrong('.name', toUnicode(10060))
+span0aWrong.init()
 
 
 const labelError0a = new LabelError('.name' )
@@ -94,7 +98,14 @@ labelError0a.init()
 const input0b= new Input('.nameAndSurnameOrder','email',  'email')
 input0b.init()
 
-const labelError0b = new LabelError('.email' )
+
+const span0b = new SpanOk('.email', toUnicode(0x2713))
+span0b.init()
+
+const span0bWrong = new SpanWrong('.email', toUnicode(10060))
+span0bWrong.init()
+
+const labelError0b = new LabelError('.email')
 labelError0b.init()
 
 const input1 = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')

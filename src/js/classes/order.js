@@ -85,11 +85,18 @@ class Order {
                 // e.target.reset();
                 const orderForm = document.querySelector('.form-send'); 
                 const span = orderForm.querySelectorAll('span')
+                const inputs = orderForm.querySelectorAll('input')
+            
                 
                 orderForm.addEventListener('click', e => {
                     span.forEach(function(el){
                     el.innerText = ''
-                    })})
+                    })
+                   inputs.forEach(function(el){
+                    el.classList.remove('success')
+                   })
+                }
+                )
              } 
 
               
