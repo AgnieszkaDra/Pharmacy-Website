@@ -9,10 +9,9 @@ const body = document.querySelector('body')
 
 
 
-console.log(buttonpp, backBlack)
 
 if(button === true){
-    console.log('yes')
+
 }
 const open =  function () {
     document.querySelector(".form").classList.add('open');

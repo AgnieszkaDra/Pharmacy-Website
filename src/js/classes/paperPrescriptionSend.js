@@ -33,8 +33,8 @@ let uploadedFile = document.getElementById('uploaded-file');
 // buttonPaper.addEventListener('click',initImageLoader) ;
 initImageLoader()
 function initImageLoader(){
-alert('init')
-console.dir(uploadedFile)
+
+
 
     uploadedFile.addEventListener('change',handleManualUploadedFiles);
     function handleManualUploadedFiles(ev){
@@ -86,7 +86,7 @@ console.log(inp,can)
         let uploadedFile = document.querySelector(`.in${inp}`);
         initImageLoader()
 function initImageLoader(){
-alert('init')
+
 console.dir(uploadedFile)
 
     uploadedFile.addEventListener('change',handleManualUploadedFiles);
