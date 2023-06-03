@@ -13,18 +13,14 @@ export class Form{
         this.classs = classs
         this.classs2 = classs2
         
-     
     }
 
     init() {
         this.render()
     }
 
-  
-
     render() {
-        // this.container.innerText = ''
-      
+       
         const form = document.createElement('form')
         form.classList.add(this.classs)
         this.container.appendChild(form)

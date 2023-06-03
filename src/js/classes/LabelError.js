@@ -9,9 +9,6 @@ export class LabelError{
         this.selector = selector
         this.container = document.querySelector(selector)
         this.label = label
-        
-      
-     
     }
 
     init() {
@@ -19,15 +16,12 @@ export class LabelError{
     }
 
     render() {
-        // this.container.innerText = ''
+       
         const labelCont = document.createElement('div')
         labelCont.classList.add('label__error')
         labelCont.innerText = this.label
       
-    
         this.container.appendChild(labelCont)
-     
-
     }
 
 }

@@ -19,12 +19,8 @@ export class Canvas{
         this.render()
     }
 
- 
-  
-
     render() {
-        // this.container.innerText = ''
-
+      
         const canvas = document.createElement('canvas')
         canvas.setAttribute('id', 'our-canvas')
         canvas.classList.add( 'cl' + this.classs)

@@ -6,7 +6,7 @@ import { showElectronicPrescriptionValue } from "../showInputValue/showInputValu
 class electronicPrescriptionSend {
 
     constructor() {
-        // this.value = value;
+     
         this.pin = document.getElementById('PIN');
         this.pesel = document.getElementById('PESEL')
         this.electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
@@ -14,11 +14,7 @@ class electronicPrescriptionSend {
         this.showElectronicPrescriptionValue = showElectronicPrescriptionValue
         this.textareaPinPesel = document.querySelector('.electronicPrescriptionOrder')
         this.setError = {setError}
-        // this.paperPrescriptionButton = document.querySelector('paperPrescription.button')
-        // this.ourCanvas = document.querySelector('.our-canvas')
-        // this.paperPrescriptionValue = paperPrescriptionValue
-    
-
+     
         this.electronicPrescriptionForm.fields = [
             {
                 name: 'PIN',
@@ -39,8 +35,6 @@ class electronicPrescriptionSend {
     send(){
  
         this.electronicPrescriptionForm.addEventListener('submit', e => {
-            alert('click')
-            console.log(this.electronicPrescriptionForm.elements)
             e.preventDefault();
             const errors = [];
         
@@ -48,11 +42,8 @@ class electronicPrescriptionSend {
             this.electronicPrescriptionForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
                 const value = electronicPrescriptionForm.elements[name].value;
-                console.log(value)
                 const valParent = electronicPrescriptionForm.elements[name]
-               
-                // errorDisplayPesel.innerText = ''
-               
+            
                 if(pattern, valParent){
                     const reg = new RegExp(pattern);
                     if(!reg.test(value)){
@@ -61,11 +52,11 @@ class electronicPrescriptionSend {
                         errors.push('error');
                     }
                 }
-           
-            })
+                }
+            )
          
             if(errors.length === 0){
-                alert('0 errors')
+               
                 this.showElectronicPrescriptionValue(this.pin, this.pesel, this.textareaPinPesel)
                 this.pin.value=' '
                 this.pesel.value = ' ' 
@@ -86,15 +77,9 @@ class electronicPrescriptionSend {
     }
 
     click() {
-        alert('click')
-        this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
+       this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
     }
    
-
-        
-        
-      
- 
 }
 
  export default electronicPrescriptionSend

@@ -12,8 +12,7 @@ export class InputFile{
         this.selector = selector
         this.container = document.querySelector(selector)
         this.classs = classInputCreate()
-        // this.id = id
-     
+      
     }
 
     init() {
@@ -25,7 +24,7 @@ export class InputFile{
     }
 
     render() {
-        // this.container.innerText = ''
+      
         const id = this.changeId()
         const inputCont = document.createElement('div') 
         inputCont.classList.add('inputCont')

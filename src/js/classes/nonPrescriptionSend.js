@@ -2,18 +2,12 @@
 class prescriptionValue {
     
     constructor() {
-        // this.elementClicked = elementClicked
-        // this.input1 = input1
-        // this.input2 = input2
-        // this.container = container
         this.inputDrugName = document.querySelector('#drugName')
         this.inputDrugDose = document.querySelector('#drugDose')
         this.inputDrugAmount = document.querySelector('#drugAmount')
         this.nonPrescriptionFieldset = document.querySelector('.nonPrescriptionFieldset')
         this.nonPrescriptionButton = document.querySelector('.nonPrescriptionFieldsetButton')
-   
-        
-    }
+   }
 
     init() {
         const container = document.querySelector('.nonPrescriptionOrder')
@@ -56,8 +50,6 @@ class prescriptionValue {
                 }
 
         if (!(this.inputDrugName.value === '') && !(this.inputDrugDosevalue === '') && (this.inputDrugAmount === '')) {
-
-           
                         const inputValueContainer = document.createElement('div')
                         const inputValueContainerNode = container.appendChild(inputValueContainer)
                         inputValueContainer.classList.add('inputValueContainer')
@@ -75,10 +67,7 @@ class prescriptionValue {
             
                         })
                     }
-       
-                 
                 }
-            
             
     }
 

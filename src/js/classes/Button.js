@@ -1,6 +1,6 @@
 export class Button{
 
-    constructor( selector, label, type) {
+    constructor(selector, label, type) {
 
         const container = document.querySelector(selector)
 
@@ -11,7 +11,6 @@ export class Button{
         this.label = label
         this.type = type
       
-     
     }
 
     init() {
@@ -19,21 +18,16 @@ export class Button{
     }
 
     render() {
-        // this.container.innerText = ''
+     
         const buttonCont = document.createElement('div')
         buttonCont.classList.add('flex', 'column')
        
         const button = document.createElement('button') 
-        // button.classList.add('button')
-        
         button.classList.add(this.selector.slice(1)+'button')
         button.setAttribute('type', this.type)
         button.setAttribute('style', 'width:80%')
-        // button.setAttribute('style', 'background:yellow')
         button.innerText = this.label
       
-        // inputFile.setAttribute('id', )
-    
         this.container.appendChild(buttonCont)
         buttonCont.appendChild(button)
 

@@ -17,9 +17,7 @@ class electronicPrescription {
         this.setError = {setError}
         this.paperPrescriptionButton = document.querySelector('paperPrescription.button')
         this.ourCanvas = document.querySelector('.our-canvas')
-        // this.paperPrescriptionValue = paperPrescriptionValue
-    
-
+       
         this.electronicPrescriptionForm.fields = [
             {
                 name: 'PIN',
@@ -38,9 +36,8 @@ class electronicPrescription {
     }
     
     send(){
-      console.log(this.electronicPrescriptionForm)
+    
         this.electronicPrescriptionForm.addEventListener('submit', e => {
-            alert('submit')
             e.preventDefault();
             const errors = [];
             const electronicPrescriptionForm = document.querySelector('.electronicPrescription'); 
@@ -75,17 +72,11 @@ class electronicPrescription {
     }
 
     click() {
-        alert('click')
-        this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
+       this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
     }
    
-
-        
-        
-      
- 
 }
 
- export default electronicPrescription
+export default electronicPrescription
 
 

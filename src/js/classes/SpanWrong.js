@@ -9,9 +9,6 @@ export class SpanWrong{
         this.selector = selector
         this.container = document.querySelector(selector)
         this.label = label
-        
-      
-     
     }
 
     init() {
@@ -19,16 +16,12 @@ export class SpanWrong{
     }
 
     render() {
-        // this.container.innerText = ''
+     
         const spanCont = document.createElement('span')
         spanCont.classList.add('spanwrong')
-    spanCont.innerText = this.label
-      
-    
+        spanCont.innerText = this.label
         this.container.appendChild(spanCont)
-     
-
-    }
+     }
 
 }
 

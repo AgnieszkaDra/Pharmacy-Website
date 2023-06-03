@@ -15,7 +15,6 @@ export class Input{
         this.label = label
         this.classs = id
 
-        
     }
 
     init() {
@@ -31,8 +30,6 @@ export class Input{
     }
 
     render() {
-        // this.container.innerText = ''
-
         const inputContainer = document.createElement('div')
         
         inputContainer.classList.add('flex')
@@ -50,11 +47,9 @@ export class Input{
        
         input.setAttribute('name', this.id)
         input.setAttribute('style', 'width:80%')
-        // label.setAttribute('for', this.name)
-        
-        
+      
         this.container.appendChild(inputContainer)
-       inputContainer.appendChild(label)
+        inputContainer.appendChild(label)
         inputContainer.appendChild(input)
 
     }

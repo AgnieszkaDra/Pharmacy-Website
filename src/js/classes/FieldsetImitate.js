@@ -14,18 +14,14 @@ export class FieldsetImitate{
         this.classs = classs
         this.color = color
         
-     
     }
 
     init() {
         this.render()
     }
 
-  
-
     render() {
-        // this.container.innerText = ''
-      
+ 
         const fieldsetImitate = document.createElement('section')
         fieldsetImitate.classList.add('fieldset')
         fieldsetImitate.classList.add('flex')
@@ -35,19 +31,10 @@ export class FieldsetImitate{
         const h2 = document.createElement('h2')
         h2.innerText = this.textH2
       
-        
         fieldsetImitate.classList.add('fieldset')
-        
-       
         fieldsetImitate.style.background = this.color
-        
-
         fieldsetImitate.appendChild(h2)
-     
-        // inputFile.setAttribute('id', )
-     
-  
-       this.container.appendChild(fieldsetImitate)
+        this.container.appendChild(fieldsetImitate)
 
     }
 

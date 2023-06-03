@@ -8,11 +8,17 @@ console.log(element)
     console.log(inputControl)
     
     const errorDisplay = inputControl.querySelector('.label__error')
-    
-    // element.classList.add('error')
     inputControl.classList.add('error')
     inputControl.classList.remove('success')
     errorDisplay.innerText = message
+
+    const span = inputControl.querySelector('spanwrong')
+    span.removeAttribute('class')
+    span.classList.remove('.span')
+    span.classList.add('error')
+    element.classList.add('error')
+    span.classList.remove('success')
+    element.classList.remove('success')
     
 }
 
@@ -22,6 +28,7 @@ export const setSuccess = element => {
 
     element.style.border = 'none'
     const inputControl = element.parentElement.parentElement
+  
     const span = element.nextElementSibling
     span.removeAttribute('class')
     span.classList.remove('.span')

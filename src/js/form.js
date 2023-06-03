@@ -10,7 +10,7 @@ import electronicPrescriptionSend from "./classes/electronicPrescriptionSend.js"
 import LabelError from "./classes/LabelError.js";
 import Canvas from "./classes/Canvas.js";
 import paperPrescriptionSend from "./classes/paperPrescriptionSend.js";
-// document.addEventListener('DOMContentLoaded', init);
+
 const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 import Form from "./classes/Form.js";
 import SpanOk from "./classes/SpanOk.js";
@@ -20,9 +20,7 @@ const sendOrderButton = document.querySelector('.send')
 
 import prescriptionValue from "./classes/nonPrescriptionSend.js";
 import { toUnicode } from "./functions/functions.js";
-// const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 
-// console.dir(paperPrescriptionButton)
 const paperContainer = document.querySelector('.paperPrescriptionForm')
 const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
@@ -33,22 +31,6 @@ const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
 
 
-// function init() {
-
-
-  //   const electronicPrescriptionButtonAdd = new electronicPrescription(electronicPrescriptionButton)
-
-  //   electronicPrescriptionButtonAdd.send()
-
-  // const orderButtonSend = new Order(sendOrderButton)
-  // const electronicPrescriptionButtonAdd = new electronicPrescription(electronicPrescriptionButton)
-  
-  // const paperPrescriptionButton = document.querySelector('.paperPrescription.button')
-  // orderButtonSend.send()
-  // electronicPrescriptionButtonAdd.send()
-
-//     const fieldset0 = new FieldsetImitate('.orderDrugsForm-container', 'Dane zamawiającego', 'dataOfPrescription', '#0000')
-// fieldset0.init()
 
 const fieldset1 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
 fieldset1.init()
@@ -57,8 +39,7 @@ form1.init()
 
 const fieldset2 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '#fe2e16')
 fieldset2.init()
-// const form2 = new Form('.paperPrescriptionFieldset', 'paperPrescriptionForm')
-// form2.init()
+
 
 const fieldset3 = new FieldsetImitate('.orderDrugsForm-container', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
 fieldset3.init()
@@ -124,8 +105,7 @@ labelError2.init()
 const input3= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
 input3.init()
 
-// const labelError3 = new LabelError('.paperPrescriptionFieldset' )
-// labelError3.init()
+
 
 const input4= new Input('.nonPrescriptionFieldset', 'drugName','nazwa leku')
 input4.init()
@@ -138,8 +118,6 @@ input5.init()
 const input6= new Input('.nonPrescriptionFieldset', 'drugAmount' , 'ilość')
 input6.init()
 
-// const inputFile1 = new InputFile('.paperPrescription', 0)
-// inputFile1.init()
 
 const button1 = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
 button1.init()
@@ -162,7 +140,7 @@ paperPrescriptionButtonAdd.send()
 const paperPrescriptionButton = document.querySelector('.paperPrescriptionFieldsetbutton')
 console.log(paperPrescriptionButton)
 paperPrescriptionButton.addEventListener('click', (el) =>{
- alert('clickButton')
+
 const elem = el.target
   const input4 = new InputFile('.paperInputsContainer')
 input4.init()
@@ -181,7 +159,7 @@ button3.init()
 
 const nonPrescriptionButton = document.querySelector('.nonPrescriptionFieldsetbutton')
 nonPrescriptionButton.addEventListener('click', (el) => {
-  alert('clicknon')
+
   const non = new prescriptionValue()
   non.init()
 })
@@ -196,8 +174,6 @@ button4.init()
 
 
 
-// const button3 = new Button('nonPrescription', 'Dodaj kolejny lek')
-// button3.init()
 
 
 
@@ -208,91 +184,9 @@ button4.init()
 
 
 
-
-// } 
-
-
-
-
-// const newInput = new InputFile('.paperPrescriptionContainer')
-// newInput.init()
-
-// const newButton = new Button('.paperPrescriptionContainer')
-// newButton.init()
-// const paperPrescription1 = new paperPrescription('.paperPrescriptionContainer')
-// paperPrescription1.init()
-  // paperPrescriptionButton.addEventListener('click', e => {
-  //   const paperPrescriptionButtonAdd = new paperPrescription(paperPrescriptionButton)
-  //   paperPrescriptionButtonAdd.add()
+  
+  
    
-  // })
-  
-  
+
+   
  
-//  let uploadedFiles = document.querySelector('#uploaded-file');
-//         uploadedFiles.addEventListener('change', function(el){
-//            const load = new paperPrescription(el)
-//            var file = el.target.files[0];
-//             load.handleFile(file);
-//           load.initImageLoader(el)
-           
-//         })
-   
-    
-//      function initImageLoader(el){
-      
-//         this.uploadedFile.forEach(el => el.addEventListener('change',handleManualUploadedFiles));
-//         function handleManualUploadedFiles(ev){
-//             alert('change')
-           
-           
-    
-//         }   
-//
-
-  
-   
-
-    // const userName = new Input(usernameData)
-    // userName.checkLength()
-
-    // const userEmail = new Input(emailData)
-    // userEmail.checkLength()
-   
-
-//     var canvas = document.getElementById('our-canvas'),
-//     context = canvas.getContext('2d');
-//     const buttonPaper = document.querySelector('.paperPrescriptionForm.button')
-//     console.log(buttonPaper)
-// let uploadedFile = document.getElementById('uploaded-file');
-// buttonPaper.addEventListener('submit',initImageLoader) ;
-
-// function initImageLoader(e){
-//   e.preventDefault()
-// alert('init')
-//     uploadedFile.addEventListener('change',handleManualUploadedFiles);
-//     function handleManualUploadedFiles(ev){
-//         var file = ev.target.files[0];
-//         handleFile(file);
-
-//     }   
-// }
-// function handleFile(file){
-//     var ImageType = /image.*/;
-
-//     if(file.type.match(ImageType)){
-
-//         var reader = new FileReader();      
-
-//         reader.onloadend = function(event){
-//             var tempImageStore = new Image();
-//             tempImageStore.onload = function(ev){
-//                 canvas.height = ev.target.height;
-//                 canvas.width = ev.target.width;         
-//                 context.drawImage(ev.target,0,0);
-//             }   
-//             tempImageStore.src = event.target.result;
-//         }
-//         reader.readAsDataURL(file);
-//     }   
-// }

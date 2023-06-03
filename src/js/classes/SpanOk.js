@@ -9,9 +9,6 @@ export class SpanOk{
         this.selector = selector
         this.container = document.querySelector(selector)
         this.label = label
-        
-      
-     
     }
 
     init() {
@@ -19,15 +16,10 @@ export class SpanOk{
     }
 
     render() {
-        // this.container.innerText = ''
         const spanCont = document.createElement('span')
         spanCont.classList.add('spanok')
-    spanCont.innerText = this.label
-      
-    
+        spanCont.innerText = this.label
         this.container.appendChild(spanCont)
-     
-
     }
 
 }
