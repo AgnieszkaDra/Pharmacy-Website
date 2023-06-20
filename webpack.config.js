@@ -1,6 +1,7 @@
 const path = require('path');
 // importuję bibliotekę [path] z [node.js] 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 let htmlPageNames = ['index', 'form']
 let multipleHTMLPlugins = htmlPageNames.map(name => {
     return new HtmlWebpackPlugin({
@@ -27,13 +28,44 @@ module.exports = {
     },
     target: "web", 
     module: {
-        rules: [
+         rules: [
             {
-                test: /\.(scss|css)$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+              test: /\.scss$/,
+              use: [
+               
+                {
+                  loader: 'css-loader',
+                
+                }, {
+                  loader: 'resolve-url-loader',
+                 
+                }, 
+                {
+                  loader: 'sass-loader',
+                  options: {
+                    sourceMap: true, // <-- !!IMPORTANT!!
+                  }
+                }
+              ]
+            },
+            {
+                test: /\\.css$/,
+                use: [
+                  "style-loader",
+                  {
+                    loader: "css-loader",
+                    options: {
+                      importLoaders: 1,
+                      modules: true,
+                    },
+                  },
+                ],
               },
-        ]
+            
+          ],
     },
+   
+    
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
@@ -50,7 +82,8 @@ module.exports = {
             // określan nazwę dla pliku
             chunks: ['form'],
             // wskazuje plik do podpięcia
-        })
+        }),
+        new CleanWebpackPlugin(),
     ],
     mode: 'production'
    
