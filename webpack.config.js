@@ -1,17 +1,28 @@
 const path = require('path');
 // importuję bibliotekę [path] z [node.js] 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+let htmlPageNames = ['index', 'form']
+let multipleHTMLPlugins = htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+        template: `./src/${name}.html`,
+        filename: `${name}.html`,
+        chunks: [`${name}`]
+    })
+})
+
 
 module.exports = {
     entry: {
         index: ['whatwg-fetch','./src/js/index.js'],
         form: ['whatwg-fetch','./src/js/form.js']
     },
+   
     // definiuję plik wejściowy 
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'build', 'target'),
         // definiuje ścieżką wyjściową
         filename: '[name].min.js',
+        
         // definiuję nazwę pliku wyjściowego
     },
     target: "web", 
@@ -39,6 +50,7 @@ module.exports = {
         })
     ],
     mode: 'production'
+   
    
 }
 // eksportuję ustawienia dla webpacka
