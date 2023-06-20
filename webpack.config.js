@@ -28,7 +28,10 @@ module.exports = {
     target: "web", 
     module: {
         rules: [
-           
+            {
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+              },
         ]
     },
     plugins: [
