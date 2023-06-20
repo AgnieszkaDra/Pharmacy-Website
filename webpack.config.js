@@ -19,7 +19,7 @@ module.exports = {
    
     // definiuję plik wejściowy 
     output: {
-        path: path.resolve(__dirname, 'build', 'target'),
+        path: path.resolve(__dirname, 'build'),
         // definiuje ścieżką wyjściową
         filename: '[name].min.js',
         
