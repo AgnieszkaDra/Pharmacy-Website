@@ -37,7 +37,8 @@ module.exports = {
             chunks: ['form'],
             // wskazuje plik do podpięcia
         })
-    ]
+    ],
+    mode: 'production'
    
 }
 // eksportuję ustawienia dla webpacka
