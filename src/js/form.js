@@ -1,4 +1,4 @@
-
+import './sass/style.css'
 
 import Order from "./classes/order.js"
 import electronicPrescription from "./classes/electronicPrescription.js";
