@@ -2,6 +2,8 @@ const path = require('path');
 // importuję bibliotekę [path] z [node.js] 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 let htmlPageNames = ['index', 'form']
 let multipleHTMLPlugins = htmlPageNames.map(name => {
     return new HtmlWebpackPlugin({
@@ -62,7 +64,7 @@ module.exports = {
                 ],
               },
               {
-        test: /\.(sa|sc|c)ss$/,
+                test: /\.(sa|sc|c)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       }
             

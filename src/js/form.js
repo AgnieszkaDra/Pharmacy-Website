@@ -12,6 +12,7 @@ import electronicPrescriptionSend from "./classes/electronicPrescriptionSend.js"
 import LabelError from "./classes/LabelError.js";
 import Canvas from "./classes/Canvas.js";
 import paperPrescriptionSend from "./classes/paperPrescriptionSend.js";
+import Container from "./classes/Container.js"
 
 const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
 import Form from "./classes/Form.js";
@@ -23,14 +24,10 @@ const sendOrderButton = document.querySelector('.send')
 import prescriptionValue from "./classes/nonPrescriptionSend.js";
 import { toUnicode } from "./functions/functions.js";
 
+const mql = window.matchMedia("(max-width: 768px)")
+
 const paperContainer = document.querySelector('.paperPrescriptionForm')
 const paperPrescriptionContainer = document.querySelector('.paperPrescription')
-
-
-
-
-
-
 
 
 
@@ -38,6 +35,12 @@ const fieldset1 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na rece
 fieldset1.init()
 const form1 = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
 form1.init()
+
+if(mql.matches) {
+  const fieldset5 = new FieldsetImitate('.electronicPrescriptionForm', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
+  fieldset5.init()
+}
+
 
 const fieldset2 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '#fe2e16')
 fieldset2.init()

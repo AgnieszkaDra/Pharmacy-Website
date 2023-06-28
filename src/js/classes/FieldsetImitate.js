@@ -2,7 +2,7 @@
 
 export class FieldsetImitate{
 
-    constructor( selector, textH2= '', classs = '', color = '') {
+    constructor( selector, title = '', classs = '', color = '') {
 
         const container = document.querySelector(selector)
 
@@ -10,7 +10,7 @@ export class FieldsetImitate{
 
         this.selector = selector
         this.container = document.querySelector(selector)
-        this.textH2 = textH2
+        this.title = title
         this.classs = classs
         this.color = color
         
@@ -28,12 +28,13 @@ export class FieldsetImitate{
         fieldsetImitate.classList.add('column')
         fieldsetImitate.classList.add(this.classs)
 
-        const h2 = document.createElement('h2')
-        h2.innerText = this.textH2
+        const fieldsetImitateTitle = document.createElement('div')
+        fieldsetImitateTitle.innerText = this.title
+        fieldsetImitateTitle.classList.add('fieldset__title')
       
         fieldsetImitate.classList.add('fieldset')
         fieldsetImitate.style.background = this.color
-        fieldsetImitate.appendChild(h2)
+        fieldsetImitate.appendChild(fieldsetImitateTitle)
         this.container.appendChild(fieldsetImitate)
 
     }

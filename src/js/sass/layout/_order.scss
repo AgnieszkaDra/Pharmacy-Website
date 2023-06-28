@@ -1,6 +1,11 @@
 @import '../abstracts';
 
+.form-title {
+    padding: 10px;
+}
+
 .orderDrugsForm-container {
+    border: 2px solid orange;
     display: grid;
 }
 
@@ -22,95 +27,108 @@
     .orderDrugsForm-container {
 
         display: grid;
-        grid-gap: 0px 20px;
-        grid-row-gap: 20px;
-        grid-template-columns: 1fr;
-       
+        grid-template-columns: 60% 40%;
         grid-template-areas:
-            'data'
-            'electronicPrescriptionFieldset'
-            'paperPrescriptionFieldset'
-            'nonPrescriptionFieldset'
-            'order'
-            ; 
+            'electronicPrescriptionFieldset order'
+            'paperPrescriptionFieldset order'
+            'nonPrescriptionFieldset order'
+        ;
 
-    //     .fieldset {
-    //     padding: 30px 20px;
-    // }
+        .fieldset {
 
-    .fieldset h2 {
-        position: absolute;
-        top: 0;
-        left: 5px;
-        font-size: 8px;
-        line-height: 1;
-        margin: -9px 0 0;
-        background: #fff;
-        padding: 0 3px;
-    }
-      
-    }
+            padding: 10px;
+            padding-top: 15px;
+            position: relative;
 
+            &__title {
 
+                position: absolute;
+                top: 0;
+                left: 5px;
+                font-size: 13px;
+                line-height: 1;
+                margin: -9px 0 0;
+                background: #fff;
+                padding: 0 3px;
 
-    .name {
-        grid-area: name;
-        
-    }
+            }
 
-    span.success {
-        position: absolute;
-        top:100%;
-        right: 100%;
-    }
-
-    .dataOfPrescription {
-        grid-area: dataOfPrescription;
-    }
-
-    .electronicPrescriptionFieldset {
-        grid-area: electronicPrescriptionFieldset;
-      
+        }
     
     }
 
+    .electronicPrescriptionFieldset {
+
+        grid-area: electronicPrescriptionFieldset;
+
+        display: grid;
+        grid-template-rows: 60% 40%;
+        grid-template-areas:
+            'electronicPrescriptionForm'
+            'electronicPrescriptionOrder'
+
+
+      
+    }
+
     .paperPrescriptionFieldset {
+
         grid-area: paperPrescriptionFieldset;
+
     }
 
     .nonPrescriptionFieldset {
+
         grid-area: nonPrescriptionFieldset;
+
     }
 
     .sendPrescriptionFieldset {
+
         grid-area: order;
+
     }
 
     .electronicPrescriptionOrder.fieldset, .paperPrescriptionOrder.fieldset, .nonPrescriptionOrder.fieldset {
-        padding: 30px 80px;
+
+        padding: 10px;
+
     }
 
+    
+
     .electronicPrescriptionForm {
+
+        grid-area: electronicPrescriptionForm;
+
         display: flex;
         justify-content: flex-start;
         align-items:center;
         flex-direction: column;
 
         & div {
-           display: flex;
-          
-        //    justify-content: flex-start;
-        //    align-items: flex-start;
-           flex-direction: row;
-           margin-bottom: 10px;
-           
-           & input {
-            margin-bottom: 0;
-           }
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            label {
+
+                margin-bottom: 0;
+                font-size: 13px;
+            }
+            
         }
+
     }
 
-   
+    .electronicPrescriptionOrder {
+
+        grid-area: electronicPrescriptionOrder;
+    }
+
+
 
 }
 
