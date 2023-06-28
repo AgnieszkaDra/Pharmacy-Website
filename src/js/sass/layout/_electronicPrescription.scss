@@ -19,18 +19,19 @@ span.success {
 }
 
 .error {
-  background-color: $color-submain;
-  padding: 5%;
+  // background-color: $color-submain;
+  // padding: 5%;
 }
 
 .label__error {
-  color: $color-main;
+  color: $color-white;
+  font-size: 9px;
 }
 
 .label__input.error {
 
   border-color: red;
-  font-size: 9px;
-  height: 20px;
+  
+  // height: 20px;
 
 }

@@ -293,6 +293,10 @@ body {
   padding: 10px;
 }
 
+.fieldset__title {
+  font-size: calc(1rem + 1vh);
+}
+
 .orderDrugsForm-container {
   border: 2px solid orange;
   display: grid;
@@ -312,7 +316,13 @@ body {
 }
 
 @media (max-width: 700px) {
+  .main.container {
+    display: grid;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: "nameAndSurnameOrder" "orderDrugsFormContainer";
+  }
   .orderDrugsForm-container {
+    grid-area: orderDrugsFormContainer;
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-areas: "electronicPrescriptionFieldset order" "paperPrescriptionFieldset order" "nonPrescriptionFieldset order";
@@ -326,7 +336,6 @@ body {
     position: absolute;
     top: 0;
     left: 5px;
-    font-size: 13px;
     line-height: 1;
     margin: -9px 0 0;
     background: #fff;
@@ -367,8 +376,15 @@ body {
     margin-bottom: 0;
     font-size: 13px;
   }
+  .electronicPrescriptionForm div input {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
   .electronicPrescriptionOrder {
     grid-area: electronicPrescriptionOrder;
+  }
+  .nameAndSurnameOrder {
+    grid-area: nameAndSurnameOrder;
   }
 }
 @media (min-width: 700px) {
@@ -696,19 +712,13 @@ span.success {
   border-color: rgb(49, 241, 49);
 }
 
-.error {
-  background-color: rgb(249, 217, 213);
-  padding: 5%;
-}
-
 .label__error {
-  color: rgb(254, 46, 22);
+  color: rgb(255, 255, 255);
+  font-size: 9px;
 }
 
 .label__input.error {
   border-color: red;
-  font-size: 9px;
-  height: 20px;
 }
 
 @media (min-width: 768px) {

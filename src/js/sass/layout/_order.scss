@@ -4,6 +4,11 @@
     padding: 10px;
 }
 
+.fieldset__title {
+     
+    font-size: calc(1rem + 1vh);
+}
+
 .orderDrugsForm-container {
     border: 2px solid orange;
     display: grid;
@@ -24,8 +29,18 @@
 
 @media (max-width: 700px) {
 
+    .main.container {
+
+        display: grid;
+        grid-template-rows: 30% 70%;
+        grid-template-areas: 
+            'nameAndSurnameOrder'
+            'orderDrugsFormContainer';
+    }
+
     .orderDrugsForm-container {
 
+        grid-area: orderDrugsFormContainer;
         display: grid;
         grid-template-columns: 60% 40%;
         grid-template-areas:
@@ -45,7 +60,6 @@
                 position: absolute;
                 top: 0;
                 left: 5px;
-                font-size: 13px;
                 line-height: 1;
                 margin: -9px 0 0;
                 background: #fff;
@@ -118,6 +132,13 @@
                 margin-bottom: 0;
                 font-size: 13px;
             }
+
+            input {
+
+                font-size: 10px;
+                margin-bottom: 5px;
+
+            }
             
         }
 
@@ -126,6 +147,11 @@
     .electronicPrescriptionOrder {
 
         grid-area: electronicPrescriptionOrder;
+    }
+
+    .nameAndSurnameOrder {
+
+        grid-area: nameAndSurnameOrder;
     }
 
 

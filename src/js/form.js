@@ -30,11 +30,54 @@ const paperContainer = document.querySelector('.paperPrescriptionForm')
 const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
 
+if(mql.matches) {
+  const fieldsetNameAndSurname = new FieldsetImitate('.main.container', 'Dane pacjenta', 'nameAndSurnameOrder', '#fe2e16')
+  fieldsetNameAndSurname.init()
+}
+
+const nameInput= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')
+nameInput.init()
+
+const nameSpanOk = new SpanOk('.name', toUnicode(0x2713))
+nameSpanOk.init()
+
+const nameSpanWrong = new SpanWrong('.name', toUnicode(10060))
+nameSpanWrong.init()
+
+const nameLabelError = new LabelError('.name')
+nameLabelError.init()
+
+const input0b= new Input('.nameAndSurnameOrder','email',  'email')
+input0b.init()
+
+
+const span0b = new SpanOk('.email', toUnicode(0x2713))
+span0b.init()
+
+const span0bWrong = new SpanWrong('.email', toUnicode(10060))
+span0bWrong.init()
+
+const labelError0b = new LabelError('.email')
+labelError0b.init()
+
 
 const fieldset1 = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
 fieldset1.init()
 const form1 = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
 form1.init()
+
+const input1 = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')
+input1.init()
+
+const labelError1 = new LabelError('.PIN' )
+labelError1.init()
+
+
+const input2= new Input('.electronicPrescriptionForm', 'PESEL', 'PESEL recepty')
+input2.init()
+
+const labelError2 = new LabelError('.PESEL' )
+labelError2.init()
 
 if(mql.matches) {
   const fieldset5 = new FieldsetImitate('.electronicPrescriptionForm', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
@@ -68,44 +111,7 @@ fieldset6.init()
 const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'nonPrescriptionOrder', 'rgb(249, 217, 213)')
 fieldset7.init()
 
-const input0a= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko/Nick')
-input0a.init()
 
-const span0aOK = new SpanOk('.name', toUnicode(0x2713))
-span0aOK.init()
-
-const span0aWrong = new SpanWrong('.name', toUnicode(10060))
-span0aWrong.init()
-
-
-const labelError0a = new LabelError('.name' )
-labelError0a.init()
-
-const input0b= new Input('.nameAndSurnameOrder','email',  'email')
-input0b.init()
-
-
-const span0b = new SpanOk('.email', toUnicode(0x2713))
-span0b.init()
-
-const span0bWrong = new SpanWrong('.email', toUnicode(10060))
-span0bWrong.init()
-
-const labelError0b = new LabelError('.email')
-labelError0b.init()
-
-const input1 = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')
-input1.init()
-
-const labelError1 = new LabelError('.PIN' )
-labelError1.init()
-
-
-const input2= new Input('.electronicPrescriptionForm', 'PESEL', 'PESEL recepty')
-input2.init()
-
-const labelError2 = new LabelError('.PESEL' )
-labelError2.init()
 
 const input3= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
 input3.init()
