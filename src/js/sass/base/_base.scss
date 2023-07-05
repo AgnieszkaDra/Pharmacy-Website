@@ -52,3 +52,47 @@ body {
     padding: 10px 20px 20px 20px;
     margin: 20px 0;
 }
+
+.label__error {
+    color: $color-white;
+    width: 130%;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: color_change 1s infinite alternate;
+  }
+
+  @keyframes color_change {
+    from { color: white; }
+    to { color: $color-pink; }
+   }
+
+  input {
+    width: 80%;
+    
+}
+
+.success {
+    border: none;
+    background-color: $color-pink;
+}
+
+span.spanok{
+    display: none;
+  }
+span.success.spanok {
+    display: block;
+    background-color: $color-main;
+}
+  
+span.spanwrong {
+    display: none;
+  }
+
+  span.spanwrong .error{
+    display: none;
+    background-color: none;
+  }

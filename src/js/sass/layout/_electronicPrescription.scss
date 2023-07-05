@@ -10,28 +10,11 @@
 
 span.success {
   position: absolute;
-  bottom: 15px;
+  
   right: -10px;
+  background-color: none;
 }
 
 .label.success div input {
   border-color: rgb(49, 241, 49);
-}
-
-.error {
-  // background-color: $color-submain;
-  // padding: 5%;
-}
-
-.label__error {
-  color: $color-white;
-  font-size: 9px;
-}
-
-.label__input.error {
-
-  border-color: red;
-  
-  // height: 20px;
-
 }

@@ -4,15 +4,33 @@
     padding: 10px;
 }
 
-.fieldset__title {
-     
-    font-size: calc(1rem + 1vh);
-}
+.fieldset {
 
+            margin: 10px;
+            padding: 10px;
+            position: relative;
+
+            &__title {
+
+                position: absolute;
+                top: 0;
+                left: 5px;
+                line-height: 1;
+                margin: -9px 0 0;
+                background: #fff;
+                padding: 0 3px; 
+                font-size: calc(1rem + 1vh);
+
+            }
+
+        }
 .orderDrugsForm-container {
-    border: 2px solid orange;
+
     display: grid;
-}
+    
+       
+    
+    }
 
 #our-canvas {
     display: none;
@@ -29,46 +47,35 @@
 
 @media (max-width: 700px) {
 
-    .main.container {
+    .form-send {
 
         display: grid;
-        grid-template-rows: 30% 70%;
+        grid-template-columns: 1fr;
         grid-template-areas: 
             'nameAndSurnameOrder'
-            'orderDrugsFormContainer';
+            'orderDrugsFormContainer'
+            'sendPrescriptionFieldset'
+            'buttonSend';
+        
+        section {
+
+           margin: 10px;
+
+        }
     }
 
     .orderDrugsForm-container {
 
         grid-area: orderDrugsFormContainer;
+        height: 600px;
         display: grid;
-        grid-template-columns: 60% 40%;
+        grid-template-columns: 1fr;
         grid-template-areas:
-            'electronicPrescriptionFieldset order'
-            'paperPrescriptionFieldset order'
-            'nonPrescriptionFieldset order'
+            'electronicPrescriptionFieldset'
+            'paperPrescriptionFieldset'
+            'nonPrescriptionFieldset'
         ;
 
-        .fieldset {
-
-            padding: 10px;
-            padding-top: 15px;
-            position: relative;
-
-            &__title {
-
-                position: absolute;
-                top: 0;
-                left: 5px;
-                line-height: 1;
-                margin: -9px 0 0;
-                background: #fff;
-                padding: 0 3px;
-
-            }
-
-        }
-    
     }
 
     .electronicPrescriptionFieldset {
@@ -99,7 +106,7 @@
 
     .sendPrescriptionFieldset {
 
-        grid-area: order;
+        grid-area: sendPrescriptionFieldset;
 
     }
 
@@ -154,11 +161,29 @@
         grid-area: nameAndSurnameOrder;
     }
 
+    .send {
 
+        grid-area: buttonSend;
+
+    }
 
 }
 
-@media (min-width: 700px) {
+@media (min-width: 760px) {
+
+    .main.container {
+
+        display: grid;
+        grid-template-areas: 
+            
+            'orderDrugsFormContainer order';
+        
+        section {
+
+           margin: 10px;
+
+        }
+    }
 
     .orderDrugsForm-container {
         display: grid;
@@ -166,7 +191,7 @@
         grid-template-columns: 1fr 1fr;
         // grid-template-rows: 1fr 1fr;
         grid-template-areas:
-            'dataOfPrescription dataOfPrescription'
+            
             'electronicPrescriptionFieldset order'
             'paperPrescriptionFieldset order'
             'nonPrescriptionFieldset order';
@@ -208,13 +233,11 @@
 
 }
 
-.success {
-    border: none;
-    background-color: $color-pink;
-}
+
 
 .name, .email {
     position: relative;
+    width: 70%;
   }
 
 .legend {
@@ -251,13 +274,7 @@
     margin-bottom: 20px;
 }
 
-span.spanok{
-    display: none;
-  }
-  
-span.spanwrong {
-    display: none;
-  }
+
 
 
 button {

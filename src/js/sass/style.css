@@ -69,6 +69,53 @@ body {
   margin: 20px 0;
 }
 
+.label__error {
+  color: rgb(255, 255, 255);
+  width: 130%;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: color_change 1s infinite alternate;
+}
+
+@keyframes color_change {
+  from {
+    color: white;
+  }
+  to {
+    color: rgb(255, 182, 193);
+  }
+}
+input {
+  width: 80%;
+}
+
+.success {
+  border: none;
+  background-color: rgb(255, 182, 193);
+}
+
+span.spanok {
+  display: none;
+}
+
+span.success.spanok {
+  display: block;
+  background-color: rgb(254, 46, 22);
+}
+
+span.spanwrong {
+  display: none;
+}
+
+span.spanwrong .error {
+  display: none;
+  background-color: none;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
@@ -128,6 +175,53 @@ body {
 .section > div {
   padding: 10px 20px 20px 20px;
   margin: 20px 0;
+}
+
+.label__error {
+  color: rgb(255, 255, 255);
+  width: 130%;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: color_change 1s infinite alternate;
+}
+
+@keyframes color_change {
+  from {
+    color: white;
+  }
+  to {
+    color: rgb(255, 182, 193);
+  }
+}
+input {
+  width: 80%;
+}
+
+.success {
+  border: none;
+  background-color: rgb(255, 182, 193);
+}
+
+span.spanok {
+  display: none;
+}
+
+span.success.spanok {
+  display: block;
+  background-color: rgb(254, 46, 22);
+}
+
+span.spanwrong {
+  display: none;
+}
+
+span.spanwrong .error {
+  display: none;
+  background-color: none;
 }
 
 @media (min-width: 768px) {
@@ -293,12 +387,24 @@ body {
   padding: 10px;
 }
 
+.fieldset {
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+}
+
 .fieldset__title {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  line-height: 1;
+  margin: -9px 0 0;
+  background: #fff;
+  padding: 0 3px;
   font-size: calc(1rem + 1vh);
 }
 
 .orderDrugsForm-container {
-  border: 2px solid orange;
   display: grid;
 }
 
@@ -316,30 +422,20 @@ body {
 }
 
 @media (max-width: 700px) {
-  .main.container {
+  .form-send {
     display: grid;
-    grid-template-rows: 30% 70%;
-    grid-template-areas: "nameAndSurnameOrder" "orderDrugsFormContainer";
+    grid-template-columns: 1fr;
+    grid-template-areas: "nameAndSurnameOrder" "orderDrugsFormContainer" "sendPrescriptionFieldset" "buttonSend";
+  }
+  .form-send section {
+    margin: 10px;
   }
   .orderDrugsForm-container {
     grid-area: orderDrugsFormContainer;
+    height: 600px;
     display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-areas: "electronicPrescriptionFieldset order" "paperPrescriptionFieldset order" "nonPrescriptionFieldset order";
-  }
-  .orderDrugsForm-container .fieldset {
-    padding: 10px;
-    padding-top: 15px;
-    position: relative;
-  }
-  .orderDrugsForm-container .fieldset__title {
-    position: absolute;
-    top: 0;
-    left: 5px;
-    line-height: 1;
-    margin: -9px 0 0;
-    background: #fff;
-    padding: 0 3px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "electronicPrescriptionFieldset" "paperPrescriptionFieldset" "nonPrescriptionFieldset";
   }
   .electronicPrescriptionFieldset {
     grid-area: electronicPrescriptionFieldset;
@@ -354,7 +450,7 @@ body {
     grid-area: nonPrescriptionFieldset;
   }
   .sendPrescriptionFieldset {
-    grid-area: order;
+    grid-area: sendPrescriptionFieldset;
   }
   .electronicPrescriptionOrder.fieldset, .paperPrescriptionOrder.fieldset, .nonPrescriptionOrder.fieldset {
     padding: 10px;
@@ -386,13 +482,23 @@ body {
   .nameAndSurnameOrder {
     grid-area: nameAndSurnameOrder;
   }
+  .send {
+    grid-area: buttonSend;
+  }
 }
-@media (min-width: 700px) {
+@media (min-width: 760px) {
+  .main.container {
+    display: grid;
+    grid-template-areas: "orderDrugsFormContainer order";
+  }
+  .main.container section {
+    margin: 10px;
+  }
   .orderDrugsForm-container {
     display: grid;
     grid-gap: 0px 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "dataOfPrescription dataOfPrescription" "electronicPrescriptionFieldset order" "paperPrescriptionFieldset order" "nonPrescriptionFieldset order";
+    grid-template-areas: "electronicPrescriptionFieldset order" "paperPrescriptionFieldset order" "nonPrescriptionFieldset order";
   }
   .dataOfPrescription {
     grid-area: dataOfPrescription;
@@ -418,13 +524,9 @@ body {
     padding: 60px 100px;
   }
 }
-.success {
-  border: none;
-  background-color: rgb(255, 182, 193);
-}
-
 .name, .email {
   position: relative;
+  width: 70%;
 }
 
 .legend {
@@ -450,14 +552,6 @@ body {
 
 .margin-bottom-20 {
   margin-bottom: 20px;
-}
-
-span.spanok {
-  display: none;
-}
-
-span.spanwrong {
-  display: none;
 }
 
 button {
@@ -487,11 +581,6 @@ button {
     max-width: 1250px;
   }
 }
-input {
-  width: 80%;
-  margin-bottom: 20px;
-}
-
 label {
   width: 80%;
   margin-bottom: 5px;
@@ -621,7 +710,7 @@ label {
 }
 @media (max-width: 1000px) {
   .section--third,
-.section--fourth {
+  .section--fourth {
     display: grid;
     grid-template-columns: 0.8fr;
     justify-content: center;
@@ -704,21 +793,12 @@ strong {
 
 span.success {
   position: absolute;
-  bottom: 15px;
   right: -10px;
+  background-color: none;
 }
 
 .label.success div input {
   border-color: rgb(49, 241, 49);
-}
-
-.label__error {
-  color: rgb(255, 255, 255);
-  font-size: 9px;
-}
-
-.label__input.error {
-  border-color: red;
 }
 
 @media (min-width: 768px) {
@@ -794,6 +874,4 @@ span.success {
 
 .padding-10 > div {
   padding: 10%;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
