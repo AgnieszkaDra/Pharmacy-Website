@@ -32,20 +32,42 @@ class Order {
     clear() {
         console.log('clear')
         const label__errors = document.querySelectorAll('.label__error')
-        return new Promise(function(resolve, reject) {
-            resolve(label__errors.forEach(function(el){
-            el.innerText = ''
-            return el}))
+        // return new Promise(function(resolve, reject) {
+        //     resolve(label__errors.forEach(function(el){
+        //     el.innerText = ''
+        //     return el}))
+        // })
+
+        label__errors.forEach(function(el){
+             el.innerText = ''
+        return el
+        
         })
-        
-        
     }
+
+    go() {
+        
+         
+        return this.getListOfFiles()
+        .then(this.clear())
+        .then(this.send())
+        .then(this.clear())
+    }
+
+    getListOfFiles() {
+        // use this.path to get list of files and return in a Promise way (resolve, reject)
+        return new Promise((resolve, reject) => {
+        });
+      }
+
+    
     
     send(){ 
 
-        console.log('both')
-        
-        this.orderForm.addEventListener('submit', e => {
+      
+        // return new Promise(function(resolve, reject){
+        //     resolve(
+  this.orderForm.addEventListener('submit', e => {
                 alert('submit')
             e.preventDefault();
             
@@ -134,20 +156,24 @@ class Order {
              } 
 
               
+            })
+            
+            //)
         }
-        )
+        //)
+        
         //S);
         // return new Promise (function(resolve, reject) {
         //     resolve(all)
         // })
+    }
+            
+        //}
+        
       
-    }
 
-    both() {
-        return this.clear().then(this.send()).then(this.clear())
-    }
 
-}
+
  export default Order
 
 

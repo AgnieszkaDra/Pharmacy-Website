@@ -34,8 +34,7 @@ const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
 const form2 = new Form('.container.main', 'form-send')
 form2.init()
-const orderdrugsformContainer = new orderDrugsFormContainer('.form-send')
-orderdrugsformContainer.init()
+
 
 const nameandsurnameFieldset = new FieldsetImitate('.form-send', 'Dane pacjenta', 'nameAndSurnameOrder', '#fe2e16')
   nameandsurnameFieldset.init()
@@ -64,32 +63,51 @@ emailSpanWrong.init()
 const emailLabelError = new LabelError('.email')
 emailLabelError.init()
 
-const drugsContainer = new orderDrugsFormContainer('.form-send')
-drugsContainer.init()
+// const drugsContainer = new orderDrugsFormContainer('.form-send')
+// drugsContainer.init()
 
 
-// const electronicprescriptionFieldset = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
-// electronicprescriptionFieldset.init()
-// const electronicprescriptionForm = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
-// electronicprescriptionForm.init()
+const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
+electronicprescriptionFieldset.init()
+const electronicprescriptionForm = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
+electronicprescriptionForm.init()
 
-// const pinInput = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')
-// pinInput.init()
+const pinInput = new Input('.electronicPrescriptionForm', 'PIN', 'PIN recepty')
+pinInput.init()
 
-// const pinLabelError = new LabelError('.PIN' )
-// pinLabelError.init()
+const pinSpanOkName = new SpanOk('.PIN', toUnicode(0x2713))
+pinSpanOkName.init()
 
-// const peselInput = new Input('.electronicPrescriptionForm', 'PESEL', 'PESEL recepty')
-// peselInput.init()
+const pinSpanWrong = new SpanWrong('.PIN', toUnicode(10060))
+pinSpanWrong.init()
 
-// const button1 = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
-// button1.init()
+const pinLabelError = new LabelError('.PIN' )
+pinLabelError.init()
 
-// const peselLabelError = new LabelError('.PESEL' )
-// peselLabelError.init()
+const peselInput = new Input('.electronicPrescriptionForm', 'PESEL', 'PESEL recepty')
+peselInput.init()
 
-// const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
-// electronicPrescriptionButtonAdd.send()
+const peselSpanOkName = new SpanOk('.PESEL', toUnicode(0x2713))
+peselSpanOkName.init()
+
+const peselSpanWrong = new SpanWrong('.PESEL', toUnicode(10060))
+peselSpanWrong.init()
+
+const peselLabelError = new LabelError('.PESEL' )
+peselLabelError.init()
+
+
+const fieldset5 = new FieldsetImitate('.electronicPrescriptionForm', '', 'electronicPrescriptionOrder', '')
+fieldset5.init()
+
+const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
+electronicprescriptionButton.init()
+
+
+
+
+const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
+electronicPrescriptionButtonAdd.go()
 
 // if(tablet.matches) {
 //   const fieldset5 = new FieldsetImitate('.electronicPrescriptionForm', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
@@ -97,12 +115,18 @@ drugsContainer.init()
 // }
 
 
-// const paperprescriptionFieldset = new FieldsetImitate('.orderDrugsForm-container', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '#fe2e16')
-// paperprescriptionFieldset.init()
 
+const paperprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '#fe2e16')
+paperprescriptionFieldset.init()
 
-// const otherprescriptionFieldset = new FieldsetImitate('.orderDrugsForm-container', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
-// otherprescriptionFieldset.init()
+const paperprescriptionInput= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
+paperprescriptionInput.init()
+
+const paperprescriptionButton = new Button('.paperPrescriptionFieldset', 'Dodaj kolejną receptę papierową', '')
+paperprescriptionButton.init()
+
+const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
+otherprescriptionFieldset.init()
 
 
 //   const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
@@ -117,8 +141,6 @@ drugsContainer.init()
 // fieldset8.init()
 
 
-// const fieldset5 = new FieldsetImitate('.form-send', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
-// fieldset5.init()
 
 // const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'rgb(249, 217, 213)')
 // fieldset6.init()
@@ -128,8 +150,7 @@ drugsContainer.init()
 
 
 
-// const input3= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
-// input3.init()
+
 
 
 
@@ -149,8 +170,7 @@ drugsContainer.init()
 // // const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
 // // electronicPrescriptionButtonAdd.send()
 
-// const button2 = new Button('.paperPrescriptionFieldset', 'Dodaj kolejną receptę papierową', '')
-// button2.init()
+
 // const canvas1 = new Canvas('.paperPrescriptionOrder')
 // canvas1.init()
 
@@ -197,7 +217,7 @@ form.addEventListener('keydown', function(keyEvent) {
 })
 const inputName = document.querySelector('input[name="name"]')
 inputName.addEventListener('input', function(e) {
-  console.log(e)
+  
   if(e.target.value !==0){
     alert('set')
     setInputSuccess(e.target, '')
@@ -215,11 +235,30 @@ inputEmail.addEventListener('input', function(e) {
   }
 })
 
+const inputPIN = document.querySelector('input[name="PIN"]')
+inputPIN.addEventListener('input', function(e) {
+  
+  if(e.target.value !==0){
+    
+    setInputSuccess(e.target, '')
+    
+  }
+})
+
+const inputPESEL = document.querySelector('input[name="PESEL"]')
+inputPESEL.addEventListener('input', function(e) {
+  
+  if(e.target.value !==0){
+    
+    setInputSuccess(e.target, '')
+    
+  }
+})
 const buttonSend = new Button('.form-send', 'Zamawiam', 'send')
 buttonSend.init()
 
 const orderSend = new Order()
-orderSend.both()
+orderSend.go()
 
 
 

@@ -425,9 +425,12 @@ span.spanwrong .error {
   .form-send {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "nameAndSurnameOrder" "orderDrugsFormContainer" "sendPrescriptionFieldset" "buttonSend";
+    grid-template-areas: "nameAndSurnameOrder" "electronicPrescriptionFieldset" "paperPrescriptionFieldset" "nonPrescriptionFieldset" "sendPrescriptionFieldset" "buttonSend";
   }
   .form-send section {
+    margin: 10px;
+  }
+  .form-send .orderDrugsForm-container {
     margin: 10px;
   }
   .orderDrugsForm-container {
@@ -439,9 +442,6 @@ span.spanwrong .error {
   }
   .electronicPrescriptionFieldset {
     grid-area: electronicPrescriptionFieldset;
-    display: grid;
-    grid-template-rows: 60% 40%;
-    grid-template-areas: "electronicPrescriptionForm" "electronicPrescriptionOrder";
   }
   .paperPrescriptionFieldset {
     grid-area: paperPrescriptionFieldset;
@@ -466,18 +466,21 @@ span.spanwrong .error {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    padding: 5px;
   }
-  .electronicPrescriptionForm div label {
-    margin-bottom: 0;
-    font-size: 13px;
-  }
-  .electronicPrescriptionForm div input {
-    font-size: 10px;
-    margin-bottom: 5px;
-  }
-  .electronicPrescriptionOrder {
+  .electronicPrescriptionOrder.fieldset {
     grid-area: electronicPrescriptionOrder;
+    border: none;
+    width: 100%;
+  }
+  .electronicPrescriptionOrder.fieldset .fieldset__title {
+    background-color: rgb(254, 46, 22);
+  }
+  .electronicPrescriptionOrder.fieldset .inputValueContainer {
+    border: 4px solid rgb(249, 217, 213);
+  }
+  .electronicPrescriptionOrder.fieldset .inputValueContainer div {
+    padding: 5px;
   }
   .nameAndSurnameOrder {
     grid-area: nameAndSurnameOrder;
@@ -524,9 +527,13 @@ span.spanwrong .error {
     padding: 60px 100px;
   }
 }
-.name, .email {
+.name, .email, .PIN, .PESEL, .buttonsend-container, .electronicPrescriptionOrder {
   position: relative;
   width: 70%;
+}
+
+.file {
+  margin-bottom: 15px;
 }
 
 .legend {
@@ -564,7 +571,6 @@ button {
   align-items: center;
   font-size: 14px;
   font-weight: bold;
-  padding: 20px;
 }
 
 .background-pink {

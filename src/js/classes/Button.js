@@ -20,7 +20,7 @@ export class Button{
     render() {
      
         const buttonCont = document.createElement('div')
-        buttonCont.classList.add('flex', 'column')
+        buttonCont.classList.add('flex', 'column', 'buttonsend-container')
        
         const button = document.createElement('button') 
         button.classList.add(this.selector.slice(1)+'button')

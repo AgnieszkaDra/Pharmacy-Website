@@ -19,7 +19,7 @@ export class orderDrugsFormContainer{
     render() {
      
         const orderDrugsFormCont = document.createElement('div')
-        orderDrugsFormCont.classList.add('.orderDrugsForm-container')
+        orderDrugsFormCont.classList.add('orderDrugsForm-container')
         this.container.appendChild(orderDrugsFormCont)
        
        

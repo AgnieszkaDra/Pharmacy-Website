@@ -52,10 +52,18 @@ export const setError = (element, message) => {
         
         element.classList.remove('error')
          element.classList.add('success')
-        // const inputControl = element.parentElement
-        console.log(element.parentElement)
+        const inputControl = element.parentElement
+        
         const spanOk = element.parentElement.querySelector('.spanok')
         spanOk.classList.add('success')
+
+        const labelErrors = inputControl.querySelectorAll('.label__error')
+       
+        labelErrors.forEach(function(el){
+             el.innerText = ''
+        })
+       
+       
         // const span = element.nextElementSibling
         
         // span.removeAttribute('class')
