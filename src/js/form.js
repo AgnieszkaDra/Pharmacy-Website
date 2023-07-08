@@ -69,6 +69,7 @@ emailLabelError.init()
 
 const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
 electronicprescriptionFieldset.init()
+
 const electronicprescriptionForm = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
 electronicprescriptionForm.init()
 
@@ -97,14 +98,11 @@ const peselLabelError = new LabelError('.PESEL' )
 peselLabelError.init()
 
 
-const fieldset5 = new FieldsetImitate('.electronicPrescriptionForm', '', 'electronicPrescriptionOrder', '')
-fieldset5.init()
+const electronicprescriptionOrder = new FieldsetImitate('.electronicPrescriptionForm', '', 'electronicPrescriptionOrder', '')
+electronicprescriptionOrder.init()
 
 const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
 electronicprescriptionButton.init()
-
-
-
 
 const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
 electronicPrescriptionButtonAdd.go()
@@ -114,25 +112,72 @@ electronicPrescriptionButtonAdd.go()
 //   fieldset5.init()
 // }
 
-
-
 const paperprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '#fe2e16')
 paperprescriptionFieldset.init()
 
-const paperprescriptionInput= new InputFile('.paperPrescriptionFieldset', 'uploaded-file')
+// const paperprescriptionForm = new Form('.paperPrescriptionFieldset', 'paperPrescriptionForm')
+// paperprescriptionForm.init()
+
+
+
+
+
+
+// const classCanvas1 = canvas1.classs
+// const paperPrescriptionButtonAdd = new paperPrescriptionSend()
+// paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
+const paper = document.querySelector('.paperPrescriptionFieldset')
+const inputsFileContainer = document.createElement('div')
+inputsFileContainer.classList.add('paperInputsContainer')
+paper.appendChild(inputsFileContainer)
+const paperprescriptionInput= new InputFile('.paperInputsContainer', 'uploaded-file')
 paperprescriptionInput.init()
+const canvas1 = new Canvas('.inputCont')
+canvas1.init()
+const paperprescriptionOrder = new FieldsetImitate('.paperPrescriptionFieldset', '', 'paperPrescriptionOrder', '')
+paperprescriptionOrder.init()
 
 const paperprescriptionButton = new Button('.paperPrescriptionFieldset', 'Dodaj kolejną receptę papierową', '')
 paperprescriptionButton.init()
 
-const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
-otherprescriptionFieldset.init()
 
+
+
+
+
+// const paperPrescriptionButtonAdd = new paperPrescriptionSend()
+// paperPrescriptionButtonAdd.send()
+const paperPrescriptionButton = document.querySelector('.paperPrescriptionFieldsetbutton')
+console.log(paperPrescriptionButton)
+paperPrescriptionButton.addEventListener('click', (el) =>{
+alert('canvas click')
+const elem = el.target
+
+
+  const input4 = new InputFile('.paperInputsContainer')
+input4.init()
+const classInput4 = input4.classs
+console.log(typeof classInput4)
+console.log(classInput4)
+
+
+const canvas1 = new Canvas(`.inputCont`)
+canvas1.init()
+const classCanvas1 = canvas1.classs
+console.log(classCanvas1)
+const paperPrescriptionButtonAdd = new paperPrescriptionSend()
+paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
+})
+
+
+const paperPrescriptionButtonAdd = new paperPrescriptionSend()
+paperPrescriptionButtonAdd.send()
 
 //   const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
 // orderFieldset.init()
 
-
+const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
+otherprescriptionFieldset.init()
 
 
 // // const form2 = new Form('.sendPrescriptionFieldset', 'form-send')
@@ -166,13 +211,11 @@ otherprescriptionFieldset.init()
 // input6.init()
 
 
-
 // // const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
 // // electronicPrescriptionButtonAdd.send()
 
 
-// const canvas1 = new Canvas('.paperPrescriptionOrder')
-// canvas1.init()
+
 
 // const paper = document.querySelector('.paperPrescriptionFieldset')
 
@@ -180,8 +223,7 @@ otherprescriptionFieldset.init()
 // inputsFileContainer.classList.add('paperInputsContainer')
 // paper.appendChild(inputsFileContainer)
 
-// const paperPrescriptionButtonAdd = new paperPrescriptionSend()
-// paperPrescriptionButtonAdd.send()
+
 // const paperPrescriptionButton = document.querySelector('.paperPrescriptionFieldsetbutton')
 // console.log(paperPrescriptionButton)
 // paperPrescriptionButton.addEventListener('click', (el) =>{

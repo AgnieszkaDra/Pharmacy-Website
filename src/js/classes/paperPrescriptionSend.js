@@ -8,7 +8,7 @@ class paperPrescriptionSend {
     constructor(elem) {
         this.elem = elem
         this.paperPrescriptionForm = document.querySelector('.paperPrescriptionForm')
-        this.buttonPaper = document.querySelector('.paperPrescriptionForm.button')
+        this.buttonPaper = document.querySelector('.paperPrescriptionFormbutton')
         this.uploadedFile = document.getElementById('uploaded-file');
         // this.ourCanvas = document.querySelector('.our-canvas')
         // this.context = this.ourCanvas.getContext('2d');
@@ -16,6 +16,7 @@ class paperPrescriptionSend {
     }
     
     send(){
+      
    
         // this.paperPrescriptionForm.addEventListener('submit', e => {
         //     alert('submit')
