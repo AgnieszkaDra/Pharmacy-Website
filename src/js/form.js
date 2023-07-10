@@ -104,15 +104,64 @@ peselSpanWrong.init()
 const peselLabelError = new LabelError('.PESEL' )
 peselLabelError.init()
 
+if(mql.matches) {
 
-const electronicprescriptionOrder = new FieldsetImitate('.electronicPrescriptionForm', '', 'electronicPrescriptionOrder', '')
-electronicprescriptionOrder.init()
+  const electronicprescriptionOrder = new FieldsetImitate('.electronicPrescriptionForm', '', 'electronicPrescriptionOrder', '')
+  electronicprescriptionOrder.init()
 
-const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
+  const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
 electronicprescriptionButton.init()
 
 const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
 electronicPrescriptionButtonAdd.go()
+
+}
+
+if (tablet.matches) {
+
+  const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
+  orderFieldset.init()
+
+  const nameandsurnameFieldset = new FieldsetImitate('.sendPrescriptionFieldset', 'Dane pacjenta', 'nameAndSurnameOrder', '#fe2e16')
+  nameandsurnameFieldset.init()
+  
+  const nameInput= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko')
+  nameInput.init()
+
+  const nameSpanOkName = new SpanOk('.name', toUnicode(0x2713))
+  nameSpanOkName.init()
+
+  const nameSpanWrong = new SpanWrong('.name', toUnicode(10060))
+  nameSpanWrong.init()
+
+  const nameLabelError = new LabelError('.name')
+  nameLabelError.init()
+
+  const emailInput= new Input('.nameAndSurnameOrder','email',  'email')
+  emailInput.init()
+
+  const emailSpanOk = new SpanOk('.email', toUnicode(0x2713))
+  emailSpanOk.init()
+
+  const emailSpanWrong = new SpanWrong('.email', toUnicode(10060))
+  emailSpanWrong.init()
+
+  const emailLabelError = new LabelError('.email')
+  emailLabelError.init()
+
+  const electronicprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Leki na receptę', 'electronicPrescriptionOrder', '')
+  electronicprescriptionOrder.init()
+
+  const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
+electronicprescriptionButton.init()
+
+const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
+electronicPrescriptionButtonAdd.go()
+
+
+
+}
+
 
 // if(tablet.matches) {
 //   const fieldset5 = new FieldsetImitate('.electronicPrescriptionForm', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
@@ -200,12 +249,7 @@ drugAmountInput.init()
 const button3 = new Button('.nonPrescriptionForm', 'Dodaj kolejny lek', 'submit')
 button3.init()
 
-if (tablet.matches) {
 
-  const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
-  orderFieldset.init()
-
-}
 
 
 const buttonSend = new Button('.form-send', 'Zamawiam', 'submit')
