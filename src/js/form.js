@@ -180,8 +180,7 @@ paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
 const paperPrescriptionButtonAdd = new paperPrescriptionSend()
 paperPrescriptionButtonAdd.send()
 
-//   const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
-// orderFieldset.init()
+
 
 const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
 otherprescriptionFieldset.init()
@@ -200,6 +199,14 @@ drugAmountInput.init()
 
 const button3 = new Button('.nonPrescriptionForm', 'Dodaj kolejny lek', 'submit')
 button3.init()
+
+if (tablet.matches) {
+
+  const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
+  orderFieldset.init()
+
+}
+
 
 const buttonSend = new Button('.form-send', 'Zamawiam', 'submit')
 buttonSend.init()
