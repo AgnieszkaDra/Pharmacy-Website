@@ -399,6 +399,10 @@ section {
   margin: 10px;
 }
 
+.form {
+  margin-top: calc(1rem + 1vh);
+}
+
 .fieldset {
   margin: 10px;
   padding: 10px;
