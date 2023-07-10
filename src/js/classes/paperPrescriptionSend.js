@@ -27,13 +27,13 @@ class paperPrescriptionSend {
         // const paperprescriptionOrder = document.querySelector('.paperPrescriptionOrder')
         
         // paperprescriptionOrder.appendChild(canvas)
-    var canvas = document.getElementById('our-canvas')
-    let context = canvas.getContext('2d');
-    const buttonPaper = document.querySelector('.paperPrescriptionForm.button')
-let uploadedFile = document.getElementById('uploaded-file');
+        var canvas = document.getElementById('our-canvas')
+        let context = canvas.getContext('2d');
+        const buttonPaper = document.querySelector('.paperPrescriptionForm.button')
+        let uploadedFile = document.getElementById('uploaded-file');
 // buttonPaper.addEventListener('click',initImageLoader) ;
-initImageLoader()
-function initImageLoader(){
+        initImageLoader()
+        function initImageLoader(){
 
 
 
@@ -78,7 +78,7 @@ function handleFile(file){
         // )  
     
     sendNew(inp,can) {
-console.log(inp,can)
+        console.log(inp,can)
 
         let canvas = document.querySelector(`.cl${inp}`)
         console.log(canvas)

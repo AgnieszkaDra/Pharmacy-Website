@@ -12,6 +12,7 @@ class prescriptionValue {
     init() {
         const container = document.querySelector('.nonPrescriptionOrder')
          if (!(this.inputDrugName.value === '') && !(this.inputDrugDose)) {
+            alert('init value')
                 const value1 = this.inputDrugName.value
                 const inputValueContainer = document.createElement('div')
                         const inputValueContainerNode = container.appendChild(inputValueContainer)

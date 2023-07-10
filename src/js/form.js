@@ -24,7 +24,7 @@ const sendOrderButton = document.querySelector('.send')
 
 import prescriptionValue from "./classes/nonPrescriptionSend.js";
 import { setSuccess, toUnicode } from "./functions/functions.js";
-import orderDrugsFormContainer from './classes/OrderDrugsFormContainer';
+
 
 const mql = window.matchMedia("(max-width: 768px)")
 const tablet = window.matchMedia("(min-width: 769px")
@@ -32,39 +32,46 @@ const tablet = window.matchMedia("(min-width: 769px")
 const paperContainer = document.querySelector('.paperPrescriptionForm')
 const paperPrescriptionContainer = document.querySelector('.paperPrescription')
 
-const form2 = new Form('.container.main', 'form-send')
-form2.init()
+const sendForm = new Form('.container.main', 'form-send')
+sendForm.init()
 
+if(mql.matches) {
 
-const nameandsurnameFieldset = new FieldsetImitate('.form-send', 'Dane pacjenta', 'nameAndSurnameOrder', '#fe2e16')
+  const nameandsurnameFieldset = new FieldsetImitate('.form-send', 'Dane pacjenta', 'nameAndSurnameOrder', '#fe2e16')
   nameandsurnameFieldset.init()
+  
+  const nameInput= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko')
+  nameInput.init()
 
-const nameInput= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko')
-nameInput.init()
+  const nameSpanOkName = new SpanOk('.name', toUnicode(0x2713))
+  nameSpanOkName.init()
 
-const nameSpanOkName = new SpanOk('.name', toUnicode(0x2713))
-nameSpanOkName.init()
+  const nameSpanWrong = new SpanWrong('.name', toUnicode(10060))
+  nameSpanWrong.init()
 
-const nameSpanWrong = new SpanWrong('.name', toUnicode(10060))
-nameSpanWrong.init()
+  const nameLabelError = new LabelError('.name')
+  nameLabelError.init()
 
-const nameLabelError = new LabelError('.name')
-nameLabelError.init()
+  const emailInput= new Input('.nameAndSurnameOrder','email',  'email')
+  emailInput.init()
 
-const emailInput= new Input('.nameAndSurnameOrder','email',  'email')
-emailInput.init()
+  const emailSpanOk = new SpanOk('.email', toUnicode(0x2713))
+  emailSpanOk.init()
 
-const emailSpanOk = new SpanOk('.email', toUnicode(0x2713))
-emailSpanOk.init()
+  const emailSpanWrong = new SpanWrong('.email', toUnicode(10060))
+  emailSpanWrong.init()
 
-const emailSpanWrong = new SpanWrong('.email', toUnicode(10060))
-emailSpanWrong.init()
+  const emailLabelError = new LabelError('.email')
+  emailLabelError.init()
 
-const emailLabelError = new LabelError('.email')
-emailLabelError.init()
+}
 
-// const drugsContainer = new orderDrugsFormContainer('.form-send')
-// drugsContainer.init()
+
+
+
+
+
+
 
 
 const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
@@ -179,7 +186,23 @@ paperPrescriptionButtonAdd.send()
 const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
 otherprescriptionFieldset.init()
 
+const nonprescriptionForm = new Form('.nonPrescriptionFieldset', 'nonPrescriptionForm')
+nonprescriptionForm.init()
 
+const drugNameInput= new Input('.nonPrescriptionForm', 'drugName','nazwa leku')
+drugNameInput.init()
+
+const drugDoseInput= new Input('.nonPrescriptionForm', 'drugDose',  'dawka')
+drugDoseInput.init()
+
+const drugAmountInput= new Input('.nonPrescriptionForm', 'drugAmount' , 'ilość')
+drugAmountInput.init()
+
+const button3 = new Button('.nonPrescriptionForm', 'Dodaj kolejny lek', 'submit')
+button3.init()
+
+const buttonSend = new Button('.form-send', 'Zamawiam', 'submit')
+buttonSend.init()
 // // const form2 = new Form('.sendPrescriptionFieldset', 'form-send')
 // // form2.init()
 // const fieldset8 = new FieldsetImitate('.form-send', 'Dane zamawiającego', 'nameAndSurnameOrder', '')
@@ -199,16 +222,7 @@ otherprescriptionFieldset.init()
 
 
 
-// const input4= new Input('.nonPrescriptionFieldset', 'drugName','nazwa leku')
-// input4.init()
 
-
-
-// const input5= new Input('.nonPrescriptionFieldset', 'drugDose',  'dawka')
-// input5.init()
-
-// const input6= new Input('.nonPrescriptionFieldset', 'drugAmount' , 'ilość')
-// input6.init()
 
 
 // // const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
@@ -241,15 +255,14 @@ otherprescriptionFieldset.init()
 // paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
 // })
 
-// const button3 = new Button('.nonPrescriptionFieldset', 'Dodaj kolejny lek', '')
-// button3.init()
 
-// const nonPrescriptionButton = document.querySelector('.nonPrescriptionFieldsetbutton')
-// nonPrescriptionButton.addEventListener('click', (el) => {
 
-//   const non = new prescriptionValue()
-//   non.init()
-// })
+const nonPrescriptionButton = document.querySelector('.nonPrescriptionFormbutton')
+nonPrescriptionButton.addEventListener('click', (el) => {
+
+  const non = new prescriptionValue()
+  non.init()
+})
 
 const form = document.querySelector('.form-send')
 form.addEventListener('keydown', function(keyEvent) {
@@ -296,8 +309,7 @@ inputPESEL.addEventListener('input', function(e) {
     
   }
 })
-const buttonSend = new Button('.form-send', 'Zamawiam', 'send')
-buttonSend.init()
+
 
 const orderSend = new Order()
 orderSend.go()

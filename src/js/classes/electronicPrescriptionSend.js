@@ -33,35 +33,44 @@ class electronicPrescriptionSend {
     }
 
     clear() {
-        console.log('clear')
+        
         const label__errors = document.querySelectorAll('.label__error')
-       label__errors.forEach(function(el){
+        label__errors.forEach(function(el) {
+
             el.innerText = ''
-            return el})
-        }
+
+        return el
+
+            })
+        
+
+    }
         
         
         go() {
         
-         
-            return this.getListOfFiles()
+            return this.returnPromise()
             .then(this.clear())
             .then(this.send())
             .then(this.clear())
+
         }
     
-        getListOfFiles() {
-            // use this.path to get list of files and return in a Promise way (resolve, reject)
-            return new Promise((resolve, reject) => {
-            });
-          }
+        returnPromise() {
+
+           return new Promise((resolve, reject) => {
+
+            })
+
+        }
     
-    send(){
+        send()  {
  
-        this.electronicPrescriptionForm.addEventListener('submit', e => {
+            this.electronicPrescriptionForm.addEventListener('submit', e => {
+
             e.preventDefault();
+
             const errors = [];
-        
             const electronicPrescriptionForm = document.querySelector('.electronicPrescriptionForm'); 
             this.electronicPrescriptionForm.fields.forEach(function(field){
                 const {name, label, required = false, pattern = null} = field;
@@ -82,24 +91,23 @@ class electronicPrescriptionSend {
             if(errors.length === 0){
                
                 this.showElectronicPrescriptionValue(this.pin, this.pesel, this.textareaPinPesel)
-                this.pin.value=' '
-                this.pesel.value = ' ' 
-                const errorDisplayPin = document.querySelector('.PIN')
-                errorDisplayPin.classList.remove('error')
-                const errorDisplayPinClosest = errorDisplayPin.querySelector('.label__error')
+                // this.pin.value=' '
+                // this.pesel.value = ' ' 
+                // const errorDisplayPin = document.querySelector('.PIN')
+                // errorDisplayPin.classList.remove('error')
+                // const errorDisplayPinClosest = errorDisplayPin.querySelector('.label__error')
     
-                errorDisplayPinClosest.innerText = ''
-                const errorDisplayPesel = document.querySelector('.PESEL')
-                errorDisplayPesel.classList.remove('error')
-                const errorDisplayPeselClosest = errorDisplayPesel.querySelector('.label__error')
-                errorDisplayPeselClosest.innerText = ''
+                // errorDisplayPinClosest.innerText = ''
+                // const errorDisplayPesel = document.querySelector('.PESEL')
+                // errorDisplayPesel.classList.remove('error')
+                // const errorDisplayPeselClosest = errorDisplayPesel.querySelector('.label__error')
+                // errorDisplayPeselClosest.innerText = ''
 
-                errorDisplayPesel.parentElement.closest('.label__error').innerHTML = ''
+                // errorDisplayPesel.parentElement.closest('.label__error').innerHTML = ''
 
                
               
-                    // setSuccess(valParent, `${label} dane prawidłowe`)
-                    // e.target.reset();
+                    
                
 
 
@@ -108,13 +116,13 @@ class electronicPrescriptionSend {
         });
     }
 
-    both() {
-        return this.clear().then(this.send()).then(this.clear())
-    }
+    // both() {
+    //     return this.clear().then(this.send()).then(this.clear())
+    // }
 
-    click() {
-       this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
-    }
+    // click() {
+    //    this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
+    // }
    
 }
 

@@ -24,6 +24,7 @@ export class Button{
        
         const button = document.createElement('button') 
         button.classList.add(this.selector.slice(1)+'button')
+        button.setAttribute('name', this.label)
         button.setAttribute('type', this.type)
         button.setAttribute('style', 'width:80%')
         button.innerText = this.label
