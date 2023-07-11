@@ -2,7 +2,7 @@ import './sass/style.css'
 
 import Order from "./classes/order.js"
 import electronicPrescription from "./classes/electronicPrescription.js";
-import paperPrescription from "./classes/paperPrescription.js";
+
 
 import Button from "./classes/Button.js";
 import FieldsetImitate from "./classes/FieldsetImitate.js";
@@ -11,7 +11,7 @@ import InputFile from "./classes/InputFile.js";
 import electronicPrescriptionSend from "./classes/electronicPrescriptionSend.js";
 import LabelError from "./classes/LabelError.js";
 import Canvas from "./classes/Canvas.js";
-import paperPrescriptionSend from "./classes/paperPrescriptionSend.js";
+import paperPrescriptionAdd from "./classes/paperPrescriptionAdd.js";
 import Container from "./classes/Container.js"
 
 const electronicPrescriptionButton = document.querySelector('.electronicPrescription.button')
@@ -251,8 +251,8 @@ paperprescriptionButton.init()
 // KONIEC WAZNE PAPER
 
 
-const paperPrescriptionButtonAdd = new paperPrescriptionSend()
-paperPrescriptionButtonAdd.send()
+const paperPrescriptionButtonAdd = new paperPrescriptionAdd()
+paperPrescriptionButtonAdd.addNew()
 
 
 
