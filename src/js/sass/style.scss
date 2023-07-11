@@ -3,6 +3,13 @@
 @import 'layout';
 @import 'utilities';
 
+
+example-component{
+    cursor: pointer;
+    border: 1px solid black;
+    background: lightgray;
+    padding: 2px;
+  }
 // @media(max-width: 768px) {
 // //     .w {
 // //     width: 100px;

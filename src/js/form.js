@@ -200,11 +200,16 @@ const classInput4 = paperprescriptionInput.classs
 // canvas1.init()
 // const classCanvas1 = canvas1.classs
 // console.log(classCanvas1)
-const paperprescriptionOrder = new FieldsetImitate('.paperPrescriptionForm', '', 'paperPrescriptionOrder', '')
-paperprescriptionOrder.init()
+
 
 const paperprescriptionButton = new Button('.paperPrescriptionForm', 'Dodaj kolejną receptę papierową', '')
 paperprescriptionButton.init()
+
+// paperprescriptionButton.addEventListener('click', function(el) {
+//   const inn = new InputFile('.paperInputsContainer')
+  
+//   inn.init()
+// })
 
 // const files = document.querySelectorAll('.file')
 // console.log(files)
@@ -384,6 +389,17 @@ inputPESEL.addEventListener('input', function(e) {
 
 const orderSend = new Order()
 orderSend.go()
+
+InputFile.prototype.click_handler = function(el) {
+  el.preventDefault()
+  el.init()
+}
+var object = new InputFile('.paperInputsContainer');
+
+document.querySelector('.paperPrescriptionFormbutton').addEventListener('click', object.init());
+
+
+
 
 
 

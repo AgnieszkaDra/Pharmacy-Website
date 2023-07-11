@@ -2,6 +2,7 @@ var canvas = document.getElementById('our-canvas')
     // var context = canvas.getContext('2d');
     const buttonPaper = document.querySelector('.paperPrescriptionForm.button')
 let uploadedFile = document.getElementById('uploaded-file');
+import InputFile from "./InputFile";
 
 class paperPrescriptionSend {
 
@@ -16,11 +17,13 @@ class paperPrescriptionSend {
     }
     
     send(){
-      
+        var object = new InputFile('.paperInputsContainer');
+
+        document.querySelector('.paperPrescriptionFormbutton').addEventListener('click', object.init());
    
-        // this.paperPrescriptionForm.addEventListener('submit', e => {
+        //this.paperPrescriptionForm.addEventListener('submit', e => {
         //     alert('submit')
-        //     e.preventDefault();
+        // e.preventDefault();
         // let canvas = document.createElement('canvas')
         // canvas.setAttribute('id', 'our-canvas')
         // canvas.classList.add( 'cl' + this.classs)

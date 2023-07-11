@@ -22,10 +22,10 @@ export class InputFile{
         this.render()
     }
 
-    change(ev,canvasshow) {
+    change(ev,canvasshow, context) {
         console.log('change')
         var file = ev.target.files[0];
-  this.handleFile(file, canvasshow);
+  this.handleFile(file, canvasshow, context);
   ev.target.value = null
   console.log(canvasshow)
     }
@@ -34,12 +34,13 @@ export class InputFile{
         return this.id = this.id + 1
     }
 
-    handleFile(file, canvasshow){
+    handleFile(file, canvasshow, context){
         console.log('handlefile')
         var ImageType = /image.*/;
         
     console.log(file)
         if(file.type.match(ImageType)){
+            alert('match')
    
             var reader = new FileReader();      
     
@@ -97,8 +98,9 @@ export class InputFile{
 const parent = inputFile.parentElement
 console.log(parent)
 let canvasshow = parent.querySelector('canvas')
+let context = canvasshow.getContext('2d');
 console.log(canvasshow)
-            this.change(ev, canvasshow)
+            this.change(ev, canvasshow, context)
           } )
 
     }

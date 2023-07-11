@@ -420,10 +420,6 @@ section {
   font-size: calc(1rem + 1vh);
 }
 
-#our-canvas {
-  display: none;
-}
-
 .block {
   display: block;
 }
@@ -803,6 +799,13 @@ strong {
 
 .column {
   flex-direction: column;
+}
+
+example-component {
+  cursor: pointer;
+  border: 1px solid black;
+  background: lightgray;
+  padding: 2px;
 }
 
 .image-container {

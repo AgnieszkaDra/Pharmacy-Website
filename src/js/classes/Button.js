@@ -14,17 +14,17 @@ export class Button{
     }
 
     init() {
+        
         this.render()
     }
 
     render() {
      
         const buttonCont = document.createElement('div')
-        buttonCont.classList.add('flex', 'column', 'buttonsend-container')
+        buttonCont.classList.add('flex', 'column')
        
         const button = document.createElement('button') 
         button.classList.add(this.selector.slice(1)+'button')
-        button.setAttribute('name', this.label)
         button.setAttribute('type', this.type)
         button.setAttribute('style', 'width:80%')
         button.innerText = this.label
