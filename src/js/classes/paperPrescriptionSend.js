@@ -17,68 +17,24 @@ class paperPrescriptionSend {
     }
     
     send(){
+
+        this.paperPrescriptionForm.addEventListener('submit', e => {
+            alert('submit')
+         e.preventDefault();
         var object = new InputFile('.paperInputsContainer');
 
         document.querySelector('.paperPrescriptionFormbutton').addEventListener('click', object.init());
-   
-        //this.paperPrescriptionForm.addEventListener('submit', e => {
-        //     alert('submit')
-        // e.preventDefault();
-        // let canvas = document.createElement('canvas')
-        // canvas.setAttribute('id', 'our-canvas')
-        // canvas.classList.add( 'cl' + this.classs)
-        // const paperprescriptionOrder = document.querySelector('.paperPrescriptionOrder')
+        })
         
-        // paperprescriptionOrder.appendChild(canvas)
-        var canvas = document.getElementById('our-canvas')
-        let context = canvas.getContext('2d');
-        const buttonPaper = document.querySelector('.paperPrescriptionForm.button')
-        let uploadedFile = document.getElementById('uploaded-file');
-// buttonPaper.addEventListener('click',initImageLoader) ;
-        initImageLoader()
-        function initImageLoader(){
+    
 
 
-
-    uploadedFile.addEventListener('change',handleManualUploadedFiles);
-    function handleManualUploadedFiles(ev){
-        var canvas = document.getElementById('our-canvas')
-    canvas.setAttribute('style', 'display:block')
-    canvas.classList.add('canvassize')
-    let context = canvas.getContext('2d');
-        var file = ev.target.files[0];
-        handleFile(file);
-        ev.target.value = null
-
-    }   
+    
 }
-function handleFile(file){
-        var ImageType = /image.*/;
+
     
-        if(file.type.match(ImageType)){
-    
-            var reader = new FileReader();      
-    
-            reader.onloadend = function(event){
-                var tempImageStore = new Image();
-                tempImageStore.onload = function(ev){
-                    canvas.height = ev.target.height;
-                    canvas.width = ev.target.width;   
-                           
-                    context.drawImage(ev.target,0,0);
                    
-                }   
-                tempImageStore.src = event.target.result;
-            }
-            reader.readAsDataURL(file);
-          
-        }   
-    }
-    
-
-
-        }
-        // )  
+              
     
     sendNew(inp,can) {
         console.log(inp,can)

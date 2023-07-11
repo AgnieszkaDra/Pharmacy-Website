@@ -251,8 +251,8 @@ paperprescriptionButton.init()
 // KONIEC WAZNE PAPER
 
 
-// const paperPrescriptionButtonAdd = new paperPrescriptionSend()
-// paperPrescriptionButtonAdd.send()
+const paperPrescriptionButtonAdd = new paperPrescriptionSend()
+paperPrescriptionButtonAdd.send()
 
 
 
