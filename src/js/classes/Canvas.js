@@ -23,8 +23,9 @@ export class Canvas{
       
         const canvas = document.createElement('canvas')
         canvas.setAttribute('id', 'our-canvas')
-        canvas.classList.add( 'cl' + this.classs)
+        canvas.classList.add('in' + this.classs)
         canvas.classList.add('canvassize')
+        canvas.setAttribute("name", 'both' + this.classs) 
         
         this.container.appendChild(canvas)
     }

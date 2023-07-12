@@ -77,6 +77,8 @@ export const setError = (element, message) => {
     
     }
     
+    export let numberCont = 0
+    export const classContCreate = () => numberCont = numberCont + 1
        
     export let numberCanvas = 0
     export const classCanvasCreate = () => numberCanvas = numberCanvas + 1

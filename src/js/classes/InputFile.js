@@ -61,19 +61,21 @@ export class InputFile{
     }
 
     render() {
-        console.log('render')
+        // alert('inputFilerender')
+        // console.log('render')
       
-        const id = this.changeId()
-        const inputCont = document.createElement('div') 
-        inputCont.classList.add('inputCont')
-        inputCont.setAttribute('style', 'padding:10px')
+        // const id = this.changeId()
+        // const inputCont = document.createElement('div') 
+        // inputCont.classList.add('inputCont')
+        // inputCont.setAttribute('style', 'padding:10px')
         const inputFile = document.createElement('input')
         inputFile.setAttribute('type', 'file')
         inputFile.setAttribute('id', 'uploaded-file')
+        inputFile.setAttribute("name", 'both' + this.classs) 
         inputFile.classList.add('file')
         inputFile.classList.add('in' + this.classs)
      
-        inputCont.appendChild(inputFile) 
+        this.container.appendChild(inputFile) 
 
         
 
@@ -83,23 +85,38 @@ export class InputFile{
         button.addEventListener('click', function (el) {
             el.target.closest('.inputCont').remove()
         })   
-        this.container.appendChild(inputCont)
-        inputCont.appendChild(button)
+        // this.container.appendChild(inputCont)
+        this.container.appendChild(button)
 
-          let canvas = document.createElement('canvas')
-        canvas.setAttribute('id', 'our-canvas')
-        canvas.classList.add( 'cl' + this.classs)
-        canvas.classList.add('canvassize')
+        //   let canvas = document.createElement('canvas')
+        // canvas.setAttribute('id', 'our-canvas')
+        // canvas.classList.add( 'cl' + this.classs)
+        // canvas.classList.add('canvassize')
         
-        inputCont.appendChild(canvas)
+        // this.container.appendChild(canvas)
 
       
   inputFile.addEventListener('change', (ev) => {
 const parent = inputFile.parentElement
 console.log(parent)
-let canvasshow = parent.querySelector('canvas')
+
+const parentclass = parent.getAttribute("name")
+console.log(parentclass)
+const canvases = document.querySelector('canvas')
+console.log(canvases)
+let canvasshow = document.querySelector(`[name='${parentclass}']`)
+//let canvasshow = canvases.querySelector(`[name='${parentclass}']`)
+    console.log(canvasshow)
+
+// let canvasshow = canvases.forEach(function(el, parentclass){
+//     const ex = el.querySelector(`[name='${parentclass}']`)
+//     console.log(ex)
+// })
+
+
+
 let context = canvasshow.getContext('2d');
-console.log(canvasshow)
+
             this.change(ev, canvasshow, context)
           } )
 
