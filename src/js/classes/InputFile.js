@@ -83,7 +83,7 @@ export class InputFile{
         const button = document.createElement('button')
         button.innerText = 'X'
         button.addEventListener('click', function (el) {
-            el.target.closest('.inputCont').remove()
+            el.target.closest('.inputCont2').remove()
         })   
         // this.container.appendChild(inputCont)
         this.container.appendChild(button)

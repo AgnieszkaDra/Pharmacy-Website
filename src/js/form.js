@@ -181,6 +181,15 @@ inputsFileContainer.classList.add('paperInputsContainer')
 paper.appendChild(inputsFileContainer)
 const paperPrescriptionInputContainer = new InputFileContainer('.paperInputsContainer')
 paperPrescriptionInputContainer.init()
+
+ 
+
+
+
+
+// const canvas = document.querySelectorAll(`canvas[name='${na}']`)
+// console.log(canvas)
+
 const paperprescriptionInput= new InputFile('.inputCont')
 paperprescriptionInput.init()
 const paperprescriptionCanvas = new Canvas('.paperPrescriptionOrder')
@@ -212,7 +221,7 @@ paperprescriptionCanvas.init()
 const paperprescriptionButton = new Button('.paperPrescriptionForm', 'Dodaj kolejną receptę papierową', '')
 paperprescriptionButton.init()
 
-const paperPrescriptionButtonAdd = new paperPrescriptionAdd()
+const paperPrescriptionButtonAdd = new paperPrescriptionAdd('.both2')
 paperPrescriptionButtonAdd.addNew()
 
 
@@ -363,7 +372,16 @@ orderSend.go()
 
 
 
+const foundNodes = document.querySelectorAll("[class^='in'], [class*=' in']");
 
+const foundClasses = new Set(
+	Array.from(foundNodes)
+  	.map(node => Array.from(node.classList))
+    .map(classes => classes.filter(c => c.startsWith("in") || c.includes(" in")))
+    .flat()
+);
+
+console.log(foundClasses);
 
 
 
