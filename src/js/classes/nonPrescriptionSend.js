@@ -1,16 +1,20 @@
 
-class prescriptionValue {
+class nonPrescriptionSend {
     
     constructor() {
+        this.containerForm = document.querySelector('.nonPrescriptionForm')
         this.inputDrugName = document.querySelector('#drugName')
         this.inputDrugDose = document.querySelector('#drugDose')
         this.inputDrugAmount = document.querySelector('#drugAmount')
         this.nonPrescriptionFieldset = document.querySelector('.nonPrescriptionFieldset')
-        this.nonPrescriptionButton = document.querySelector('.nonPrescriptionFieldsetButton')
+        this.nonPrescriptionButton = document.querySelector('.nonPrescriptionFormButton')
    }
 
     init() {
-        const container = document.querySelector('.nonPrescriptionOrder')
+        this.containerForm.addEventListener('submit', function(el){
+            alert('init non')
+            el.preventDefault() 
+            const container = document.querySelector('.nonPrescriptionOrder')
          if (!(this.inputDrugName.value === '') && !(this.inputDrugDose)) {
             alert('init value')
                 const value1 = this.inputDrugName.value
@@ -69,11 +73,13 @@ class prescriptionValue {
                         })
                     }
                 }
+        )
+       
             
     }
 
-
-export default prescriptionValue
+}
+export default nonPrescriptionSend
 
 
 

@@ -83,17 +83,17 @@ export class InputFile{
         const button = document.createElement('button')
         button.innerText = 'X'
         button.addEventListener('click', function (el) {
-            el.target.closest('.inputCont2').remove()
+            el.target.closest('.inputCont').remove()
+            const close = el.target.closest('.inputCont')
+            const closeName = close.getAttribute("name")
+            const canvasClose = document.querySelector(`canvas[name='${closeName}']`)
+            canvasClose.remove()
+            console.log(closeName)
         })   
-        // this.container.appendChild(inputCont)
+      
         this.container.appendChild(button)
 
-        //   let canvas = document.createElement('canvas')
-        // canvas.setAttribute('id', 'our-canvas')
-        // canvas.classList.add( 'cl' + this.classs)
-        // canvas.classList.add('canvassize')
-        
-        // this.container.appendChild(canvas)
+       
 
       
   inputFile.addEventListener('change', (ev) => {

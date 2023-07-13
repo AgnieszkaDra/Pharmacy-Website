@@ -22,9 +22,11 @@ import { setInputSuccess } from './functions/functions.js';
 
 const sendOrderButton = document.querySelector('.send')
 
-import prescriptionValue from "./classes/nonPrescriptionSend.js";
+
 import { setSuccess, toUnicode } from "./functions/functions.js";
 import InputFileContainer from './classes/InputFileContainer';
+import prescriptionValue from './classes/nonPrescriptionSend.js';
+import nonPrescriptionSend from './classes/nonPrescriptionSend.js';
 
 
 
@@ -221,7 +223,7 @@ paperprescriptionCanvas.init()
 const paperprescriptionButton = new Button('.paperPrescriptionForm', 'Dodaj kolejną receptę papierową', '')
 paperprescriptionButton.init()
 
-const paperPrescriptionButtonAdd = new paperPrescriptionAdd('.both2')
+const paperPrescriptionButtonAdd = new paperPrescriptionAdd('.paperInputsContainer')
 paperPrescriptionButtonAdd.addNew()
 
 
@@ -243,6 +245,9 @@ drugAmountInput.init()
 
 const button3 = new Button('.nonPrescriptionForm', 'Dodaj kolejny lek', 'submit')
 button3.init()
+
+const sendNon = new nonPrescriptionSend()
+sendNon.init()
 
 
 
