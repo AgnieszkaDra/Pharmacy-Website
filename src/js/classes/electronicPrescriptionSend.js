@@ -3,6 +3,7 @@ import { setError } from "../functions/functions";
 import { showElectronicPrescriptionValue } from "../showInputValue/showInputValue";
 
 
+
 class electronicPrescriptionSend {
 
     constructor() {
@@ -73,6 +74,7 @@ class electronicPrescriptionSend {
             const errors = [];
             const electronicPrescriptionForm = document.querySelector('.electronicPrescriptionForm'); 
             this.electronicPrescriptionForm.fields.forEach(function(field){
+                alert('pinField')
                 const {name, label, required = false, pattern = null} = field;
                 const value = electronicPrescriptionForm.elements[name].value;
                 const valParent = electronicPrescriptionForm.elements[name]

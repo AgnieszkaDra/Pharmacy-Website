@@ -1,3 +1,5 @@
+import { showNonPrescriptionValue } from "../showInputValue/showInputValue"
+
 
 class nonPrescriptionSend {
     
@@ -6,72 +8,129 @@ class nonPrescriptionSend {
         this.inputDrugName = document.querySelector('#drugName')
         this.inputDrugDose = document.querySelector('#drugDose')
         this.inputDrugAmount = document.querySelector('#drugAmount')
+        this.nonPrescriptionForm = document.querySelector('.nonPrescriptionForm')
         this.nonPrescriptionFieldset = document.querySelector('.nonPrescriptionFieldset')
         this.nonPrescriptionButton = document.querySelector('.nonPrescriptionFormButton')
+        this.nonPrescriptionOrder = document.querySelector('.nonPrescriptionOrder')
+        this.showNonPrescriptionValue = showNonPrescriptionValue
+        this.nonPrescriptionForm.fields = [
+            {
+                name: 'drugName',
+                label: 'nazwa',
+                
+            },
+            {
+                name: 'drugDose',
+                label: 'dawka',
+            },
+            {
+                name: 'drugAmount',
+                label: 'ilość',
+            }
+        ]
    }
 
     init() {
-        this.containerForm.addEventListener('submit', function(el){
-            alert('init non')
-            el.preventDefault() 
+
+     
+         
+        this.nonPrescriptionForm.addEventListener('submit', e => {
+          
+            e.preventDefault() 
             const container = document.querySelector('.nonPrescriptionOrder')
-         if (!(this.inputDrugName.value === '') && !(this.inputDrugDose)) {
-            alert('init value')
-                const value1 = this.inputDrugName.value
-                const inputValueContainer = document.createElement('div')
-                        const inputValueContainerNode = container.appendChild(inputValueContainer)
-                        inputValueContainer.classList.add('inputValueContainer')
-                        const inputContainer = document.createElement('div')
-                        inputValueContainerNode.appendChild(inputContainer)
-                        inputContainer.innerText = n + "  " + value1
-                        const button = document.createElement('button')
-                        button.innerText = 'X'
-                        inputValueContainerNode.appendChild(button)
+
+            const nonPrescriptionForm = document.querySelector('.nonPrescriptionForm'); 
+
+
+            this.nonPrescriptionForm.fields.forEach(function(field){
+          
+                const {name, label} = field;
+                const value = nonPrescriptionForm.elements[name].value;
+               
+                const valParent = nonPrescriptionForm.elements[name]
+               
+
+                
             
-                        button.addEventListener('click', function (el) {
-                            el.target.closest('.inputValueContainer').remove()
-                        })
+                // if(name === 'drugName'){
+                //   alert('value')
+                //   const value1 = this.inputDrugName.value
+                //   const inputValueContainer = document.createElement('div')
+                //         const inputValueContainerNode = container.appendChild(inputValueContainer)
+                //         inputValueContainer.classList.add('inputValueContainer')
+                //         const inputContainer = document.createElement('div')
+                //         inputValueContainerNode.appendChild(inputContainer)
+                //         inputContainer.innerText = n + "  " + value1
+                //         const button = document.createElement('button')
+                //         button.innerText = 'X'
+                //         inputValueContainerNode.appendChild(button)
+            
+                //         button.addEventListener('click', function (el) {
+                //             el.target.closest('.inputValueContainer').remove()
+                //         })
+                        
+                // }
+                }
+              
+            )
+            this.showNonPrescriptionValue(this.inputDrugName, this.inputDrugDose,  this.inputDrugAmount, this.nonPrescriptionOrder)
+//          if (!(this.inputDrugName.value === '') && !(this.inputDrugDose)) {
+//             alert('init drugname ')
+//                 const value1 = this.inputDrugName.value
+//                 const inputValueContainer = document.createElement('div')
+//                         const inputValueContainerNode = container.appendChild(inputValueContainer)
+//                         inputValueContainer.classList.add('inputValueContainer')
+//                         const inputContainer = document.createElement('div')
+//                         inputValueContainerNode.appendChild(inputContainer)
+//                         inputContainer.innerText = n + "  " + value1
+//                         const button = document.createElement('button')
+//                         button.innerText = 'X'
+//                         inputValueContainerNode.appendChild(button)
+            
+//                         button.addEventListener('click', function (el) {
+//                             el.target.closest('.inputValueContainer').remove()
+//                         })
                         
                       
-                    }  
-   if (!(this.inputDrugName.value === '') && !(this.inputDrugDose.value === '')) {
+//                     }  
+//    if (!(this.inputDrugName.value === '') && !(this.inputDrugDose.value === '')) {
                         
-                    const value1 = this.inputDrugName.value
-                    const value2 = this.inputDrugDose.value
-                    console.log(value1,value2)
-                    const inputValueContainer = document.createElement('div')
-                    const inputValueContainerNode = container.appendChild(inputValueContainer)
-                    inputValueContainer.classList.add('inputValueContainer')
-                    const inputContainer = document.createElement('div')
-                    inputValueContainerNode.appendChild(inputContainer)
-                    inputContainer.innerText = value1 + "  " +  value2
-                    const button = document.createElement('button')
-                    button.innerText = 'X'
-                    inputValueContainerNode.appendChild(button)
+//                     const value1 = this.inputDrugName.value
+//                     const value2 = this.inputDrugDose.value
+//                     console.log(value1,value2)
+//                     const inputValueContainer = document.createElement('div')
+//                     const inputValueContainerNode = container.appendChild(inputValueContainer)
+//                     inputValueContainer.classList.add('inputValueContainer')
+//                     const inputContainer = document.createElement('div')
+//                     inputValueContainerNode.appendChild(inputContainer)
+//                     inputContainer.innerText = value1 + "  " +  value2
+//                     const button = document.createElement('button')
+//                     button.innerText = 'X'
+//                     inputValueContainerNode.appendChild(button)
             
-                    button.addEventListener('click', function (el) {
-                        el.target.closest('.inputValueContainer').remove()
-                    })
-                }
+//                     button.addEventListener('click', function (el) {
+//                         el.target.closest('.inputValueContainer').remove()
+//                     })
+//                 }
 
-        if (!(this.inputDrugName.value === '') && !(this.inputDrugDosevalue === '') && (this.inputDrugAmount === '')) {
-                        const inputValueContainer = document.createElement('div')
-                        const inputValueContainerNode = container.appendChild(inputValueContainer)
-                        inputValueContainer.classList.add('inputValueContainer')
-                        const inputContainer = document.createElement('div')
-                        inputValueContainerNode.appendChild(inputContainer)
+//         if (!(this.inputDrugName.value === '') && !(this.inputDrugDosevalue === '') && (this.inputDrugAmount === '')) {
+//                         const inputValueContainer = document.createElement('div')
+//                         const inputValueContainerNode = container.appendChild(inputValueContainer)
+//                         inputValueContainer.classList.add('inputValueContainer')
+//                         const inputContainer = document.createElement('div')
+//                         inputValueContainerNode.appendChild(inputContainer)
             
-                        inputContainer.innerText = n + "" + value1 + " " +  value2
+//                         inputContainer.innerText = n + "" + value1 + " " +  value2
             
-                        const button = document.createElement('button')
-                        button.innerText = 'X'
-                        inputValueContainerNode.appendChild(button)
+//                         const button = document.createElement('button')
+//                         button.innerText = 'X'
+//                         inputValueContainerNode.appendChild(button)
             
-                        button.addEventListener('click', function (el) {
-                            el.target.closest('.inputValueContainer').remove()
+//                         button.addEventListener('click', function (el) {
+//                             el.target.closest('.inputValueContainer').remove()
             
-                        })
-                    }
+//                         })
+//                     }
                 }
         )
        

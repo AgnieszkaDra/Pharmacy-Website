@@ -316,7 +316,13 @@ nonPrescriptionButton.addEventListener('click', (el) => {
 })
 
 const form = document.querySelector('.form-send')
+const formNon = document.querySelector('.nonPrescriptionForm')
 form.addEventListener('keydown', function(keyEvent) {
+  if ((keyEvent.charCode || keyEvent.keyCode) === 13) {
+    keyEvent.preventDefault();
+  }
+})
+formNon.addEventListener('keydown', function(keyEvent) {
   if ((keyEvent.charCode || keyEvent.keyCode) === 13) {
     keyEvent.preventDefault();
   }
