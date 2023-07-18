@@ -1,4 +1,6 @@
 import { showNonPrescriptionValue } from "../showInputValue/showInputValue"
+const mql = window.matchMedia("(max-width: 768px)")
+const tablet = window.matchMedia("(min-width: 769px")
 
 
 class nonPrescriptionSend {
@@ -12,6 +14,7 @@ class nonPrescriptionSend {
         this.nonPrescriptionFieldset = document.querySelector('.nonPrescriptionFieldset')
         this.nonPrescriptionButton = document.querySelector('.nonPrescriptionFormButton')
         this.nonPrescriptionOrder = document.querySelector('.nonPrescriptionOrder')
+        this.nonPrescriptionInputs = document.querySelector('.nonInputsContainer')
         this.showNonPrescriptionValue = showNonPrescriptionValue
         this.nonPrescriptionForm.fields = [
             {
@@ -73,7 +76,14 @@ class nonPrescriptionSend {
                 }
               
             )
-            this.showNonPrescriptionValue(this.inputDrugName, this.inputDrugDose,  this.inputDrugAmount, this.nonPrescriptionOrder)
+
+            if(mql.matches) {
+                this.showNonPrescriptionValue(this.inputDrugName, this.inputDrugDose,  this.inputDrugAmount, this.nonPrescriptionInputs) 
+            }
+            if(tablet.matches) {
+               this.showNonPrescriptionValue(this.inputDrugName, this.inputDrugDose,  this.inputDrugAmount, this.nonPrescriptionOrder) 
+            }
+            
 //          if (!(this.inputDrugName.value === '') && !(this.inputDrugDose)) {
 //             alert('init drugname ')
 //                 const value1 = this.inputDrugName.value

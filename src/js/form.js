@@ -151,7 +151,7 @@ if (tablet.matches) {
 
   const paperprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Recepta papierowa', 'paperPrescriptionOrder', '')
   paperprescriptionOrder.init()
-  
+
   const nonprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Leki bez recepty', 'nonPrescriptionOrder', '')
   nonprescriptionOrder.init()
 
@@ -204,14 +204,39 @@ otherprescriptionFieldset.init()
 const nonprescriptionForm = new Form('.nonPrescriptionFieldset', 'nonPrescriptionForm')
 nonprescriptionForm.init()
 
-const drugNameInput= new Input('.nonPrescriptionForm', 'drugName','nazwa leku')
-drugNameInput.init()
+if(mql.matches) {
 
-const drugDoseInput= new Input('.nonPrescriptionForm', 'drugDose',  'dawka')
-drugDoseInput.init()
+  const non = document.querySelector('.nonPrescriptionForm')
+  const inputsContainer = document.createElement('div')
+  inputsContainer.classList.add('nonInputsContainer')
+  non.appendChild(inputsContainer)
 
-const drugAmountInput= new Input('.nonPrescriptionForm', 'drugAmount' , 'ilość')
-drugAmountInput.init()
+  const drugNameInput= new Input('.nonInputsContainer', 'drugName','nazwa leku')
+  drugNameInput.init()
+
+  const drugDoseInput= new Input('.nonInputsContainer', 'drugDose',  'dawka')
+  drugDoseInput.init()
+
+  const drugAmountInput= new Input('.nonInputsContainer', 'drugAmount' , 'ilość')
+  drugAmountInput.init()
+}
+
+if(tablet.matches) {
+
+  const drugNameInput= new Input('.nonPrescriptionForm', 'drugName','nazwa leku')
+  drugNameInput.init()
+
+  const drugDoseInput= new Input('.nonPrescriptionForm', 'drugDose',  'dawka')
+  drugDoseInput.init()
+
+  const drugAmountInput= new Input('.nonPrescriptionForm', 'drugAmount' , 'ilość')
+  drugAmountInput.init()
+  
+}
+
+
+
+
 
 const button3 = new Button('.nonPrescriptionForm', 'Dodaj kolejny lek', 'submit')
 button3.init()

@@ -420,8 +420,33 @@ section {
   font-size: calc(1rem + 1vh);
 }
 
+.fieldset.nonPrescriptionFieldset {
+  padding-top: 50px;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-sendbutton {
+  background-color: rgb(254, 46, 22);
+}
+
 .block {
   display: block;
+}
+
+canvas {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .canvassize {
@@ -534,18 +559,6 @@ section {
 
 .margin-bottom-20 {
   margin-bottom: 20px;
-}
-
-button {
-  padding: 10px;
-  background-color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: bold;
 }
 
 .background-pink {

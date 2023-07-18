@@ -25,22 +25,15 @@ export class InputFileContainer{
 
    
     render() {
-       alert('containerrender')
+     
         const inputCont = document.createElement('div') 
         inputCont.classList.add('inputCont')
         inputCont.setAttribute("name", 'both' + this.classs) 
         inputCont.classList.add('in' + this.classs)
         inputCont.setAttribute('style', 'padding:10px')
 
-        
-
-       
         this.container.appendChild(inputCont)
-       
-      
-
-        
-
+    
     }
 
 }

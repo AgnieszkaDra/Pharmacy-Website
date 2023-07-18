@@ -34,10 +34,11 @@ export class Input{
         
         inputContainer.classList.add('flex')
         inputContainer.classList.add('column')
-        inputContainer.classList.add('margin-bottom')
         inputContainer.classList.add(this.classs)
+        inputContainer.setAttribute('style', 'margin-bottom:10px')
         const label = document.createElement('label')
         label.setAttribute('style', 'width:80%')
+
  
         label.innerText = this.label
       
