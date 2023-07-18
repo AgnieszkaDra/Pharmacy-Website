@@ -2,6 +2,9 @@ import InputFileContainer from "./InputFileContainer";
 import InputFile from "./InputFile";
 import Canvas from "./Canvas";
 
+const mql = window.matchMedia("(max-width: 768px)")
+const tablet = window.matchMedia("(min-width: 769px")
+
 class paperPrescriptionAdd {
 
     constructor(selector, pictureCanvas) {
@@ -106,8 +109,16 @@ class paperPrescriptionAdd {
         let ind = new InputFile(`div[name='${name}']`)
         ind.init()
 
-        let canvas = new Canvas('.paperPrescriptionOrder')
-        canvas.init()
+    //     if(mql.matches){
+    //           let canvas = new Canvas('.paperInputsContainer')
+    //     canvas.init()
+    //     }
+
+    //     if(tablet.matches){
+    //         let canvas = new Canvas('.paperPrescriptionOrder')
+    //   canvas.init()
+    //   }
+      
 
             //   let object = new InputFileContainer('.paperInputsContainer');
             //     object.init()

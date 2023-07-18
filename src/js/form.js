@@ -19,6 +19,7 @@ import Form from "./classes/Form.js";
 import SpanOk from "./classes/SpanOk.js";
 import SpanWrong from "./classes/SpanWrong.js";
 import { setInputSuccess } from './functions/functions.js';
+import paperPrescriptionChangeFile from './classes/paperPrescriptionChangeFile';
 
 const sendOrderButton = document.querySelector('.send')
 
@@ -69,14 +70,6 @@ if(mql.matches) {
   emailLabelError.init()
 
 }
-
-
-
-
-
-
-
-
 
 const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
 electronicprescriptionFieldset.init()
@@ -163,12 +156,10 @@ if (tablet.matches) {
   nonprescriptionOrder.init()
 
   const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
-electronicprescriptionButton.init()
+  electronicprescriptionButton.init()
 
-const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
-electronicPrescriptionButtonAdd.go()
-
-
+  const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
+  electronicPrescriptionButtonAdd.go()
 
 }
 
@@ -183,42 +174,21 @@ inputsFileContainer.classList.add('paperInputsContainer')
 paper.appendChild(inputsFileContainer)
 const paperPrescriptionInputContainer = new InputFileContainer('.paperInputsContainer')
 paperPrescriptionInputContainer.init()
-
- 
-
-
-
-
-// const canvas = document.querySelectorAll(`canvas[name='${na}']`)
-// console.log(canvas)
-
 const paperprescriptionInput= new InputFile('.inputCont')
 paperprescriptionInput.init()
-const paperprescriptionCanvas = new Canvas('.paperPrescriptionOrder')
-paperprescriptionCanvas.init()
-// if(tablet.matches) {
-//   const fieldset5 = new FieldsetImitate('.electronicPrescriptionForm', 'Recepty elektroniczne', 'electronicPrescriptionOrder', 'rgb(249, 217, 213)')
-//   fieldset5.init()
+
+// if(mql.matches) {
+//   const paperprescriptionCanvas = new Canvas('.paperInputsContainer')
+// paperprescriptionCanvas.init()
 // }
 
+// if(tablet.matches) {
+//   const paperprescriptionCanvas = new Canvas('.paperPrescriptionOrder')
+// paperprescriptionCanvas.init()
+// }
 
-
-
-
-
-
-// const classCanvas1 = canvas1.classs
-// const paperPrescriptionButtonAdd = new paperPrescriptionSend()
-// paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
-
-
-
-
-// const canvas1 = new Canvas(`.inputCont`)
-// canvas1.init()
-// const classCanvas1 = canvas1.classs
-// console.log(classCanvas1)
-
+// const changeFile = new paperPrescriptionChangeFile()
+// changeFile.changeNew()
 
 const paperprescriptionButton = new Button('.paperPrescriptionForm', 'Dodaj kolejną receptę papierową', '')
 paperprescriptionButton.init()
