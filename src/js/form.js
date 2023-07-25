@@ -71,7 +71,7 @@ if(mql.matches) {
 
 }
 
-const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', 'order', '#fe2e16')
+const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '', '#fe2e16')
 electronicprescriptionFieldset.init()
 
 const electronicprescriptionForm = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
@@ -116,10 +116,10 @@ if(mql.matches) {
 
 if (tablet.matches) {
 
-  const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', 'order', '#fe2e16')
+  const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '', '#fe2e16')
   orderFieldset.init()
 
-  const nameandsurnameFieldset = new FieldsetImitate('.sendPrescriptionFieldset', 'Dane pacjenta', 'nameAndSurnameOrder', 'order', '#fe2e16')
+  const nameandsurnameFieldset = new FieldsetImitate('.sendPrescriptionFieldset', 'Dane pacjenta', 'nameAndSurnameOrder', '', '#fe2e16')
   nameandsurnameFieldset.init()
   
   const nameInput= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko')
@@ -163,7 +163,7 @@ if (tablet.matches) {
 
 }
 
-const paperprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę papierową', 'paperPrescriptionFieldset', 'order', '#fe2e16')
+const paperprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '', '#fe2e16')
 paperprescriptionFieldset.init()
 
 const paperprescriptionForm = new Form('.paperPrescriptionFieldset', 'paperPrescriptionForm')
@@ -198,7 +198,7 @@ paperPrescriptionButtonAdd.addNew()
 
 
 
-const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', 'order', '#fe2e16')
+const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '', '#fe2e16')
 otherprescriptionFieldset.init()
 
 const nonprescriptionForm = new Form('.nonPrescriptionFieldset', 'nonPrescriptionForm')

@@ -28,7 +28,12 @@ export class FieldsetImitate{
         fieldsetImitate.classList.add('flex')
         fieldsetImitate.classList.add('column')
         fieldsetImitate.classList.add(this.classs)
-        fieldsetImitate.classList.add(this.classs2)
+        if(this.classs2 === ''){
+            fieldsetImitate.classList.add('nevermind')
+        }else {
+              fieldsetImitate.classList.add(this.classs2)
+        }
+      
 
         const fieldsetImitateTitle = document.createElement('div')
         fieldsetImitateTitle.innerText = this.title
