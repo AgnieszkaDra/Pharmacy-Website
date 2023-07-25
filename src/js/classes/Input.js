@@ -37,7 +37,7 @@ export class Input{
         inputContainer.classList.add(this.classs)
         inputContainer.setAttribute('style', 'margin-bottom:10px')
         const label = document.createElement('label')
-        label.setAttribute('style', 'width:80%')
+        // label.setAttribute('style', 'width:80%')
 
  
         label.innerText = this.label
@@ -47,7 +47,7 @@ export class Input{
         input.setAttribute('id', this.id)
        
         input.setAttribute('name', this.id)
-        input.setAttribute('style', 'width:80%')
+        // input.setAttribute('style', 'width:80%')
       
         this.container.appendChild(inputContainer)
         inputContainer.appendChild(label)

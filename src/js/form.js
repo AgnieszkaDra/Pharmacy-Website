@@ -19,7 +19,7 @@ import Form from "./classes/Form.js";
 import SpanOk from "./classes/SpanOk.js";
 import SpanWrong from "./classes/SpanWrong.js";
 import { setInputSuccess } from './functions/functions.js';
-import paperPrescriptionChangeFile from './classes/paperPrescriptionChangeFile';
+// import paperPrescriptionChangeFile from './classes/paperPrescriptionChangeFile';
 
 const sendOrderButton = document.querySelector('.send')
 
@@ -42,7 +42,7 @@ sendForm.init()
 
 if(mql.matches) {
 
-  const nameandsurnameFieldset = new FieldsetImitate('.form-send', 'Dane pacjenta', 'nameAndSurnameOrder', '#fe2e16')
+  const nameandsurnameFieldset = new FieldsetImitate('.form-send', 'Dane pacjenta', 'nameAndSurnameOrder',  'order', '#fe2e16')
   nameandsurnameFieldset.init()
   
   const nameInput= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko')
@@ -71,7 +71,7 @@ if(mql.matches) {
 
 }
 
-const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', '#fe2e16')
+const electronicprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę elektroniczną', 'electronicPrescriptionFieldset', 'order', '#fe2e16')
 electronicprescriptionFieldset.init()
 
 const electronicprescriptionForm = new Form('.electronicPrescriptionFieldset', 'electronicPrescriptionForm')
@@ -103,7 +103,7 @@ peselLabelError.init()
 
 if(mql.matches) {
 
-  const electronicprescriptionOrder = new FieldsetImitate('.electronicPrescriptionForm', '', 'electronicPrescriptionOrder', '')
+  const electronicprescriptionOrder = new FieldsetImitate('.electronicPrescriptionForm', '', 'electronicPrescriptionOrder', 'order',  '')
   electronicprescriptionOrder.init()
 
   const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
@@ -116,10 +116,10 @@ if(mql.matches) {
 
 if (tablet.matches) {
 
-  const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', '#fe2e16')
+  const orderFieldset = new FieldsetImitate('.form-send', 'Twoje Zamówienie', 'sendPrescriptionFieldset', 'order', '#fe2e16')
   orderFieldset.init()
 
-  const nameandsurnameFieldset = new FieldsetImitate('.sendPrescriptionFieldset', 'Dane pacjenta', 'nameAndSurnameOrder', '#fe2e16')
+  const nameandsurnameFieldset = new FieldsetImitate('.sendPrescriptionFieldset', 'Dane pacjenta', 'nameAndSurnameOrder', 'order', '#fe2e16')
   nameandsurnameFieldset.init()
   
   const nameInput= new Input('.nameAndSurnameOrder', 'name', 'Imię i nazwisko')
@@ -146,13 +146,13 @@ if (tablet.matches) {
   const emailLabelError = new LabelError('.email')
   emailLabelError.init()
 
-  const electronicprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Recepta elektroniczna', 'electronicPrescriptionOrder', '')
+  const electronicprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Recepta elektroniczna', 'electronicPrescriptionOrder', 'order', '')
   electronicprescriptionOrder.init()
 
-  const paperprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Recepta papierowa', 'paperPrescriptionOrder', '')
+  const paperprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Recepta papierowa', 'paperPrescriptionOrder','order', '')
   paperprescriptionOrder.init()
 
-  const nonprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Leki bez recepty', 'nonPrescriptionOrder', '')
+  const nonprescriptionOrder = new FieldsetImitate('.sendPrescriptionFieldset', 'Leki bez recepty', 'nonPrescriptionOrder', 'order',  '')
   nonprescriptionOrder.init()
 
   const electronicprescriptionButton = new Button('.electronicPrescriptionForm', 'Dodaj kolejną receptę elektroniczną', 'submit')
@@ -163,7 +163,7 @@ if (tablet.matches) {
 
 }
 
-const paperprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę papierową', 'paperPrescriptionFieldset', '#fe2e16')
+const paperprescriptionFieldset = new FieldsetImitate('.form-send', 'Leki na receptę papierową', 'paperPrescriptionFieldset', 'order', '#fe2e16')
 paperprescriptionFieldset.init()
 
 const paperprescriptionForm = new Form('.paperPrescriptionFieldset', 'paperPrescriptionForm')
@@ -198,7 +198,7 @@ paperPrescriptionButtonAdd.addNew()
 
 
 
-const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '#fe2e16')
+const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', 'order', '#fe2e16')
 otherprescriptionFieldset.init()
 
 const nonprescriptionForm = new Form('.nonPrescriptionFieldset', 'nonPrescriptionForm')

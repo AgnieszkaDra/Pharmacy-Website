@@ -263,6 +263,16 @@ strong {
 
 }
 
+section.fieldset.order {
+    background-color: pink;
+    padding: 50px;
+
+    .fieldset__title {
+
+        font-size: calc(0.5rem + 1vh);
+    }
+}
+
   
 .fieldset h2 {
 

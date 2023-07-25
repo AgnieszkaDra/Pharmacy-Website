@@ -5,7 +5,7 @@ import Canvas from "./Canvas";
 const mql = window.matchMedia("(max-width: 768px)")
 const tablet = window.matchMedia("(min-width: 769px")
 
-class paperPrescriptionChangeFile {
+export class paperPrescriptionChangeFile {
 
     constructor(selector, pictureCanvas) {
 

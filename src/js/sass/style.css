@@ -450,8 +450,8 @@ canvas {
 }
 
 .canvassize {
-  width: 60px;
-  height: 60px;
+  width: 20px;
+  height: 20px;
 }
 
 .electronicPrescriptionOrder.fieldset, .paperPrescriptionOrder.fieldset, .nonPrescriptionOrder.fieldset {
@@ -472,6 +472,8 @@ canvas {
 
 .sendPrescriptionFieldset {
   grid-area: sendPrescriptionFieldset;
+  justify-content: flex-start;
+  background-color: pink;
 }
 
 .electronicPrescriptionForm {
@@ -492,11 +494,6 @@ canvas {
 .electronicPrescriptionOrder.fieldset {
   grid-area: electronicPrescriptionOrder;
   border: none;
-  width: 100%;
-}
-
-.electronicPrescriptionOrder.fieldset .fieldset__title {
-  background-color: rgb(254, 46, 22);
 }
 
 .electronicPrescriptionOrder.fieldset .inputValueContainer {
@@ -699,7 +696,7 @@ canvas {
 }
 @media (max-width: 1000px) {
   .section--third,
-  .section--fourth {
+.section--fourth {
     display: grid;
     grid-template-columns: 0.8fr;
     justify-content: center;
@@ -753,6 +750,15 @@ strong {
   border: 1px solid #ddd;
   padding: 30px;
   margin-bottom: 20px;
+}
+
+section.fieldset.order {
+  background-color: pink;
+  padding: 50px;
+}
+
+section.fieldset.order .fieldset__title {
+  font-size: calc(0.5rem + 1vh);
 }
 
 .fieldset h2 {
@@ -846,4 +852,6 @@ example-component {
 
 .padding-10 > div {
   padding: 10%;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

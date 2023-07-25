@@ -2,7 +2,7 @@
 
 export class FieldsetImitate{
 
-    constructor( selector, title = '', classs = '', color = '') {
+    constructor( selector, title = '', classs = '', classs2 = '', color = '') {
 
         const container = document.querySelector(selector)
 
@@ -12,6 +12,7 @@ export class FieldsetImitate{
         this.container = document.querySelector(selector)
         this.title = title
         this.classs = classs
+        this.classs2 = classs2
         this.color = color
         
     }
@@ -27,6 +28,7 @@ export class FieldsetImitate{
         fieldsetImitate.classList.add('flex')
         fieldsetImitate.classList.add('column')
         fieldsetImitate.classList.add(this.classs)
+        fieldsetImitate.classList.add(this.classs2)
 
         const fieldsetImitateTitle = document.createElement('div')
         fieldsetImitateTitle.innerText = this.title

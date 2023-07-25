@@ -14,7 +14,6 @@ export class InputFileContainer{
         this.classs = classContCreate()
         this.canvas = this.classs.parentElemet
       
-        
     }
 
     init() {
