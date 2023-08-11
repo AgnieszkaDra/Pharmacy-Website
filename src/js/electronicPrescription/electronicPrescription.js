@@ -15,7 +15,7 @@ buttonElectronicPrescription.addEventListener('click', e => {
 )
 
 export const validateButtons = () => {
-    alert('button')
+
 
     const pinValue = pin.value.trim()
     const peselValue = pesel.value.trim()
@@ -76,37 +76,6 @@ const showText2 = function (container, text, pesel) {
 }
 
 
-// fileSelector.addEventListener('change', readFile);
-
-// function readFile(input) {
-//     let file = input.files; 
-//     let fileReader = new FileReader(); 
-//     fileReader.readFile() 
-//     fileReader.onload = function() {
-//       alert(fileReader.result);
-//     }; 
-//     fileReader.onerror = function() {
-//       alert(fileReader.error);
-//     }; 
-//   }
-
-// // function readFile(file) {
-
-// //   let selected = fileSelector.files[0]
-// //   let fileReader = new FileReader();
-
-// //  // fileReader.readAsText(file); 
-// //   fileReader.onload = function() {
-// //     alert(fileReader.result);
-// //   }; 
-// //   fileReader.onerror = function() {
-// //     alert(fileReader.error);
- 
-// //   }
-  
-
-  
-// // }
 
 var canvas = document.getElementById('our-canvas'),
     context = canvas.getContext('2d');

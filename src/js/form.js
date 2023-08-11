@@ -177,18 +177,6 @@ paperPrescriptionInputContainer.init()
 const paperprescriptionInput= new InputFile('.inputCont')
 paperprescriptionInput.init()
 
-// if(mql.matches) {
-//   const paperprescriptionCanvas = new Canvas('.paperInputsContainer')
-// paperprescriptionCanvas.init()
-// }
-
-// if(tablet.matches) {
-//   const paperprescriptionCanvas = new Canvas('.paperPrescriptionOrder')
-// paperprescriptionCanvas.init()
-// }
-
-// const changeFile = new paperPrescriptionChangeFile()
-// changeFile.changeNew()
 
 const paperprescriptionButton = new Button('.paperPrescriptionForm', 'Dodaj kolejną receptę papierową', '')
 paperprescriptionButton.init()
@@ -249,18 +237,6 @@ sendNon.init()
 
 const buttonSend = new Button('.form-send', 'Zamawiam', 'submit')
 buttonSend.init()
-// // const form2 = new Form('.sendPrescriptionFieldset', 'form-send')
-// // form2.init()
-// const fieldset8 = new FieldsetImitate('.form-send', 'Dane zamawiającego', 'nameAndSurnameOrder', '')
-// fieldset8.init()
-
-
-
-// const fieldset6 = new FieldsetImitate('.form-send', 'Recepty papierowe', 'paperPrescriptionOrder', 'rgb(249, 217, 213)')
-// fieldset6.init()
-
-// const fieldset7 = new FieldsetImitate('.form-send', 'Pozostałe leki', 'nonPrescriptionOrder', 'rgb(249, 217, 213)')
-// fieldset7.init()
 
 
 
@@ -270,36 +246,6 @@ buttonSend.init()
 
 
 
-
-// // const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
-// // electronicPrescriptionButtonAdd.send()
-
-
-
-
-// const paper = document.querySelector('.paperPrescriptionFieldset')
-
-// const inputsFileContainer = document.createElement('div')
-// inputsFileContainer.classList.add('paperInputsContainer')
-// paper.appendChild(inputsFileContainer)
-
-
-// const paperPrescriptionButton = document.querySelector('.paperPrescriptionFieldsetbutton')
-// console.log(paperPrescriptionButton)
-// paperPrescriptionButton.addEventListener('click', (el) =>{
-
-// const elem = el.target
-//   const input4 = new InputFile('.paperInputsContainer')
-// input4.init()
-// const classInput4 = input4.classs
-// console.log(typeof classInput4)
-
-// const canvas1 = new Canvas('.paperPrescriptionOrder')
-// canvas1.init()
-// const classCanvas1 = canvas1.classs
-// const paperPrescriptionButtonAdd = new paperPrescriptionSend()
-// paperPrescriptionButtonAdd.sendNew(classInput4,classCanvas1)
-// })
 
 
 
@@ -366,13 +312,6 @@ inputPESEL.addEventListener('input', function(e) {
 const orderSend = new Order()
 orderSend.go()
 
-// InputFile.prototype.click_handler = function(el) {
-//   el.preventDefault()
-//   el.init()
-// }
-// var object = new InputFile('.paperInputsContainer');
-
-// document.querySelector('.paperPrescriptionFormbutton').addEventListener('click', object.init());
 
 
 

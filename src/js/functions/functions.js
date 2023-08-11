@@ -5,16 +5,13 @@
 
 
 export const setError = (element, message) => {
-    alert('set error')
-    console.log(element)
+  
         const inputControl = element.parentElement
-        console.log(inputControl)
+       
         const inputInInputControl = inputControl.querySelector('input')
         
         const errorDisplay = inputControl.querySelector('.label__error')
     
-        // inputControl.classList.add('error')
-        // inputControl.classList.remove('success')
         inputInInputControl.classList.remove('success')
         inputInInputControl.classList.add('error')
         errorDisplay.innerText = message
@@ -64,15 +61,7 @@ export const setError = (element, message) => {
         })
        
        
-        // const span = element.nextElementSibling
-        
-        // span.removeAttribute('class')
-        // span.classList.remove('.span')
-        // // const errorDisplay = inputControl.querySelector('.label__error')
-       
-        // span.classList.add('success')
-      
-        // span.classList.remove('error')
+    
        
     
     }

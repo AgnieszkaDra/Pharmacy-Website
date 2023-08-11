@@ -74,7 +74,6 @@ class electronicPrescriptionSend {
             const errors = [];
             const electronicPrescriptionForm = document.querySelector('.electronicPrescriptionForm'); 
             this.electronicPrescriptionForm.fields.forEach(function(field){
-                alert('pinField')
                 const {name, label, required = false, pattern = null} = field;
                 const value = electronicPrescriptionForm.elements[name].value;
                 const valParent = electronicPrescriptionForm.elements[name]
@@ -93,39 +92,10 @@ class electronicPrescriptionSend {
             if(errors.length === 0){
                
                 this.showElectronicPrescriptionValue(this.pin, this.pesel, this.textareaPinPesel)
-                // this.pin.value=' '
-                // this.pesel.value = ' ' 
-                // const errorDisplayPin = document.querySelector('.PIN')
-                // errorDisplayPin.classList.remove('error')
-                // const errorDisplayPinClosest = errorDisplayPin.querySelector('.label__error')
-    
-                // errorDisplayPinClosest.innerText = ''
-                // const errorDisplayPesel = document.querySelector('.PESEL')
-                // errorDisplayPesel.classList.remove('error')
-                // const errorDisplayPeselClosest = errorDisplayPesel.querySelector('.label__error')
-                // errorDisplayPeselClosest.innerText = ''
-
-                // errorDisplayPesel.parentElement.closest('.label__error').innerHTML = ''
-
-               
-              
-                    
-               
-
-
             } 
             
         });
     }
-
-    // both() {
-    //     return this.clear().then(this.send()).then(this.clear())
-    // }
-
-    // click() {
-    //    this.paperPrescriptionValue(this.paperPrescriptionButton, this.ourCanvas)
-    // }
-   
 }
 
  export default electronicPrescriptionSend

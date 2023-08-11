@@ -32,12 +32,6 @@ class Order {
     clear() {
         console.log('clear')
         const label__errors = document.querySelectorAll('.label__error')
-        // return new Promise(function(resolve, reject) {
-        //     resolve(label__errors.forEach(function(el){
-        //     el.innerText = ''
-        //     return el}))
-        // })
-
         label__errors.forEach(function(el){
              el.innerText = ''
         return el
@@ -55,7 +49,7 @@ class Order {
     }
 
     getListOfFiles() {
-        // use this.path to get list of files and return in a Promise way (resolve, reject)
+       
         return new Promise((resolve, reject) => {
         });
       }
@@ -64,10 +58,7 @@ class Order {
     
     send(){ 
 
-      
-        // return new Promise(function(resolve, reject){
-        //     resolve(
-  this.orderForm.addEventListener('submit', e => {
+      this.orderForm.addEventListener('submit', e => {
                 alert('submit')
             e.preventDefault();
             
