@@ -1,10 +1,12 @@
 
-import './sass/style.css'
+
 
 const button = document.querySelector('.nav__button')
 
 const buttonpp = document.querySelector('.hamburger')
 const backBlack = document.querySelector('.back_black')
+const nav = document.querySelector('nav')
+const buttonClose = document.querySelector('.nav__button.close')
 const menu = document.querySelector('.menu_slide_left')
 const close6 = document.querySelector('.close')
 const header = document.querySelector('header')
@@ -31,10 +33,14 @@ document.querySelector(".form").classList.toggle('close');
 
 
 buttonpp.addEventListener('click', function(){
-
-    
-    menu.style.transform = "translateX(0%)"
+    alert('click')
+    nav.classList.add('nav__block')
    
+})
+
+buttonClose.addEventListener('click', function(){
+    alert('buttonClose')
+    nav.classList.remove('nav__block')
 })
 
 close6.addEventListener('click', function(){
@@ -42,7 +48,4 @@ close6.addEventListener('click', function(){
 })
 
 
-$("#myHref").on('click', function() {
-    alert("inside onclick");
-    // window.location = "http://www.google.com";
-  });
+

@@ -6,35 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./js/sass/style.css">
+    <link rel="stylesheet" href="./styles/reset/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <script src="https://kit.fontawesome.com/5921e22956.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header" id="header">
-        <div class="header__back">
-            <div class="header__container flex container">
-                <div class="header__logo"><img src="../images/banner/drofarmaptekanamyslow.webp"
-                            alt="background-tablet"></div>
-                    <div class="header__button-container">
-                        <button class="hamburger">
-                            <i class="fas fa-bars fa-lg"></i>
-                        </button>
-                    </div>
-                    <div class="name__top">
-                        <h3>Apteka Non-Stop 2</br> Jelcz-Laskowice</h3>
-                    </div>
-                    <div class="menu__top">
-                        <nav class="nav">
-                            <ul class="nav__menu">
-                                <li class="menu-item"><a class="link" href="#main">Strona główna</a></li>
-                                <li class="menu-item"><a class="link" href="#section--fourth">Kontakt</a></li>
-                                <li class="menu-item"><a class="link" href="/">Praca</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+        <div class="header__logo"><img src="../images/banner/drofarmaptekanamyslow.webp" alt="background-tablet"></div>
+        <div class="header__navigation">
+            <button class='hamburger'>
+                <i class="fas fa-bars fa-lg hamburger__icon"></i>
+            </button>
+            <div class="headline">
+                <h3>Apteka Non-Stop 2</br> Jelcz-Laskowice</h3>
             </div>
+            <nav class='nav'>
+                <ul class="nav__menu menu">
+                    <li class="menu__item"><a class="link" href="#main">Strona główna</a></li>
+                    <li class="menu__item"><a class="link" href="#section--fourth">Kontakt</a></li>
+                    <li class="menu__item"><a class="link" href="/">Praca</a></li>
+                </ul>
+                <button class="nav__button close">
+                    <i class="fa-solid fa-xmark nav__button__icon"></i>
+                </button>
+            </nav>
+        </div>
+        <!-- <div class="header__button-container">
+            <button class="hamburger">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </div>
+        <div class="name__top">
+            <h3>Apteka Non-Stop 2</br> Jelcz-Laskowice</h3>
+        </div>
+        <div class="menu__top">
+            <nav class="nav">
+                <ul class="nav__menu">
+                    <li class="menu-item"><a class="link" href="#main">Strona główna</a></li>
+                    <li class="menu-item"><a class="link" href="#section--fourth">Kontakt</a></li>
+                    <li class="menu-item"><a class="link" href="/">Praca</a></li>
+                </ul>
+            </nav>
+        </div> -->
     </header>
     <main class="main container" id="main">
         <section class="section section--first ">
@@ -43,13 +57,13 @@
                 </h2>
                 <h3 class="section__headline section__headline--h3">W celu złożenia rezerwacji wypełnij formularz
                 </h3>
-                <button class="section__button-container"> 
-                  
-                         <a class="section__button__link" href="./form.html" id="myHref">
+                <button class="section__button-container">
+
+                    <a class="section__button__link" href="./form.html" id="myHref">
                         Złóż zamówienie
-                    </a> 
-                
-                  
+                    </a>
+
+
                 </button>
             </div>
             <div class="section--first__element border--pink"></div>
@@ -156,7 +170,8 @@
             <li class="menu-item"><a href="">Praca</a></li>
         </ul>
     </div>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- <script src="./build/index.min.js"></script> -->
 </body>
 
