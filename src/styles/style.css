@@ -36,6 +36,15 @@ body {
   border-radius: 2px;
 }
 
+.button {
+  border-radius: 55px;
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 35px;
+  background: rgb(254, 46, 22);
+}
+
 .text-center {
   text-align: center;
 }
@@ -46,27 +55,9 @@ body {
   align-items: center;
 }
 
-.section__headline--h2 {
-  margin: 0;
-  font-size: 40px;
-  color: rgb(254, 46, 22);
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-@media (max-width: 768px) {
-  .section__headline--h2 {
-    font-size: 30px;
-  }
-}
 .section__headline--h3 {
   color: rgb(57, 57, 57);
   font-size: 25px;
-}
-
-.section > div {
-  padding: 10px 20px 20px 20px;
-  margin: 20px 0;
 }
 
 label {
@@ -155,6 +146,15 @@ body {
   border-radius: 2px;
 }
 
+.button {
+  border-radius: 55px;
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 35px;
+  background: rgb(254, 46, 22);
+}
+
 .text-center {
   text-align: center;
 }
@@ -165,27 +165,9 @@ body {
   align-items: center;
 }
 
-.section__headline--h2 {
-  margin: 0;
-  font-size: 40px;
-  color: rgb(254, 46, 22);
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-@media (max-width: 768px) {
-  .section__headline--h2 {
-    font-size: 30px;
-  }
-}
 .section__headline--h3 {
   color: rgb(57, 57, 57);
   font-size: 25px;
-}
-
-.section > div {
-  padding: 10px 20px 20px 20px;
-  margin: 20px 0;
 }
 
 label {
@@ -409,10 +391,6 @@ span.spanwrong .error {
     max-width: 1250px;
   }
 }
-section {
-  margin: 10px;
-}
-
 .form {
   margin-top: calc(1rem + 1vh);
 }
@@ -586,27 +564,70 @@ canvas {
     max-width: 1250px;
   }
 }
-.section--first {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 25px;
+.main {
+  padding: 20px 10px;
 }
 
-@media (max-width: 1200px) {
-  .section--first {
-    grid-template-columns: 1.4fr 1fr;
-    grid-gap: 10px;
+@media only screen and (min-width: 900px) {
+  .main {
+    padding: 30px 30px;
   }
 }
-@media (max-width: 1000px) {
-  .section--first div:last-child {
-    display: none;
-  }
+.section--first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 900px) {
   .section--first {
-    grid-template-columns: 0.8fr;
-    justify-content: center;
+    flex-direction: row;
   }
 }
+.section--first__element {
+  width: 100%;
+  height: 350px;
+  margin: 20px 0 20px 0;
+}
+
+@media only screen and (min-width: 900px) {
+  .section--first__element {
+    width: 50%;
+    margin: 0 20px 0 20px;
+  }
+}
+.section--first__element.order {
+  padding: 10px;
+}
+
+@media only screen and (min-width: 900px) {
+  .section--first__element.order {
+    padding: 20px;
+  }
+}
+.section--first__element.hero {
+  display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .section--first__element.hero {
+    display: block;
+    background-image: url("/images/leki.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 10px solid rgb(249, 217, 213);
+  }
+}
+.section--first .order__headline {
+  margin: 0;
+  font-size: 40px;
+  color: rgb(254, 46, 22);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
 .section__button-container {
   border-radius: 55px;
   border-color: rgb(254, 46, 22);
@@ -741,7 +762,8 @@ canvas {
     margin-bottom: 20px;
   }
 }
-.fa-clock, .fa-mortar-pestle {
+.fa-clock,
+.fa-mortar-pestle {
   font-size: 40px;
   float: left;
   margin-right: 40px;
@@ -784,54 +806,6 @@ section.fieldset.order .fieldset__title {
   margin: -9px 0 0;
   background: #fff;
   padding: 0 3px;
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1250px;
-  }
-}
-.container, .main {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (max-width: 1000px) {
-  .container, .main {
-    padding-left: 0;
-  }
-}
-@media (min-width: 768px) {
-  .container, .main {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container, .main {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container, .main {
-    max-width: 1250px;
-  }
-}
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.column {
-  flex-direction: column;
 }
 
 example-component {

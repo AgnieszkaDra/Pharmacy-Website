@@ -1,39 +1,97 @@
 @import '../abstracts/';
 
+.main {
+    padding: 20px 10px;
 
+    @include respond(tablet) {
+        padding: 30px 30px;
+    }
+}
 
 .section--first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 25px;
-
-}
-
-@media(max-width:1200px) {
-
-    .section--first {
-        grid-template-columns: 1.4fr 1fr;
-        grid-gap: 10px
+    @include respond(tablet) {
+        flex-direction: row;
     }
 
-}
+    &__element {
+        width: 100%;
+        height: 350px;
+        margin: 20px 0 20px 0;
 
-@media(max-width:1000px) {
+        @include respond(tablet) {
+            width: 50%;
+            margin: 0 20px 0 20px;
+        }
+    }
 
-    .section--first div:last-child {
+    &__element.order {
+        padding: 10px;
+        @include respond(tablet) {
+            padding: 20px;
+        }
+    }
 
+    &__element.hero {
         display: none;
 
+        @include respond(tablet) {
+            display: block;
+            background-image: url('/images/leki.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 10px solid $color-submain;
+        }
     }
 
-    .section--first {
-
-        grid-template-columns: 0.8fr;
-        justify-content: center;
-
+    .order {
+        &__headline {
+            margin: 0;
+            font-size: 40px;
+            color: rgb(254, 46, 22);
+            font-weight: 700;
+            margin-bottom: 30px; 
+        }
     }
 }
+
+// .section--first {
+
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-gap: 25px;
+
+// }
+
+// @media(max-width:1200px) {
+
+//     .section--first {
+//         grid-template-columns: 1.4fr 1fr;
+//         grid-gap: 10px
+//     }
+
+// }
+
+// @media(max-width:1000px) {
+
+//     .section--first div:last-child {
+
+//         display: none;
+
+//     }
+
+//     .section--first {
+
+//         grid-template-columns: 0.8fr;
+//         justify-content: center;
+
+//     }
+// }
 
 .section__button-container {
 
@@ -42,7 +100,7 @@
     font-size: 16px;
     display: inline-block;
     text-decoration: none;
-    padding: 14px 35px; 
+    padding: 14px 35px;
     background: $color-main;
     color: rgb(57, 57, 57);
 
@@ -162,7 +220,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
- 
+
 }
 
 @media(max-width:1000px) {
@@ -173,7 +231,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
 
-     
+
     }
 
 }
@@ -230,7 +288,8 @@
 }
 
 
-.fa-clock, .fa-mortar-pestle {
+.fa-clock,
+.fa-mortar-pestle {
 
     font-size: 40px;
     float: left;
@@ -273,7 +332,7 @@ section.fieldset.order {
     }
 }
 
-  
+
 .fieldset h2 {
 
     position: absolute;
@@ -281,8 +340,8 @@ section.fieldset.order {
     left: 40px;
     font-size: 18px;
     line-height: 1;
-    margin: -9px 0 0; 
+    margin: -9px 0 0;
     background: #fff;
     padding: 0 3px;
-    
-  }
+
+}
