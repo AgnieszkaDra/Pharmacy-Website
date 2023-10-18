@@ -1,31 +1,42 @@
 @import '../abstracts/';
 
 .main {
-    padding: 20px 10px;
+    padding: 0 30px 0 30px;
 
     @include respond(tablet) {
-        padding: 30px 30px;
+        padding: 0 30px 0 30px;
     }
 }
 
 .section--first {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-
+    padding: 20px 0 20px 0;
+  
     @include respond(tablet) {
         flex-direction: row;
+        padding: 30px 0 30px 0;
+     
     }
 
     &__element {
         width: 100%;
-        height: 350px;
-        margin: 20px 0 20px 0;
+    height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+    flex-direction: column;
+      
 
         @include respond(tablet) {
-            width: 50%;
-            margin: 0 20px 0 20px;
+            width: 49%;
+       
+           
+        }
+        > * {
+            padding: 10px;
         }
     }
 
@@ -49,134 +60,135 @@
         }
     }
 
-    .order {
-        &__headline {
-            margin: 0;
-            font-size: 40px;
-            color: rgb(254, 46, 22);
-            font-weight: 700;
-            margin-bottom: 30px; 
-        }
+    
+}
+
+.section--second {
+    padding: 20px 0 20px 0;
+    @include respond(tablet) {
+        padding: 30px 0 30px 0;
     }
-}
-
-// .section--first {
-
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-//     grid-gap: 25px;
-
-// }
-
-// @media(max-width:1200px) {
-
-//     .section--first {
-//         grid-template-columns: 1.4fr 1fr;
-//         grid-gap: 10px
-//     }
-
-// }
-
-// @media(max-width:1000px) {
-
-//     .section--first div:last-child {
-
-//         display: none;
-
-//     }
-
-//     .section--first {
-
-//         grid-template-columns: 0.8fr;
-//         justify-content: center;
-
-//     }
-// }
-
-.section__button-container {
-
-    border-radius: 55px;
-    border-color: $color-main;
-    font-size: 16px;
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 35px;
-    background: $color-main;
-    color: rgb(57, 57, 57);
-
-}
-
-.section__button__link {
-
-    text-decoration: none;
-    color: $color-white;
-
-}
-
-.section--first>.section--first__element:last-child {
-
-    background-image: url('/images/leki.webp');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 10px solid $color-submain;
-
-}
-
-.section--second__element:last-child {
-
-    display: grid;
+    &__element.headline {
+        text-align: center;
+    }
+    &__element.order {
+        display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 300px;
     text-align: center;
+    grid-gap: 20px;
+    @include respond(tablet) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    }
 
-}
-
-.element__sub.flex {
-
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 20px auto;
-    background: $color-submain;
-    border-radius: 30px;
-    flex-direction: column;
-
-}
-
-.element__sub__icon.flex {
-
-    height: 50%;
-    align-items: flex-end;
-
-}
-
-.element__sub__icon i {
-
-    font-size: 50px;
-    margin-bottom: 20px;
-
-}
-
-.element__sub__icon div {
-
-    align-self: center;
+    .order__sub {
+       width: 100%;
+       height: 100%;
+       padding: 30px;
+        position: relative;
+        background: $color-submain;
+        border-radius: 30px;
+        @include flexAbsoluteCenter();
+        flex-direction: column;
+        &__icon {
+            width: 60px;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            .number {
+                align-self: center;
     margin-top: 80%;
     margin-right: 10px;
     font-size: 16px;
     font-weight: 700;
-
+            }
+            i {
+                width: 40px;
+                height: 40px;
+                font-size: 50px;
+                margin-bottom: 20px;
+              
+            }
+        }
+        &__title {
+            height: 50%;
+        }
+    }
 }
 
-@media(max-width: 1000px) {
-
-    .element__sub__icon div {
-
-        margin-top: 0;
-
+.section--third {
+    padding: 20px 0 20px 0;
+    @include respond(tablet) {
+        padding: 30px 0 30px 0;
+    }
+    &__element.headline {
+        text-align: center;
+    }
+    ul {
+        list-style: disc;
+          padding: 0 50px 0 50px;
+    }
+    &__element.list {
+      
     }
 
 }
+
+
+
+
+
+
+
+
+
+// .element__sub.flex {
+
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     margin: 20px auto;
+//     background: $color-submain;
+//     border-radius: 30px;
+//     flex-direction: column;
+
+// }
+
+// .element__sub__icon.flex {
+
+//     height: 50%;
+//     align-items: flex-end;
+
+// }
+
+// .element__sub__icon i {
+
+//     font-size: 50px;
+//     margin-bottom: 20px;
+
+// }
+
+// .element__sub__icon div {
+
+//     align-self: center;
+//     margin-top: 80%;
+//     margin-right: 10px;
+//     font-size: 16px;
+//     font-weight: 700;
+
+// }
+
+// @media(max-width: 1000px) {
+
+//     .element__sub__icon div {
+
+//         margin-top: 0;
+
+//     }
+
+// }
 
 .element__sub__title.flex {
 
@@ -187,33 +199,33 @@
 
 }
 
-@media(max-width:768px) {
+// @media(max-width:768px) {
 
-    .section--second__element:last-child {
+//     .section--second__element:last-child {
 
-        display: grid;
-        grid-template-columns: 0.8fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-gap: 20px;
-        justify-content: center;
+//         display: grid;
+//         grid-template-columns: 0.8fr;
+//         grid-template-rows: 1fr 1fr 1fr;
+//         grid-gap: 20px;
+//         justify-content: center;
 
-    }
+//     }
 
-}
+// }
 
-@media(min-width:768px) {
+// @media(min-width:768px) {
 
-    .section--second__element:last-child {
+//     .section--second__element:last-child {
 
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 300px;
-        text-align: center;
-        grid-gap: 20px;
+//         display: grid;
+//         grid-template-columns: 1fr 1fr 1fr;
+//         grid-template-rows: 300px;
+//         text-align: center;
+//         grid-gap: 20px;
 
-    }
+//     }
 
-}
+// }
 
 .section--fourth__element:nth-child(2) {
 

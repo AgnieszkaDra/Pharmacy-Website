@@ -49,6 +49,43 @@ body {
 }
 
 
+.link {
+
+    text-decoration: none;
+    color: $color-white;
+
+}
+
+.headline--h2 {
+    margin: 0;
+    font-size: 30px;
+    color: $color-main;
+    font-weight: 700;
+    @include respond(tablet) {
+         font-size: 40px;
+    }
+    
+}
+
+.headline--h3 {
+    margin: 0;
+    font-size: 20px;
+    color: $color-font;
+    font-weight: 500;
+    @include respond(tablet) {
+        font-size: 30px;
+    }
+
+}
+
+.headline--h4 {
+    margin: 0;
+    font-size: 20px;
+    color: $color-font;
+    font-weight: 500;
+
+}
+
 // .section__headline--h2 {
 
 //     margin: 0;
