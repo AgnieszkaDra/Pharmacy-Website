@@ -111,10 +111,15 @@
         background: $color-white 40%;
         @include flexAbsoluteCenter;
 
-        ul {
+        .menu {
             display: flex;
             justify-content: center;
             flex-direction: column;
+            &__item {
+                .link {
+                    color: $color-font;
+                }
+            }
         }
     }
 

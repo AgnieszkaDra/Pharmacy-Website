@@ -426,10 +426,14 @@ span.spanwrong .error {
   align-items: center;
 }
 
-.nav__block ul {
+.nav__block .menu {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.nav__block .menu__item .link {
+  color: rgb(57, 57, 57);
 }
 
 .nav__button {
@@ -711,7 +715,7 @@ canvas {
 .section--second__element.order {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 300px;
+  grid-template-rows: 300px 300px 300px;
   text-align: center;
   grid-gap: 20px;
 }
@@ -719,6 +723,7 @@ canvas {
 @media only screen and (min-width: 900px) {
   .section--second__element.order {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px;
   }
 }
 .section--second .order__sub {
@@ -776,9 +781,13 @@ canvas {
 
 .section--third ul {
   list-style: disc;
-  padding: 0 50px 0 50px;
 }
 
+@media only screen and (min-width: 900px) {
+  .section--third ul {
+    padding: 0 50px 0 50px;
+  }
+}
 .element__sub__title.flex {
   height: 50%;
   justify-content: flex-start;

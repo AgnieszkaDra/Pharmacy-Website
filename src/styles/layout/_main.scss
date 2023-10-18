@@ -74,11 +74,12 @@
     &__element.order {
         display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 300px;
+    grid-template-rows: 300px 300px 300px ;
     text-align: center;
     grid-gap: 20px;
     @include respond(tablet) {
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 400px;
     }
     }
 
@@ -128,7 +129,11 @@
     }
     ul {
         list-style: disc;
-          padding: 0 50px 0 50px;
+        @include respond(tablet) {
+              padding: 0 50px 0 50px; 
+        }
+       
+        
     }
     &__element.list {
       
