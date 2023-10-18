@@ -665,6 +665,7 @@ canvas {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  padding: 10px;
 }
 
 @media only screen and (min-width: 900px) {
@@ -672,10 +673,6 @@ canvas {
     width: 49%;
   }
 }
-.section--first__element > * {
-  padding: 10px;
-}
-
 .section--first__element.order {
   padding: 10px;
 }
@@ -832,57 +829,20 @@ canvas {
   color: rgb(249, 217, 213);
 }
 
-.box {
-  float: left;
-  width: 50%;
-  text-align: left;
-  font-size: 17px;
-  line-height: 25px;
-  padding-left: auto;
-  justify-self: center;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 20px 0;
+  height: 200px;
 }
 
-@media (max-width: 1000px) {
-  .box {
-    width: 120%;
-    margin-bottom: 50px;
-  }
-  .box .fa-clock {
-    margin-bottom: 20px;
+@media only screen and (min-width: 900px) {
+  .footer {
+    height: 250px;
+    padding: 30px 0 30px 0;
   }
 }
-.box span {
-  font-size: 30px;
-  line-height: 40px;
-}
-
-.fieldset {
-  position: relative;
-  border: 1px solid #ddd;
-  padding: 30px;
-  margin-bottom: 20px;
-}
-
-section.fieldset.order {
-  background-color: pink;
-  padding: 50px;
-}
-
-section.fieldset.order .fieldset__title {
-  font-size: calc(0.5rem + 1vh);
-}
-
-.fieldset h2 {
-  position: absolute;
-  top: 0;
-  left: 40px;
-  font-size: 18px;
-  line-height: 1;
-  margin: -9px 0 0;
-  background: #fff;
-  padding: 0 3px;
-}
-
 example-component {
   cursor: pointer;
   border: 1px solid black;

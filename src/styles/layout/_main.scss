@@ -28,14 +28,10 @@
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-
+        padding: 10px;
 
         @include respond(tablet) {
             width: 49%;
-        }
-
-        >* {
-            padding: 10px;
         }
     }
 
@@ -59,7 +55,6 @@
             border: 10px solid $color-submain;
         }
     }
-
 
 }
 
@@ -148,7 +143,7 @@
 }
 
 .section--fourth {
-  
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -156,254 +151,50 @@
     padding: 20px 0 20px 0;
 
     height: 750px;
+
     @include respond(tablet) {
-     height: 350px;
+        height: 350px;
         flex-direction: row;
         padding: 30px 0 30px 0;
 
     }
+
     &__element {
         width: 100%;
-       height: 49%;
-       padding: 80px 10% 80px 10%; 
-       @include respond(tablet) {
-        height: 350px;
+        height: 49%;
+        padding: 80px 10% 80px 10%;
+
+        @include respond(tablet) {
+            height: 350px;
             width: 49%;
-            height: 350px; 
-            padding: 100px 10% 100px 10%; 
+            height: 350px;
+            padding: 100px 10% 100px 10%;
         }
+
         .icon {
             float: left;
             font-size: 40px;
-    float: left;
-    margin-right: 40px;
-    margin-bottom: 50px;
+            float: left;
+            margin-right: 40px;
+            margin-bottom: 50px;
         }
+
         strong {
 
             font-size: 25px;
             line-height: 35px;
             color: $color-submain;
-        
         }
-        
-    }
-    
-
-       
-}
-
-
-
-
-
-
-
-
-
-// .element__sub.flex {
-
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     margin: 20px auto;
-//     background: $color-submain;
-//     border-radius: 30px;
-//     flex-direction: column;
-
-// }
-
-// .element__sub__icon.flex {
-
-//     height: 50%;
-//     align-items: flex-end;
-
-// }
-
-// .element__sub__icon i {
-
-//     font-size: 50px;
-//     margin-bottom: 20px;
-
-// }
-
-// .element__sub__icon div {
-
-//     align-self: center;
-//     margin-top: 80%;
-//     margin-right: 10px;
-//     font-size: 16px;
-//     font-weight: 700;
-
-// }
-
-// @media(max-width: 1000px) {
-
-//     .element__sub__icon div {
-
-//         margin-top: 0;
-
-//     }
-
-// }
-
-// .element__sub__title.flex {
-
-//     height: 50%;
-//     justify-content: flex-start;
-//     align-items: flex-start;
-//     font-size: 20px;
-
-// }
-
-// @media(max-width:768px) {
-
-//     .section--second__element:last-child {
-
-//         display: grid;
-//         grid-template-columns: 0.8fr;
-//         grid-template-rows: 1fr 1fr 1fr;
-//         grid-gap: 20px;
-//         justify-content: center;
-
-//     }
-
-// }
-
-// @media(min-width:768px) {
-
-//     .section--second__element:last-child {
-
-//         display: grid;
-//         grid-template-columns: 1fr 1fr 1fr;
-//         grid-template-rows: 300px;
-//         text-align: center;
-//         grid-gap: 20px;
-
-//     }
-
-// }
-
-// .section--fourth__element:nth-child(2) {
-
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-
-
-// }
-
-// @media(max-width:1000px) {
-
-//     .section--fourth__element:nth-child(2) {
-
-//         display: grid;
-//         grid-template-columns: 1fr;
-//         grid-template-rows: 1fr 1fr;
-
-
-//     }
-
-// }
-
-// @media(max-width: 1000px) {
-
-//     .section--third,
-//     .section--fourth {
-
-//         display: grid;
-//         grid-template-columns: 0.8fr;
-//         justify-content: center;
-
-//     }
-
-//     .section--fourth div {
-
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         flex-direction: column;
-
-//     }
-
-// }
-
-.box {
-
-    float: left;
-    width: 50%;
-    text-align: left;
-    font-size: 17px;
-    line-height: 25px;
-    padding-left: auto;
-    justify-self: center;
-
-}
-
-@media(max-width: 1000px) {
-
-    .box {
-
-        width: 120%;
-        margin-bottom: 50px;
-
-        .fa-clock {
-
-            margin-bottom: 20px;
-
-        }
-
-    }
-
-}
-
-
-// .fa-clock,
-// .fa-mortar-pestle {
-
-//     font-size: 40px;
-//     float: left;
-//     margin-right: 40px;
-//     margin-bottom: 50px;
-
-// }
-
-
-.box span {
-
-    font-size: 30px;
-    line-height: 40px;
-
-}
-
-.fieldset {
-
-    position: relative;
-    border: 1px solid #ddd;
-    padding: 30px;
-    margin-bottom: 20px;
-
-}
-
-section.fieldset.order {
-    background-color: pink;
-    padding: 50px;
-
-    .fieldset__title {
-
-        font-size: calc(0.5rem + 1vh);
     }
 }
 
+.footer {
+    @include flexAbsoluteCenter();
+    padding: 20px 0 20px 0;
+    height: 200px;
 
-.fieldset h2 {
-
-    position: absolute;
-    top: 0;
-    left: 40px;
-    font-size: 18px;
-    line-height: 1;
-    margin: -9px 0 0;
-    background: #fff;
-    padding: 0 3px;
-
+    @include respond(tablet) {
+        height: 250px;
+        padding: 30px 0 30px 0;
+    }
 }

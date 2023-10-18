@@ -7,7 +7,6 @@ hamburger.addEventListener('click', function(){
 })
 
 buttonClose.addEventListener('click', function(){
-    alert('buttonClose')
     nav.classList.remove('nav__block')
 })
 
