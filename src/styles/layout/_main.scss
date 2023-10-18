@@ -14,34 +14,34 @@
     align-items: center;
     flex-direction: column;
     padding: 20px 0 20px 0;
-  
+
     @include respond(tablet) {
         flex-direction: row;
         padding: 30px 0 30px 0;
-     
+
     }
 
     &__element {
         width: 100%;
-    height: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-    flex-direction: column;
-      
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
 
         @include respond(tablet) {
             width: 49%;
-       
-           
         }
-        > * {
+
+        >* {
             padding: 10px;
         }
     }
 
     &__element.order {
         padding: 10px;
+
         @include respond(tablet) {
             padding: 20px;
         }
@@ -60,59 +60,67 @@
         }
     }
 
-    
+
 }
 
 .section--second {
     padding: 20px 0 20px 0;
+
     @include respond(tablet) {
         padding: 30px 0 30px 0;
     }
+
     &__element.headline {
         text-align: center;
     }
+
     &__element.order {
         display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 300px 300px 300px ;
-    text-align: center;
-    grid-gap: 20px;
-    @include respond(tablet) {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 400px;
-    }
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 300px 300px;
+        text-align: center;
+        grid-gap: 20px;
+
+        @include respond(tablet) {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 400px;
+        }
     }
 
     .order__sub {
-       width: 100%;
-       height: 100%;
-       padding: 30px;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
         position: relative;
         background: $color-submain;
         border-radius: 30px;
         @include flexAbsoluteCenter();
         flex-direction: column;
+
         &__icon {
             width: 60px;
             height: 50%;
             display: flex;
             justify-content: center;
             align-items: flex-end;
+
             .number {
                 align-self: center;
-    margin-top: 80%;
-    margin-right: 10px;
-    font-size: 16px;
-    font-weight: 700;
+                margin-top: 80%;
+                margin-right: 10px;
+                font-size: 16px;
+                font-weight: 700;
             }
+
             i {
                 width: 40px;
                 height: 40px;
                 font-size: 50px;
                 margin-bottom: 20px;
-              
+
             }
         }
+
         &__title {
             height: 50%;
         }
@@ -121,24 +129,68 @@
 
 .section--third {
     padding: 20px 0 20px 0;
+
     @include respond(tablet) {
         padding: 30px 0 30px 0;
     }
+
     &__element.headline {
         text-align: center;
     }
+
     ul {
         list-style: disc;
+
         @include respond(tablet) {
-              padding: 0 50px 0 50px; 
+            padding: 0 50px 0 50px;
         }
-       
+    }
+}
+
+.section--fourth {
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0 20px 0;
+
+    height: 750px;
+    @include respond(tablet) {
+     height: 350px;
+        flex-direction: row;
+        padding: 30px 0 30px 0;
+
+    }
+    &__element {
+        width: 100%;
+       height: 49%;
+       padding: 80px 10% 80px 10%; 
+       @include respond(tablet) {
+        height: 350px;
+            width: 49%;
+            height: 350px; 
+            padding: 100px 10% 100px 10%; 
+        }
+        .icon {
+            float: left;
+            font-size: 40px;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 50px;
+        }
+        strong {
+
+            font-size: 25px;
+            line-height: 35px;
+            color: $color-submain;
+        
+        }
         
     }
-    &__element.list {
-      
-    }
+    
 
+       
 }
 
 
@@ -195,14 +247,14 @@
 
 // }
 
-.element__sub__title.flex {
+// .element__sub__title.flex {
 
-    height: 50%;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 20px;
+//     height: 50%;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     font-size: 20px;
 
-}
+// }
 
 // @media(max-width:768px) {
 
@@ -232,48 +284,48 @@
 
 // }
 
-.section--fourth__element:nth-child(2) {
+// .section--fourth__element:nth-child(2) {
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-
-}
-
-@media(max-width:1000px) {
-
-    .section--fourth__element:nth-child(2) {
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
 
 
-    }
+// }
 
-}
+// @media(max-width:1000px) {
 
-@media(max-width: 1000px) {
+//     .section--fourth__element:nth-child(2) {
 
-    .section--third,
-    .section--fourth {
+//         display: grid;
+//         grid-template-columns: 1fr;
+//         grid-template-rows: 1fr 1fr;
 
-        display: grid;
-        grid-template-columns: 0.8fr;
-        justify-content: center;
 
-    }
+//     }
 
-    .section--fourth div {
+// }
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+// @media(max-width: 1000px) {
 
-    }
+//     .section--third,
+//     .section--fourth {
 
-}
+//         display: grid;
+//         grid-template-columns: 0.8fr;
+//         justify-content: center;
+
+//     }
+
+//     .section--fourth div {
+
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         flex-direction: column;
+
+//     }
+
+// }
 
 .box {
 
@@ -305,23 +357,16 @@
 }
 
 
-.fa-clock,
-.fa-mortar-pestle {
+// .fa-clock,
+// .fa-mortar-pestle {
 
-    font-size: 40px;
-    float: left;
-    margin-right: 40px;
-    margin-bottom: 50px;
+//     font-size: 40px;
+//     float: left;
+//     margin-right: 40px;
+//     margin-bottom: 50px;
 
-}
+// }
 
-strong {
-
-    font-size: 25px;
-    line-height: 35px;
-    color: $color-submain;
-
-}
 
 .box span {
 

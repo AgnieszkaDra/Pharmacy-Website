@@ -788,39 +788,50 @@ canvas {
     padding: 0 50px 0 50px;
   }
 }
-.element__sub__title.flex {
-  height: 50%;
-  justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 20px;
+.section--fourth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0 20px 0;
+  height: 750px;
 }
 
-.section--fourth__element:nth-child(2) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-@media (max-width: 1000px) {
-  .section--fourth__element:nth-child(2) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-}
-@media (max-width: 1000px) {
-  .section--third,
+@media only screen and (min-width: 900px) {
   .section--fourth {
-    display: grid;
-    grid-template-columns: 0.8fr;
-    justify-content: center;
-  }
-  .section--fourth div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: 350px;
+    flex-direction: row;
+    padding: 30px 0 30px 0;
   }
 }
+.section--fourth__element {
+  width: 100%;
+  height: 49%;
+  padding: 80px 10% 80px 10%;
+}
+
+@media only screen and (min-width: 900px) {
+  .section--fourth__element {
+    height: 350px;
+    width: 49%;
+    height: 350px;
+    padding: 100px 10% 100px 10%;
+  }
+}
+.section--fourth__element .icon {
+  float: left;
+  font-size: 40px;
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 50px;
+}
+
+.section--fourth__element strong {
+  font-size: 25px;
+  line-height: 35px;
+  color: rgb(249, 217, 213);
+}
+
 .box {
   float: left;
   width: 50%;
@@ -840,20 +851,6 @@ canvas {
     margin-bottom: 20px;
   }
 }
-.fa-clock,
-.fa-mortar-pestle {
-  font-size: 40px;
-  float: left;
-  margin-right: 40px;
-  margin-bottom: 50px;
-}
-
-strong {
-  font-size: 25px;
-  line-height: 35px;
-  color: rgb(249, 217, 213);
-}
-
 .box span {
   font-size: 30px;
   line-height: 40px;
