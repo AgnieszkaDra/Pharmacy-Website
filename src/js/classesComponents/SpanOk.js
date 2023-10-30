@@ -1,8 +1,6 @@
+export class SpanOk{
 
-
-export class Form{
-
-    constructor( selector, className='') {
+    constructor( selector, label='') {
 
         const container = document.querySelector(selector)
 
@@ -10,8 +8,7 @@ export class Form{
 
         this.selector = selector
         this.container = document.querySelector(selector)
-        this.className = className
-      
+        this.label = label
     }
 
     init() {
@@ -19,13 +16,12 @@ export class Form{
     }
 
     render() {
-       
-        const form = document.createElement('form')
-        form.classList.add(this.className)
-        this.container.appendChild(form)
-
+        const spanCont = document.createElement('span')
+        spanCont.classList.add('spanok')
+        spanCont.innerText = this.label
+        this.container.appendChild(spanCont)
     }
 
 }
 
-export default Form
+export default SpanOk

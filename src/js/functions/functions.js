@@ -60,10 +60,6 @@ export const setError = (element, message) => {
              el.innerText = ''
         })
        
-       
-    
-       
-    
     }
     
     export let numberCont = 0

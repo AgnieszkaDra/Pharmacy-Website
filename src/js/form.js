@@ -184,8 +184,6 @@ paperprescriptionButton.init()
 const paperPrescriptionButtonAdd = new paperPrescriptionAdd('.paperInputsContainer')
 paperPrescriptionButtonAdd.addNew()
 
-
-
 const otherprescriptionFieldset = new FieldsetImitate('.form-send', 'Pozostałe leki/suplementy diety/wyroby medyczne', 'nonPrescriptionFieldset', '', '#fe2e16')
 otherprescriptionFieldset.init()
 
@@ -222,32 +220,14 @@ if(tablet.matches) {
   
 }
 
-
-
-
-
 const button3 = new Button('.nonPrescriptionForm', 'Dodaj kolejny lek', 'submit')
 button3.init()
 
 const sendNon = new nonPrescriptionSend()
 sendNon.init()
 
-
-
-
 const buttonSend = new Button('.form-send', 'Zamawiam', 'submit')
 buttonSend.init()
-
-
-
-
-
-
-
-
-
-
-
 
 const nonPrescriptionButton = document.querySelector('.nonPrescriptionFormbutton')
 nonPrescriptionButton.addEventListener('click', (el) => {

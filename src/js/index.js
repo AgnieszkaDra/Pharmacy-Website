@@ -1,3 +1,24 @@
+//  import myHTML from '../../src/index.html';
+
+// document.querySelector('.app').innerHTML = myHTML;
+import './styles/reset/reset.css'
+import './styles/style.css'
+
+const logo2 = '../images/banner/drofarmaptekanamyslow.webp'
+
+import webscope from '../images/banner/drofarmaptekanamyslow.webp'
+
+
+export const footer = {
+    webscope:webscope
+}
+
+export default footer
+
+const logo = document.querySelector('.logo')
+logo.src= footer.webscope
+
+
 const hamburger = document.querySelector('.hamburger')
 const nav = document.querySelector('nav')
 const buttonClose = document.querySelector('.nav__button.close')

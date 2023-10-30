@@ -1,0 +1,84 @@
+@import '../abstracts/';
+
+.form {
+    display: grid;
+    grid-template-areas: 
+    'username . '
+    'electronicPrescription paperPrescription'
+    'formButton formButton';
+}
+
+.section {
+    position: relative;
+    background-color: $color-main;
+    min-height: 100px;
+    width: 100%;
+    @include flexAbsoluteCenter;
+    @include respond(tablet) {
+        width: 50%;
+    }
+
+    &__title {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        line-height: 1;
+        margin: -9px 0 0;
+        background: #fff;
+        padding: 0 3px;
+    }
+    &-username {
+        grid-area: username;
+        flex-direction: column;
+        
+    }
+    &-electronicPrescription {
+        grid-area: electronicPrescription;
+    }
+    &-button {
+        background-color: pink;
+        grid-area: formButton;
+    }
+}
+
+
+.success {
+
+    border: none;
+    background-color: $color-pink;
+
+}
+
+.success {
+
+    position: absolute;
+    right: -10px;
+    background-color: none;
+
+}
+
+.spanok {
+
+    display: none;
+
+}
+
+.success.spanok {
+
+    display: block;
+    background-color: $color-main;
+
+}
+  
+.spanwrong {
+
+    display: none;
+
+}
+
+.spanwrong .error {
+
+    display: none;
+    background-color: none;
+
+}

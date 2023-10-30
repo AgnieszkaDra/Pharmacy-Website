@@ -17,7 +17,7 @@ let multipleHTMLPlugins = htmlPageNames.map(name => {
 module.exports = {
     entry: {
         index: ['whatwg-fetch','./src/js/index.js'],
-        form: ['whatwg-fetch','./src/js/form.js']
+        form: ['whatwg-fetch','./src/js/form2.js']
     },
    
     // definiuję plik wejściowy 
@@ -33,6 +33,7 @@ module.exports = {
          rules: [
             {
               test: /\.scss$/,
+              
               use: [
                
                 {
@@ -47,7 +48,8 @@ module.exports = {
                   options: {
                     sourceMap: true, // <-- !!IMPORTANT!!
                   }
-                }
+                },
+             
               ]
             },
             {
@@ -66,7 +68,20 @@ module.exports = {
               {
                 test: /\.(sa|sc|c)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+          use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+          },
+        },
+      ]
+      },
+    
             
           ],
     },

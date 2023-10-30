@@ -1,0 +1,95 @@
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1250px;
+  }
+}
+.form {
+  display: grid;
+  grid-template-areas: "username . " "electronicPrescription paperPrescription" "formButton formButton";
+}
+
+.section {
+  position: relative;
+  background-color: rgb(254, 46, 22);
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 900px) {
+  .section {
+    width: 50%;
+  }
+}
+.section__title {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  line-height: 1;
+  margin: -9px 0 0;
+  background: #fff;
+  padding: 0 3px;
+}
+
+.section-username {
+  grid-area: username;
+  flex-direction: column;
+}
+
+.section-electronicPrescription {
+  grid-area: electronicPrescription;
+}
+
+.section-button {
+  background-color: pink;
+  grid-area: formButton;
+}
+
+.success {
+  border: none;
+  background-color: rgb(255, 182, 193);
+}
+
+.success {
+  position: absolute;
+  right: -10px;
+  background-color: none;
+}
+
+.spanok {
+  display: none;
+}
+
+.success.spanok {
+  display: block;
+  background-color: rgb(254, 46, 22);
+}
+
+.spanwrong {
+  display: none;
+}
+
+.spanwrong .error {
+  display: none;
+  background-color: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1250px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
