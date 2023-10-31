@@ -31,13 +31,12 @@ export class Input{
 
     render() {
         const inputContainer = document.createElement('div')
-        
-        inputContainer.classList.add('flex')
-        inputContainer.classList.add('column')
+        inputContainer.classList.add('section__inputContainer')
+       
         inputContainer.classList.add(this.classs)
-        inputContainer.setAttribute('style', 'margin-bottom:10px')
+      
         const label = document.createElement('label')
-        // label.setAttribute('style', 'width:80%')
+     label.classList.add('section__label')
 
  
         label.innerText = this.label

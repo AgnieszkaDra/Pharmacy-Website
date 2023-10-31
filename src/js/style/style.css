@@ -1,41 +1,65 @@
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
+.main {
+  padding: 20px;
+  width: 100%;
 }
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1250px;
-  }
-}
+
 .form {
   display: grid;
-  grid-template-areas: "username . " "electronicPrescription paperPrescription" "formButton formButton";
+  width: 100%;
+  grid-gap: 20px;
+  grid-template-areas: "username" "electronicPrescription" "paperPrescription" "nonPrescription" "formButton";
+}
+
+@media only screen and (min-width: 900px) {
+  .form {
+    grid-template-areas: "username username" "electronicPrescription order" "paperPrescription order" "nonPrescription order" "formButton formButton";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.form-electronicPrescription, .form-paperPrescription, .form-nonPrescription {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .section {
   position: relative;
   background-color: rgb(254, 46, 22);
   min-height: 100px;
+  padding: 30px 10px 30px 10px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@media only screen and (min-width: 900px) {
-  .section {
-    width: 50%;
-  }
-}
 .section__title {
   position: absolute;
   top: 0;
   left: 5px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   line-height: 1;
   margin: -9px 0 0;
-  background: #fff;
+  background-color: rgb(255, 182, 193);
   padding: 0 3px;
+}
+
+.section__inputContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.section__inputContainer > * {
+  margin: 2px;
+}
+
+.section__label {
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .section-username {
@@ -47,8 +71,21 @@
   grid-area: electronicPrescription;
 }
 
+.section-paperPrescription {
+  grid-area: paperPrescription;
+}
+
+.section-nonPrescription {
+  grid-area: nonPrescription;
+}
+
 .section-button {
-  background-color: pink;
+  background-color: rgb(255, 182, 193);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 5px;
+  font-size: 0.7rem;
   grid-area: formButton;
 }
 
@@ -79,17 +116,6 @@
 .spanwrong .error {
   display: none;
   background-color: none;
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1250px;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
