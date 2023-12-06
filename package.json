@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^4.18.2",
     "whatwg-fetch": "^3.6.2"
   },
   "name": "pharmacy-website-1",

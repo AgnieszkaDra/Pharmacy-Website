@@ -1,6 +1,6 @@
-import logos from '../../images/banner/drofarmaptekanamyslow.webp'
+// import logos from '../../images/banner/drofarmaptekanamyslow.webp'
 
 
-export const logo = {logos:logos}
+// export const logo = {logos:logos}
 
-export default logo
+// export default logo

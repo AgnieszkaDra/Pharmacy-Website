@@ -1,3 +1,5 @@
+
+console.log('form2')
 import './style/reset/reset.css'
 import './style/style.css'
 
