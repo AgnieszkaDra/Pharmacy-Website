@@ -48,7 +48,8 @@ export const showElectronicPrescriptionValue = function(input1, input2, containe
       
     }  
     if (!(input1.value.trim() === '') && !(input2.value.trim() === '')) {
-        
+        alert('second')
+        console.log(container)
     const value1 = input1.value.trim()
     const value2 = input2.value.trim()
     const inputValueContainer = document.createElement('div')

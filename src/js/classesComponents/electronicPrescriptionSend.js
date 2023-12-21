@@ -1,6 +1,6 @@
 
 import { setError } from "../functions/functions";
-import { showElectronicPrescriptionValue } from "../showInputValue/showInputValue";
+import {showElectronicPrescriptionValue} from '../showInputValue/showInputValue';
 
 
 
@@ -10,10 +10,10 @@ class electronicPrescriptionSend {
      
         this.pin = document.getElementById('PIN');
         this.pesel = document.getElementById('PESEL')
-        this.electronicPrescriptionButton = document.querySelector('.electronicPrescriptionFormButton')
+        this.electronicPrescriptionButton = document.querySelector('.form-electronicPrescription button')
         this.electronicPrescriptionForm = document.querySelector('.form-electronicPrescription')
         this.showElectronicPrescriptionValue = showElectronicPrescriptionValue
-        this.textareaPinPesel = document.querySelector('.electronicPrescriptionOrder')
+        this.textareaPinPesel = document.querySelector('.order__electronicPrescription')
         this.setError = {setError}
      
         this.electronicPrescriptionForm.fields = [

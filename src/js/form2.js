@@ -1,21 +1,24 @@
 
-console.log('form2')
+
 import './style/reset/reset.css'
 import './style/style.css'
 
-import Form from "./classesComponents/Form";
-import Section from "./classesComponents/Section";
-import Input from './classesComponents/Input';
+import Form from './UI/Form.js';
+import Section from "./UI/Section";
+import Input from './UI/Input';
 import SpanOk from './classesComponents/SpanOk';
 import SpanWrong from './classesComponents/SpanWrong';
 import LabelError from './classesComponents/LabelError';
-import Button from './classesComponents/Button';
+import Button from './UI/Button';
 import electronicPrescriptionSend from './classesComponents/electronicPrescriptionSend'
-import InputFile from './classesComponents/InputFile';
+import InputFile from './UI/InputFile';
 import InputFileContainer from './classesComponents/InputFileContainer';
 import paperPrescriptionAdd from './classesComponents/paperPrescriptionAdd';
+import FieldsetImitate from './UI/FieldsetImitate.js';
+import Textarea from './classesComponents/Textarea';
 
 import { setSuccess, toUnicode } from "./functions/functions.js";
+import ElectronicPrescription from './classesComponents/electronicPrescription.js';
 
 const form = new Form('.main', 'form')
 form.init()
@@ -28,22 +31,30 @@ emailInput.init()
 
 const electronicPrescription = new Section('.form', 'Leki na receptę elektroniczną', 'section-electronicPrescription')
 electronicPrescription.init()
-const electronicPrescriptionForm = new Form('.section-electronicPrescription', 'form-electronicPrescription')
-electronicPrescriptionForm.init()
-const pinInput = new Input('.form-electronicPrescription', 'PIN', 'PIN recepty')
-pinInput.init()
-const pinSpanOkName = new SpanOk('.PIN', toUnicode(0x2713))
-pinSpanOkName.init()
-const pinSpanWrong = new SpanWrong('.PIN', toUnicode(10060))
-pinSpanWrong.init()
-const pinLabelError = new LabelError('.PIN' )
-pinLabelError.init()
-const peselInput = new Input('.form-electronicPrescription', 'PESEL', 'PESEL recepty')
-peselInput.init()
-const electronicprescriptionButton = new Button('.form-electronicPrescription', 'Dodaj kolejną receptę elektroniczną', 'submit')
-electronicprescriptionButton.init()
-const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
-electronicPrescriptionButtonAdd.send()
+
+const electronicContent = new ElectronicPrescription('.section-electronicPrescription')
+electronicContent.init()
+// const electronicPrescriptionForm = new Form('.section-electronicPrescription', 'form-electronicPrescription')
+// electronicPrescriptionForm.init()
+// const pinInput = new Input('.form-electronicPrescription', 'PIN', 'PIN recepty')
+// pinInput.init()
+// // const pinSpanOkName = new SpanOk('.PIN', toUnicode(0x2713))
+// // pinSpanOkName.init()
+// // const pinSpanWrong = new SpanWrong('.PIN', toUnicode(10060))
+// // pinSpanWrong.init()
+// const pinLabelError = new LabelError('.PIN' )
+// pinLabelError.init()
+// const peselInput = new Input('.form-electronicPrescription', 'PESEL', 'PESEL recepty')
+// peselInput.init()
+// // const peselSpanOkName = new SpanOk('.PESEL', toUnicode(0x2713))
+// // pinSpanOkName.init()
+// // const peselSpanWrong = new SpanWrong('.PESEL', toUnicode(10060))
+// // pinSpanWrong.init()
+// const peselLabelError = new LabelError('.PESEL' )
+// peselLabelError.init()
+// const electronicprescriptionButton = new Button('.form-electronicPrescription', 'Dodaj kolejną receptę elektroniczną', 'submit')
+// electronicprescriptionButton.init()
+
 
 const paperPrescription = new Section('.form', 'Leki na receptę papierową', 'section-paperPrescription')
 paperPrescription.init()
@@ -71,8 +82,20 @@ drugAmountInput.init()
 const button3 = new Button('.form-nonPrescription', 'Dodaj kolejny lek', 'submit')
 button3.init()
 
-const orderFieldset = new Section('.form', 'Twoje Zamówienie', 'section-order', '', '#fe2e16')
+const orderFieldset = new Section('.form', 'Twoje Zamówienie', 'order', '', '#fe2e16')
+
 orderFieldset.init()
+
+const electronicprescriptionOrder = new FieldsetImitate('.order', 'Recepta elektroniczna', 'order__electronicPrescription', 'order', '')
+electronicprescriptionOrder.init()
+const electronicPrescriptionButtonAdd = new electronicPrescriptionSend()
+electronicPrescriptionButtonAdd.send()
+
+const paperprescriptionOrder = new FieldsetImitate('.order', 'Recepta papierowa', 'order__paperPrescription', 'order', '')
+paperprescriptionOrder.init()
+// const paperPrescriptionButtonAdd = new electronicPrescriptionSend()
+// paperPrescriptionButtonAdd.send()
+
 
 
 

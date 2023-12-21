@@ -1,5 +1,5 @@
 import InputFileContainer from "./InputFileContainer";
-import InputFile from "./InputFile";
+import InputFile from "../UI/InputFile";
 
 
 const mql = window.matchMedia("(max-width: 768px)")

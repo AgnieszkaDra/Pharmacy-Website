@@ -164,152 +164,6 @@ span.spanwrong .error {
     max-width: 1250px;
   }
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  color: #393939;
-  overflow-x: hidden;
-  line-height: 1.5;
-  font-size: 16px;
-  font-weight: 400;
-  box-sizing: border-box;
-}
-
-.border--pink {
-  border: 10px solid rgb(249, 217, 213);
-  border-radius: 2px;
-}
-
-.button {
-  border-radius: 55px;
-  font-size: 16px;
-  display: inline-block;
-  text-decoration: none;
-  padding: 14px 35px;
-  background: rgb(254, 46, 22);
-}
-
-.text-center {
-  text-align: center;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.link {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
-.headline--h2 {
-  margin: 0;
-  font-size: 30px;
-  color: rgb(254, 46, 22);
-  font-weight: 700;
-}
-
-@media only screen and (min-width: 900px) {
-  .headline--h2 {
-    font-size: 40px;
-  }
-}
-.headline--h3 {
-  margin: 0;
-  font-size: 20px;
-  color: rgb(57, 57, 57);
-  font-weight: 500;
-}
-
-@media only screen and (min-width: 900px) {
-  .headline--h3 {
-    font-size: 30px;
-  }
-}
-.headline--h4 {
-  margin: 0;
-  font-size: 20px;
-  color: rgb(57, 57, 57);
-  font-weight: 500;
-}
-
-.section__headline--h3 {
-  color: rgb(57, 57, 57);
-  font-size: 25px;
-}
-
-label {
-  width: 80%;
-  margin-bottom: 5px;
-}
-
-.label__error {
-  color: rgb(255, 255, 255);
-  width: 130%;
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: color_change 1s infinite alternate;
-}
-
-@keyframes color_change {
-  from {
-    color: white;
-  }
-  to {
-    color: rgb(255, 182, 193);
-  }
-}
-input {
-  width: 80%;
-}
-
-.success {
-  border: none;
-  background-color: rgb(255, 182, 193);
-}
-
-span.success {
-  position: absolute;
-  right: -10px;
-  background-color: none;
-}
-
-span.spanok {
-  display: none;
-}
-
-span.success.spanok {
-  display: block;
-  background-color: rgb(254, 46, 22);
-}
-
-span.spanwrong {
-  display: none;
-}
-
-span.spanwrong .error {
-  display: none;
-  background-color: none;
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1250px;
-  }
-}
 .header {
   background-color: rgb(254, 46, 22);
   height: 20vh;
@@ -466,13 +320,13 @@ span.spanwrong .error {
   margin-top: calc(1rem + 1vh);
 }
 
-.fieldset {
+.fieldsetImitate {
   margin: 10px;
   padding: 10px;
   position: relative;
 }
 
-.fieldset__title {
+.fieldsetImitate__title {
   position: absolute;
   top: 0;
   left: 5px;

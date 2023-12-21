@@ -12,17 +12,17 @@ export const setError = (element, message) => {
         
         const errorDisplay = inputControl.querySelector('.label__error')
     
-        inputInInputControl.classList.remove('success')
-        inputInInputControl.classList.add('error')
+        // inputInInputControl.classList.remove('success')
+        // inputInInputControl.classList.add('error')
         errorDisplay.innerText = message
     
-        const span = inputControl.querySelector('spanwrong')
-        span.removeAttribute('class')
-        span.classList.remove('.span')
-        span.classList.add('error')
-        element.classList.add('error')
-        span.classList.remove('success')
-        element.classList.remove('success')
+        // const span = inputControl.querySelector('spanwrong')
+        // span.removeAttribute('class')
+        // span.classList.remove('.span')
+        // span.classList.add('error')
+        // element.classList.add('error')
+        // span.classList.remove('success')
+        // element.classList.remove('success')
         
     }
     
