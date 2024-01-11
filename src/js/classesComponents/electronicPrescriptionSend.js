@@ -33,37 +33,37 @@ class electronicPrescriptionSend {
        
     }
 
-    clear() {
+    // clear() {
         
-        const label__errors = document.querySelectorAll('.label__error')
-        label__errors.forEach(function(el) {
+    //     const label__errors = document.querySelectorAll('.label__error')
+    //     label__errors.forEach(function(el) {
 
-            el.innerText = ''
+    //         el.innerText = ''
 
-        return el
+    //     return el
 
-            })
+    //         })
         
 
-    }
+    // }
         
         
-        go() {
+    //     go() {
         
-            return this.returnPromise()
-            .then(this.clear())
-            .then(this.send())
-            .then(this.clear())
+    //         return this.returnPromise()
+    //         .then(this.clear())
+    //         .then(this.send())
+    //         .then(this.clear())
 
-        }
+    //     }
     
-        returnPromise() {
+    //     returnPromise() {
 
-           return new Promise((resolve, reject) => {
+    //        return new Promise((resolve, reject) => {
 
-            })
+    //         })
 
-        }
+    //     }
     
         send()  {
  

@@ -1,5 +1,6 @@
 import InputFileContainer from "./InputFileContainer";
 import InputFile from "../UI/InputFile";
+import Canvas from "../classes/Canvas";
 
 
 const mql = window.matchMedia("(max-width: 768px)")
@@ -61,10 +62,10 @@ class paperPrescriptionAdd {
             console.log('addNew')
            
              e.preventDefault();  
- let object = new InputFileContainer('.paperInputsContainer');
+        let object = new InputFileContainer('.form-paperPrescription');
         object.init()
 
-        const last = document.querySelector('.paperInputsContainer')
+        const last = document.querySelector('.inputCont')
         const lastChild = last.lastChild
         console.log(lastChild)
         const name = lastChild.getAttribute("name")
@@ -78,6 +79,9 @@ class paperPrescriptionAdd {
 
         let ind = new InputFile(`div[name='${name}']`)
         ind.init()
+
+        let can = new Canvas('.order__paperPrescription')
+        can.render()
     })
         
     }

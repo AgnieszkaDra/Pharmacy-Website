@@ -32,7 +32,8 @@ export class InputFileContainer{
         inputCont.setAttribute('style', 'padding:10px')
 
         this.container.appendChild(inputCont)
-    
+
+      
     }
 
 }

@@ -1,9 +1,7 @@
 import { setError } from "../functions/functions.js"
 import { setSuccess } from "../functions/functions.js"
-console.log('electronic')
 
 const pin = document.getElementById('PIN')
-
 const pesel = document.getElementById('pesel')
 const textareaPinPesel = document.querySelector('.textarea.pinpesel')
 const buttonElectronicPrescription = document.querySelector('.electronicPrescription.button')

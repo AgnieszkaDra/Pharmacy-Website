@@ -32,27 +32,36 @@ export class InputFile{
         inputFile.setAttribute("name", 'both' + this.classs) 
         inputFile.classList.add('file')
         inputFile.classList.add('in' + this.classs)
-     
+ 
         this.container.appendChild(inputFile) 
+
+        const parentId = inputFile.parentElement.id
+     
     
         const button = document.createElement('button')
         button.innerText = 'X'
         button.addEventListener('click', function (el) {
             el.target.closest('.inputCont').remove()
             const close = el.target.closest('.inputCont')
-            const closeName = close.getAttribute("name")
-            const canvasClose = document.querySelector(`canvas[name='${closeName}']`)
-            canvasClose.remove()
+            var elementToRemove = document.querySelector(`[id=${parentId}]`);
+            console.log(elementToRemove)
+  
+  if (elementToRemove) {
+    elementToRemove.parentNode.removeChild(elementToRemove);
+  }
+            // const closeName = close.getAttribute("name")
+            // const canvasClose = document.querySelector(`canvas[name='${closeName}']`)
+            // canvasClose.remove()
             
         })   
       
         this.container.appendChild(button)
 
-            const canvas = document.createElement('canvas')
-            canvas.setAttribute('id', 'our-canvas')
-            canvas.classList.add('in' + this.classs)
-            canvas.classList.add('canvassize')
-            canvas.setAttribute("name", 'both' + this.classs) 
+            // const canvas = document.createElement('canvas')
+            // canvas.setAttribute('id', 'our-canvas')
+            // canvas.classList.add('in' + this.classs)
+            // canvas.classList.add('canvassize')
+            // canvas.setAttribute("name", 'both' + this.classs) 
 
         // if(mql.matches) {
             
