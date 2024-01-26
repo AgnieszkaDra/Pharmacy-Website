@@ -81,6 +81,20 @@ module.exports = {
         },
       ]
       },
+      {
+        // Rule for handling image files
+        test: /\.(png|jpg|jpeg|gif|webp)$/i,
+        use: [
+            {
+                // Use file-loader to emit the image as a separate file in the output directory
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'images/', // Output path for images
+                },
+            },
+        ],
+    },
     
             
           ],

@@ -1,7 +1,8 @@
-
+console.log('form2')
 
 import './style/reset/reset.css'
 import './style/style.css'
+
 
 import Form from './UI/Form.js';
 import Section from "./UI/Section";
