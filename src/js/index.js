@@ -1,4 +1,4 @@
-
+alert('still in refactoring - mess in code')
 import './styles/reset/reset.css'
 import './styles/style.css'
 
